@@ -1,0 +1,28 @@
+.tooltip-label-content {
+	position: relative;
+
+	.tooltip-label,
+	.tooltip-label-collapse {
+		width: auto;
+		background-color: #d2e1ec;
+		position: absolute;
+		top: 37px;
+		right: 34px;
+		border-radius: 0.2em;
+		padding: 3px;
+		font-size: 0.8rem;
+		color: #171717;
+		font-weight: 500;
+		z-index: 1;
+	}
+
+	.tooltip-label-collapse {
+		top: 0;
+		right: 34px;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		display: none;
+	}
+}

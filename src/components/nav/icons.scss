@@ -1,0 +1,41 @@
+.light-content-icon,
+.dark-content-icon {
+	height: 35px;
+	width: 35px;
+	padding: 5px;
+	cursor: pointer;
+	border-radius: 0.2em;
+	background-color: inherit;
+
+	.icon {
+		width: 25px;
+		height: 25px;
+		color: #efeeee;
+	}
+}
+
+.light-content-icon:hover {
+	background-color: #1d90d2;
+	.icon {
+		color: #ffffff;
+	}
+}
+
+.dark-content-icon:hover {
+	background-color: #37383a;
+	.icon {
+		color: #ffffff;
+	}
+}
+
+.light-collapse-icons,
+.dark-collapse-icons {
+	position: absolute;
+	background-color: #1768aa;
+	top: 51px;
+	border-radius: 0.2em;
+}
+
+.dark-collapse-icons {
+	background-color: #1f2020;
+}

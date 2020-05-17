@@ -1,0 +1,21 @@
+.light-App,
+.dark-App {
+	font-family: sans-serif;
+	background-color: #dcdcdc;
+	min-height: 100vh;
+	animation: show linear 0.5s;
+}
+
+.dark-App {
+	background-color: #444444;
+}
+
+@keyframes show {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}

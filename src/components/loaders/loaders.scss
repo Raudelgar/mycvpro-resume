@@ -1,0 +1,20 @@
+@import './polar.scss';
+
+.bg-loader {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-height: 100vh;
+	background-color: #1818189a;
+	pointer-events: none;
+	cursor: none;
+	z-index: 2;
+
+	.loader-center {
+		position: absolute;
+		margin: 0;
+		top: 40vh;
+		left: 45vw;
+	}
+}
