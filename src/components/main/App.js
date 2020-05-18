@@ -28,7 +28,6 @@ export default function App() {
 			) : (
 				<div className={`${theme}-App`}>
 					<NavBar />
-					<SettingMenu />
 					<Home />
 				</div>
 			)}

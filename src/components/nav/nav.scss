@@ -24,28 +24,25 @@
 
 		.user-avatar {
 			border-radius: 50%;
-			height: 45px;
-			width: 45px;
-			// position: relative;
+			height: 100%;
+			width: 50px;
+			margin-right: 10px;
+			display: flex;
+			align-items: center;
+			padding: 5px;
 		}
 
 		.avatar-container {
-			width: 45px;
-			height: 45px;
+			width: 40px;
+			height: 40px;
 			border-radius: 50%;
 			background-color: #ababab;
 			border: none;
 		}
 
 		.avatar-img {
-			// border-radius: 50%;
-			// height: 45px;
-			// width: 45px;
-			// position: relative;
-			// display: flex;
-			// justify-content: center;
-			// align-items: center;
-			// border: 1px solid #f7ce04;
+			width: 40px;
+			padding: 0;
 		}
 
 		.menu {
@@ -83,8 +80,28 @@
 		.dark-collapse-menu:hover {
 			background-color: #37383a;
 		}
+	}
+}
 
-		@media (max-width: 770px) {
+.dark-nav {
+	background-color: #1f2020;
+}
+
+@media (max-width: 1180px) {
+	.light-nav,
+	.dark-nav {
+		height: 100px;
+		height: 100px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		align-content: center;
+		font-size: 1.2rem;
+
+		.main-header {
+			width: 100%;
+
 			.menu {
 				// background-color: #333;
 				display: none;
@@ -96,8 +113,4 @@
 			}
 		}
 	}
-}
-
-.dark-nav {
-	background-color: #1f2020;
 }
