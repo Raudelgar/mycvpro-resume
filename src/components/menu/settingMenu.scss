@@ -1,0 +1,18 @@
+.light-menu-icons,
+.dark-menu-icons {
+	position: absolute;
+	background-color: #1768aa;
+	top: 70px;
+	right: 20px;
+	border-radius: 0.2em;
+}
+
+.dark-menu-icons {
+	background-color: #1f2020;
+}
+
+@media (max-width: 770px) {
+	.setting-menu-container {
+		display: none;
+	}
+}

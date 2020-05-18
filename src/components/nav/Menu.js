@@ -22,9 +22,6 @@ export default function Menu() {
 
 	return (
 		<>
-			<div className='menu'>
-				<Icons />
-			</div>
 			<button
 				className={`${theme}-collapse-menu`}
 				onClick={handleMenu}
@@ -44,3 +41,9 @@ export default function Menu() {
 		</>
 	);
 }
+
+/* 
+<div className='menu'>
+				<Icons />
+			</div>
+*/
