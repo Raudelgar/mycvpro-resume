@@ -24,26 +24,24 @@
 
 		.user-avatar {
 			border-radius: 50%;
-			height: 43px;
-			position: relative;
+			height: 45px;
+			width: 45px;
+			// position: relative;
 		}
 
 		.avatar-container {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			border: 2px solid transparent;
-			border-left-color: #ffff;
+			width: 45px;
+			height: 45px;
 		}
 
 		.avatar-img {
-			border-radius: 50%;
-			height: 45px;
-			width: 45px;
-			position: relative;
-			display: flex;
-			justify-content: center;
-			align-items: center;
+			// border-radius: 50%;
+			// height: 45px;
+			// width: 45px;
+			// position: relative;
+			// display: flex;
+			// justify-content: center;
+			// align-items: center;
 			// border: 1px solid #f7ce04;
 		}
 
