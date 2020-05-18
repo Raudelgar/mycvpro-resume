@@ -1,18 +1,40 @@
-.light-menu-icons,
-.dark-menu-icons {
-	position: absolute;
-	background-color: #1768aa;
-	top: 70px;
-	right: 20px;
-	border-radius: 0.2em;
+.collapse-menu-container {
+	display: none;
 }
 
-.dark-menu-icons {
-	background-color: #1f2020;
+.setting-menu-container {
+	.light-menu-icons,
+	.dark-menu-icons {
+		position: absolute;
+		background-color: #1768aa;
+		top: 70px;
+		right: 20px;
+		border-radius: 0.2em;
+	}
+
+	.dark-menu-icons {
+		background-color: #1f2020;
+	}
 }
 
-@media (max-width: 770px) {
+@media (max-width: 1180px) {
 	.setting-menu-container {
 		display: none;
+	}
+
+	.collapse-menu-container {
+		display: flex;
+		position: relative;
+		width: 45%;
+		min-width: 410px;
+		padding-bottom: 10px;
+
+		.light-menu-icons,
+		.dark-menu-icons {
+			position: relative;
+			display: flex;
+			width: 100%;
+			justify-content: space-around;
+		}
 	}
 }
