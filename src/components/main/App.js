@@ -4,7 +4,8 @@ import './main.scss';
 import NavBar from '../nav/NavBar.js';
 import ThemeContext from '../../context/ThemeContext.js';
 import useTheme from '../../hooks/useTheme.js';
-import SemipolarSpinner from '../loaders/SemipolarSpinner.js';
+// import SemipolarSpinner from '../loaders/SemipolarSpinner.js';
+import LogoLoader from '../loaders/LogoLoader.js';
 
 export default function App() {
 	const [theme, handleTheme] = useTheme();
@@ -21,7 +22,7 @@ export default function App() {
 	return (
 		<ThemeContext.Provider value={{ theme, handleTheme }}>
 			{isLoading ? (
-				<SemipolarSpinner />
+				<LogoLoader />
 			) : (
 				<div className={`${theme}-App`}>
 					<NavBar />

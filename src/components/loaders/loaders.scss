@@ -1,12 +1,13 @@
 @import './polar.scss';
+@import './logoLoader.scss';
 
-.bg-loader {
+.bg-loader,
+.bg-loader-opc {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	min-height: 100vh;
-	background-color: #1818189a;
 	pointer-events: none;
 	cursor: none;
 	z-index: 2;
@@ -14,7 +15,11 @@
 	.loader-center {
 		position: absolute;
 		margin: 0;
-		top: 40vh;
-		left: 45vw;
+		top: calc(50vh - 50px);
+		left: calc(50vw - 70px);
 	}
+}
+
+.bg-loader-opc {
+	background-color: #1818189a;
 }
