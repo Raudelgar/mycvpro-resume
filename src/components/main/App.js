@@ -6,6 +6,7 @@ import ThemeContext from '../../context/ThemeContext.js';
 import useTheme from '../../hooks/useTheme.js';
 // import SemipolarSpinner from '../loaders/SemipolarSpinner.js';
 import LogoLoader from '../loaders/LogoLoader.js';
+import SettingMenu from '../menu/SettingMenu.js';
 
 export default function App() {
 	const [theme, handleTheme] = useTheme();
@@ -26,6 +27,7 @@ export default function App() {
 			) : (
 				<div className={`${theme}-App`}>
 					<NavBar />
+					<SettingMenu />
 				</div>
 			)}
 		</ThemeContext.Provider>
