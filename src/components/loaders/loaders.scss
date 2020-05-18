@@ -10,13 +10,17 @@
 	min-height: 100vh;
 	pointer-events: none;
 	cursor: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	z-index: 2;
 
 	.loader-center {
 		position: absolute;
 		margin: 0;
-		top: calc(50vh - 50px);
-		left: calc(50vw - 70px);
+		// top: calc(50vh - 50px);
+		// left: calc(50vw - 70px);
 	}
 }
 
