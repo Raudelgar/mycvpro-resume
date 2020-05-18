@@ -1,0 +1,41 @@
+.logo-container {
+	position: relative;
+
+	.logo-icon {
+		width: 100px;
+		height: 100px;
+		color: #1768aa;
+	}
+
+	.logo-label {
+		position: absolute;
+		top: 40px;
+		left: 25px;
+		font-size: 2.5rem;
+		color: #fffefe;
+		font-weight: bold;
+		font-family: monospace;
+	}
+
+	.circle-container {
+		width: 120px;
+		height: 120px;
+		position: absolute;
+		top: -10px;
+		left: -10px;
+		border: 5px solid transparent;
+		border-top-color: #1768aa;
+		border-right-color: #1768aae0;
+		border-bottom-color: #1768aa85;
+		border-left-color: #1768aa14;
+		border-radius: 50%;
+		animation: circle-spinner-animation 670ms linear infinite;
+		z-index: 1;
+	}
+
+	@keyframes circle-spinner-animation {
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+}

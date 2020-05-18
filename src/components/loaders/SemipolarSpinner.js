@@ -9,7 +9,7 @@ export default function SemipolarSpinner() {
 		));
 
 	return (
-		<div className='bg-loader'>
+		<div className='bg-loader bg-loader-opc '>
 			<div className='semipolar-spinner loader-center'>{generateRings()}</div>
 		</div>
 	);
