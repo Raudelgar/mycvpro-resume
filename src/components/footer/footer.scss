@@ -1,3 +1,5 @@
+@import '../../sass/_colors.scss';
+
 .footer-container {
 	display: flex;
 	width: 1000px;
@@ -12,13 +14,15 @@
 	.dark-text,
 	.light-footer-link,
 	.dark-footer-link {
-		color: #5d5d5d;
+		// color: #5d5d5d;
+		color: $dark-gray;
 		font-size: 0.85rem;
 		padding: 0 3px;
 	}
 
 	.dark-text {
-		color: #b4b4b4;
+		// color: #b4b4b4;
+		color: $light-gray;
 	}
 
 	.light-footer-link,
@@ -29,7 +33,8 @@
 	.light-tab,
 	.dark-tab {
 		font-size: 1.2rem;
-		color: #a9a9a9;
+		// color: #a9a9a9;
+		color: $footer-tab-gray;
 	}
 
 	.footer-nav,
@@ -46,21 +51,25 @@
 		margin-left: 10px;
 
 		.footer-nav > .light-footer-link {
-			color: #464646;
+			// color: #464646;
+			color: $dark-gray;
 		}
 
 		.footer-nav > .dark-footer-link {
-			color: #9c9c9c;
+			// color: #9c9c9c;
+			color: $light-gray;
 		}
 
-		.footer-nav > .light-footer-link,
+		.footer-nav > .light-footer-link:hover,
 		.dark-footer-link:hover {
-			color: #2b2b2b;
+			// color: #2b2b2b;
+			color: $dark-hover-gray;
 			text-decoration: underline;
 		}
 
 		.footer-nav > .dark-footer-link:hover {
-			color: #cccccc;
+			// color: #cccccc;
+			color: $light-hover-gray;
 		}
 	}
 

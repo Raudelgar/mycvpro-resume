@@ -1,3 +1,5 @@
+@import '../../sass/_colors.scss';
+
 .light-content-icon,
 .dark-content-icon {
 	height: 35px;
@@ -10,32 +12,36 @@
 	.icon {
 		width: 25px;
 		height: 25px;
-		color: #efeeee;
+		// color: #efeeee;
+		color: $light-text-color;
 	}
 }
 
 .light-content-icon:hover {
-	background-color: #1d90d2;
+	background-color: $bg-blue-hover;
 	.icon {
-		color: #ffffff;
+		color: $bright-white-color;
 	}
 }
 
 .dark-content-icon:hover {
-	background-color: #37383a;
+	// background-color: #37383a;
+	background-color: $bg-dark-hover;
 	.icon {
-		color: #ffffff;
+		color: $bright-white-color;
 	}
 }
 
 .light-collapse-icons,
 .dark-collapse-icons {
 	position: absolute;
-	background-color: #1768aa;
+	// background-color: #1768aa;
+	background-color: $base-blue;
 	top: 51px;
 	border-radius: 0.2em;
 }
 
 .dark-collapse-icons {
-	background-color: #1f2020;
+	// background-color: #1f2020;
+	background-color: $base-dark;
 }

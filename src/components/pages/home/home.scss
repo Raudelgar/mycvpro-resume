@@ -1,3 +1,5 @@
+@import '../../../sass/_colors.scss';
+
 .main-container {
 	width: 1000px;
 	position: relative;
@@ -16,13 +18,13 @@
 
 		.light-grid-item,
 		.dark-grid-item {
-			background-color: #fff;
+			background-color: $light-text-color;
 			border-radius: 0.2em;
 		}
 
 		.dark-grid-item {
-			background-color: #1f2020;
-			color: #fff;
+			background-color: $base-dark;
+			color: $light-text-color;
 		}
 	}
 }

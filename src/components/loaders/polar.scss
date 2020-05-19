@@ -1,4 +1,4 @@
-$base-color: #ffff;
+@use '../../sass/_colors.scss';
 
 .semipolar-spinner {
 	height: 150px;
@@ -9,8 +9,8 @@ $base-color: #ffff;
 		border-radius: 50%;
 		position: absolute;
 		border: calc(150px * 0.05) solid transparent;
-		border-top-color: $base-color;
-		border-left-color: $base-color;
+		border-top-color: $light-text-color;
+		border-left-color: $light-text-color;
 		animation: semipolar-spinner-animation 2000ms infinite;
 	}
 

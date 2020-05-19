@@ -1,9 +1,13 @@
+@import '../../sass/_colors.scss';
+
 .light-nav,
 .dark-nav {
 	width: 100%;
 	height: 50px;
-	background-color: #1768aa;
-	color: #ffff;
+	// background-color: #1768aa;
+	background-color: $base-blue;
+	// color: #ffff;
+	color: $light-text-color;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -36,7 +40,8 @@
 			width: 40px;
 			height: 40px;
 			border-radius: 50%;
-			background-color: #ababab;
+			// background-color: #ababab;
+			background-color: $light-gray;
 			border: none;
 		}
 
@@ -48,7 +53,8 @@
 	}
 }
 .dark-nav {
-	background-color: #1f2020;
+	// background-color: #1f2020;
+	background-color: $base-dark;
 }
 
 @media (max-width: 1180px) {
