@@ -8,6 +8,7 @@ import useTheme from '../../hooks/useTheme.js';
 import LogoLoader from '../loaders/LogoLoader.js';
 import SettingMenu from '../menu/SettingMenu.js';
 import Home from '../pages/home/Home.js';
+import Footer from '../footer/Footer.js';
 
 export default function App() {
 	const [theme, handleTheme] = useTheme();
@@ -16,7 +17,7 @@ export default function App() {
 	useEffect(() => {
 		const delay = window.setTimeout(() => {
 			setLoading(false);
-		}, 3000);
+		}, 500);
 
 		return (_) => window.clearTimeout(delay);
 	}, [isLoading]);
@@ -29,6 +30,7 @@ export default function App() {
 				<div className={`${theme}-App`}>
 					<NavBar />
 					<Home />
+					<Footer />
 				</div>
 			)}
 		</ThemeContext.Provider>
