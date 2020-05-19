@@ -2,11 +2,9 @@ import React, { useState, useEffect } from 'react';
 
 import './main.scss';
 import NavBar from '../nav/NavBar.js';
-import ThemeContext from '../../context/ThemeContext.js';
+import { ThemeContext } from '../../context/Context.js';
 import useTheme from '../../hooks/useTheme.js';
-// import SemipolarSpinner from '../loaders/SemipolarSpinner.js';
 import LogoLoader from '../loaders/LogoLoader.js';
-import SettingMenu from '../menu/SettingMenu.js';
 import Home from '../pages/home/Home.js';
 import Footer from '../footer/Footer.js';
 

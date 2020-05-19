@@ -45,45 +45,8 @@
 			height: 40px;
 			padding: 0;
 		}
-
-		.menu {
-			// width: 300px;
-			height: 100%;
-			display: flex;
-			align-items: center;
-			padding: 5px;
-			// background-color: #087bb1;
-		}
-
-		.menu > div:nth-child(-n + 3) {
-			margin-right: 5px;
-		}
-
-		button {
-			margin: 0;
-			padding: 0;
-			outline: none;
-			background-color: transparent;
-			border: none;
-			border-radius: 0.2em;
-		}
-		.light-collapse-menu,
-		.dark-collapse-menu {
-			display: none;
-			color: inherit;
-			margin-right: 5px;
-		}
-
-		.light-collapse-menu:hover {
-			background-color: #1d90d2;
-		}
-
-		.dark-collapse-menu:hover {
-			background-color: #37383a;
-		}
 	}
 }
-
 .dark-nav {
 	background-color: #1f2020;
 }
@@ -101,16 +64,6 @@
 
 		.main-header {
 			width: 100%;
-
-			.menu {
-				// background-color: #333;
-				display: none;
-			}
-			.light-collapse-menu,
-			.dark-collapse-menu {
-				display: flex;
-				flex-direction: column;
-			}
 		}
 	}
 }
