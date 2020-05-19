@@ -1,7 +1,6 @@
 .main-container {
 	width: 1000px;
-	// max-width: 1000px;
-	// height: 100%;
+	position: relative;
 	margin: 0 auto;
 
 	.grid-container {
@@ -31,8 +30,5 @@
 @media (max-width: 1000px) {
 	.main-container {
 		width: 100%;
-		.grid-container {
-			grid-auto-rows: auto;
-		}
 	}
 }
