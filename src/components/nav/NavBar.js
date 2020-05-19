@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 
 import './nav.scss';
 import Menu from './Menu.js';
+import SettingMenu from '../menu/SettingMenu.js';
 import ThemeContext from '../../context/ThemeContext.js';
 import { FaUserCircle } from 'react-icons/fa';
 
@@ -24,8 +25,8 @@ export default function NavBar() {
 						<FaUserCircle className='avatar-container' />
 					)}
 				</div>
-				<Menu />
 			</div>
+			<SettingMenu />
 		</nav>
 	);
 }
