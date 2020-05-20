@@ -258,3 +258,38 @@ function _getUserInfo(id) {
 		setTimeout((_) => resolve(user), 1000);
 	});
 }
+
+function _getUserSkills(id) {
+	return new Promise((resolve, reject) => {
+		const userSkills = skills.filter((data) => data[id] === id);
+		setTimeout((_) => resolve(userSkills), 1000);
+	});
+}
+
+function _getUserExperience(id) {
+	return new Promise((resolve, reject) => {
+		const userExperience = experience.filter((data) => data[id] === id);
+		setTimeout((_) => resolve(userExperience), 1000);
+	});
+}
+
+function _getUserEducation(id) {
+	return new Promise((resolve, reject) => {
+		const userEducation = education.filter((data) => data[id] === id);
+		setTimeout((_) => resolve(userEducation), 1000);
+	});
+}
+
+export function getUserData(id) {
+	return new Promise.all([
+		_getUserInfo(id),
+		_getUserSkills(id),
+		_getUserExperience(id),
+		_getUserEducation(id),
+	]).then(([profile, skills, experience, education]) => ({
+		profile,
+		skills,
+		experience,
+		education,
+	}));
+}
