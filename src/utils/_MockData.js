@@ -25,6 +25,7 @@ const usersInfo = [
 const skills = [
 	{
 		[userId]: {
+			id: userId,
 			section: 'technical skills',
 			content: [
 				{
@@ -93,11 +94,12 @@ const skills = [
 const experience = [
 	{
 		[userId]: {
+			id: userId,
 			section: 'work experience',
 			content: [
 				{
 					from: generateTimestampFromStringDate('01-11-2018'),
-					to: null,
+					to: new Date().getTime(),
 					current: true,
 					company: 'Deutsche Bank',
 					location: 'Cary, NC',
@@ -232,6 +234,7 @@ const experience = [
 const education = [
 	{
 		[userId]: {
+			id: userId,
 			section: 'education',
 			content: [
 				{
@@ -254,34 +257,46 @@ const education = [
 //Server API
 function _getUserInfo(id) {
 	return new Promise((resolve, reject) => {
-		const user = usersInfo.filter((user) => user[id] === id);
-		setTimeout((_) => resolve(user), 1000);
+		setTimeout(() => {
+			const user = findById(id, usersInfo);
+			resolve({ ...user[id] });
+		}, 1000);
 	});
 }
 
 function _getUserSkills(id) {
 	return new Promise((resolve, reject) => {
-		const userSkills = skills.filter((data) => data[id] === id);
-		setTimeout((_) => resolve(userSkills), 1000);
+		setTimeout(() => {
+			const userSkills = findById(id, skills);
+			resolve({ ...userSkills[id] });
+		}, 1000);
 	});
 }
 
 function _getUserExperience(id) {
 	return new Promise((resolve, reject) => {
-		const userExperience = experience.filter((data) => data[id] === id);
-		setTimeout((_) => resolve(userExperience), 1000);
+		setTimeout(() => {
+			const userExperience = findById(id, experience);
+			resolve({ ...userExperience[id] });
+		}, 1000);
 	});
 }
 
 function _getUserEducation(id) {
 	return new Promise((resolve, reject) => {
-		const userEducation = education.filter((data) => data[id] === id);
-		setTimeout((_) => resolve(userEducation), 1000);
+		setTimeout(() => {
+			const userEducation = findById(id, education);
+			resolve({ ...userEducation[id] });
+		}, 1000);
 	});
 }
 
+function findById(id, arr) {
+	return arr.find((obj) => obj[id].id === id);
+}
+
 export function getUserData(id) {
-	return new Promise.all([
+	return Promise.all([
 		_getUserInfo(id),
 		_getUserSkills(id),
 		_getUserExperience(id),
