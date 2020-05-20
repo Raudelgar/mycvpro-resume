@@ -10,7 +10,7 @@ export default function SkillsComponent() {
 	console.log(section, content);
 	return (
 		<div className={`${theme}-grid-item`}>
-			<SectionHeader header={section} />
+			<SectionHeader header={section} theme={theme} />
 		</div>
 	);
 }
