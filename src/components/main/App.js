@@ -25,7 +25,7 @@ export default function App() {
 	}, [dispatch]);
 
 	useEffect(() => {
-		console.log('App effect', userProfile);
+		// console.log('App effect', userProfile);
 	}, [userProfile]);
 
 	return (

@@ -1,4 +1,5 @@
-@use './sass/_colors.scss';
+@import './sass/_colors.scss';
+@import './sass/_format.scss';
 
 * {
 	margin: 0;
@@ -18,6 +19,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	overflow-x: hidden;
+	@include ul-li-reset;
 }
 
 code {
