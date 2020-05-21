@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { ThemeContext } from '../../../context/Context.js';
 import useExperienceState from '../../../hooks/useExperienceState.js';
 import SectionHeader from '../SectionHeader.js';
-import SectionContent from '../SectionContent.js';
+import ExperienceContent from './ExperienceContent.js';
 
 export default function ExperienceComponent() {
 	const { theme } = useContext(ThemeContext);
@@ -11,7 +11,7 @@ export default function ExperienceComponent() {
 	return (
 		<div className={`${theme}-grid-item`}>
 			<SectionHeader header={section} theme={theme} />
-			<SectionContent content={content} theme={theme} section='EXP' />
+			<ExperienceContent content={content} theme={theme} />
 		</div>
 	);
 }
