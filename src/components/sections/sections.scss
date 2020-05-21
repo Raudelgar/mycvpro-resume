@@ -26,6 +26,24 @@
 		margin-bottom: 10px;
 	}
 
+	.light-section-border,
+	.dark-section-border {
+		border-top: 1px solid $bg-light-app;
+		padding: 5px 0;
+	}
+
+	.dark-section-border {
+		border-top: 1px solid $dark-gray;
+	}
+
+	.section-task {
+		margin-left: 10px;
+	}
+
+	.section-desc {
+		margin: 0 0 10px 10px;
+	}
+
 	.section-label {
 		text-transform: capitalize;
 		font-weight: 600;

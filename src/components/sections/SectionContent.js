@@ -19,30 +19,37 @@ const filterRender = (content, theme, section) => {
 			return (
 				<div className={`${theme}-section-content`}>
 					{content.map((obj) => (
-						<div key={obj.contentId} className='sub-section'>
-							<span className='section-label label-block'>{obj.title}</span>
-							<span className='section-label label-block'>
-								{obj.from} - {obj.current ? 'Present' : obj.to}
-							</span>
-							<span className='section-label label-block'>
-								{obj.company}, {obj.location}
-							</span>
-							{obj.note ? (
-								<span className='section-label label-block'>{obj.note}</span>
-							) : null}
-							<span className='section-value'>
-								{obj.description.map(({ taskId, task, subtasks }) => (
-									<div key={taskId}>
-										<span className='section-value'>{task}</span>
-										{subtasks.map(({ subtaskId, subtask }) => (
-											<div key={subtaskId}>
-												<span className='section-value'>{subtask}</span>
+						<>
+							<div key={obj.contentId} className='sub-section'>
+								<span className='section-label label-block'>{obj.title}</span>
+								<span className='section-label label-block'>
+									{obj.from} - {obj.current ? 'Present' : obj.to}
+								</span>
+								<span className='section-label label-block'>
+									{obj.company}, {obj.location}
+								</span>
+								{obj.note ? (
+									<span className='section-label label-block'>{obj.note}</span>
+								) : null}
+								<span className='section-value'>
+									{obj.description.map(({ taskId, task, subtasks }) => (
+										<div key={taskId} className='section-desc'>
+											<span className='section-value'>{task}</span>
+											<div className='section-task'>
+												{subtasks.map(({ subtaskId, subtask }) => (
+													<div key={subtaskId}>
+														<span className='section-value sub-task'>
+															{subtask}
+														</span>
+													</div>
+												))}
 											</div>
-										))}
-									</div>
-								))}
-							</span>
-						</div>
+										</div>
+									))}
+								</span>
+							</div>
+							<div className={`${theme}-section-border`}></div>
+						</>
 					))}
 				</div>
 			);
