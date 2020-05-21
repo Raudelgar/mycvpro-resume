@@ -4,6 +4,7 @@ import './home.scss';
 import { ThemeContext } from '../../../context/Context.js';
 import SkillsComponent from '../../sections/skills/SkillsComponent.js';
 import ExperienceComponent from '../../sections/experience/ExperienceComponent.js';
+import EducationComponent from '../../sections/education/EducationComponent';
 
 export default function Home() {
 	const { theme } = useContext(ThemeContext);
@@ -12,8 +13,7 @@ export default function Home() {
 			<div className='grid-container'>
 				<SkillsComponent />
 				<ExperienceComponent />
-				<div className={`${theme}-grid-item`}></div>
-				<div className={`${theme}-grid-item`}></div>
+				<EducationComponent />
 			</div>
 		</div>
 	);
