@@ -18,13 +18,21 @@
 	padding: 10px;
 	font-size: 0.9rem;
 
-	li {
+	span {
 		margin-bottom: 2px;
+	}
+
+	.sub-section {
+		margin-bottom: 10px;
 	}
 
 	.section-label {
 		text-transform: capitalize;
 		font-weight: 600;
+	}
+
+	.label-block {
+		display: block;
 	}
 
 	.section-value {

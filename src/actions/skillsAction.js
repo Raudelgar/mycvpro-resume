@@ -1,8 +1,8 @@
-import { INIT_DATA } from './types.js';
+import { INIT_SKILLS } from './types.js';
 
 export function getSkills(skills) {
 	return {
-		type: INIT_DATA,
+		type: INIT_SKILLS,
 		payload: skills,
 	};
 }
