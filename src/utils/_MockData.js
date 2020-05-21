@@ -23,6 +23,8 @@ const usersInfo = [
 			name: 'Raudel Garcia',
 			email: 'raudel24@gmail.com',
 			phone: '+1(919)-592-6362',
+			avatar_url:
+				'https://media-exp1.licdn.com/dms/image/C5103AQHPZg4WFrUCZQ/profile-displayphoto-shrink_100_100/0?e=1595462400&v=beta&t=IemcBrohIPQNvPsdndr3NJqK6M6BD075E552J77uNVI',
 		},
 	},
 ];
