@@ -1,8 +1,8 @@
-import { INIT_DATA } from './types.js';
+import { INIT_PROFILE } from './types.js';
 
 export function getProfile(profile) {
 	return {
-		type: INIT_DATA,
+		type: INIT_PROFILE,
 		payload: profile,
 	};
 }
