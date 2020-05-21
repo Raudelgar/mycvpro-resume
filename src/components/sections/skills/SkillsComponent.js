@@ -12,7 +12,7 @@ export default function SkillsComponent() {
 	return (
 		<div className={`${theme}-grid-item`}>
 			<SectionHeader header={section} theme={theme} />
-			<SectionContent content={content} theme={theme} />
+			<SectionContent content={content} theme={theme} section='SK' />
 		</div>
 	);
 }

@@ -16,4 +16,21 @@
 .light-section-content,
 .dark-section-content {
 	padding: 10px;
+	font-size: 0.9rem;
+
+	li {
+		margin-bottom: 2px;
+	}
+
+	.section-label {
+		text-transform: capitalize;
+		font-weight: 600;
+	}
+
+	.section-value {
+		padding-left: 10px;
+		letter-spacing: 0.5px;
+		font-weight: 400;
+		overflow-wrap: break-word;
+	}
 }
