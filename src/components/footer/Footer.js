@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import './footer.scss';
-import ThemeContext from '../../context/ThemeContext.js';
+import { ThemeContext } from '../../context/Context.js';
 
 export default function Footer() {
 	const { theme } = useContext(ThemeContext);
@@ -10,7 +10,7 @@ export default function Footer() {
 			<div className='footer-left'>
 				<div className='copyright'>
 					<span className={`${theme}-text`}>
-						Copyright &#9400; 2020 MyCvPro LLC. All rights reserved.
+						Copyright &#9400; 2020 MyCvPro Inc. All rights reserved.
 					</span>
 				</div>
 				<div className='footer-nav'>

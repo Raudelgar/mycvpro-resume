@@ -1,0 +1,3 @@
+export const SHOW_LOGO_LOADER = 'SHOW_LOGO_LOADER';
+export const HIDE_LOGO_LOADER = 'HIDE_LOGO_LOADER';
+export const INIT_DATA = 'INIT_DATA';
