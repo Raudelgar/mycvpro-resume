@@ -1,5 +1,6 @@
 @import '../../sass/_colors.scss';
 @import '../../sass/_variables.scss';
+@import '../../sass/_responsive.scss';
 
 .light-nav,
 .dark-nav {
@@ -55,19 +56,4 @@
 	background-color: $base-dark;
 }
 
-@media (max-width: $nav-max-width) {
-	.light-nav,
-	.dark-nav {
-		height: 100px;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		align-content: center;
-		font-size: 1.2rem;
-
-		.main-header {
-			width: 100%;
-		}
-	}
-}
+@include nav-media;
