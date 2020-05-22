@@ -13,3 +13,7 @@ export function skillsSelector({ skills }) {
 export function experienceSelector({ experience }) {
 	return experience;
 }
+
+export function educationSelector({ education }) {
+	return education;
+}
