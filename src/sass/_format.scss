@@ -10,3 +10,12 @@
 		list-style-type: none;
 	}
 }
+
+@mixin light-section-shadow {
+	// box-shadow: 0 0.5px 0 1px #00000026;
+	box-shadow: 0 0.5px 0 1px $light-gray;
+}
+
+@mixin dark-section-shadow {
+	box-shadow: 0 0.5px 0 1px $dark-gray;
+}

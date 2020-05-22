@@ -1,5 +1,6 @@
 @import '../../../sass/_colors.scss';
 @import '../../../sass/_variables.scss';
+@import '../../../sass/_format.scss';
 
 .main-container {
 	width: $content-width;
@@ -20,11 +21,13 @@
 			border-radius: 0.2em;
 			padding: 10px;
 			color: $dark-text-color;
+			@include light-section-shadow;
 		}
 
 		.dark-grid-item {
 			background-color: $base-dark;
 			color: $light-text-color;
+			@include dark-section-shadow;
 		}
 	}
 }
