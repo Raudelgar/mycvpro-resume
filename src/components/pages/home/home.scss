@@ -1,7 +1,8 @@
 @import '../../../sass/_colors.scss';
+@import '../../../sass/_variables.scss';
 
 .main-container {
-	width: 1000px;
+	width: $content-width;
 	position: relative;
 	margin: 0 auto;
 
@@ -28,7 +29,7 @@
 	}
 }
 
-@media (max-width: 1000px) {
+@media (max-width: $content-width) {
 	.main-container {
 		width: 100%;
 	}
