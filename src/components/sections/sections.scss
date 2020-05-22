@@ -18,8 +18,31 @@
 	padding: 10px;
 	font-size: 0.9rem;
 
-	li {
+	span {
 		margin-bottom: 2px;
+	}
+
+	.sub-section {
+		margin-bottom: 10px;
+	}
+
+	.light-section-border,
+	.dark-section-border {
+		border-top: 1px solid $bg-light-app;
+		padding: 5px 0;
+		margin-top: 5px;
+	}
+
+	.dark-section-border {
+		border-top: 1px solid $dark-gray;
+	}
+
+	.section-task {
+		margin-left: 20px;
+	}
+
+	.section-desc {
+		margin: 0 0 10px 10px;
 	}
 
 	.section-label {
@@ -27,10 +50,19 @@
 		font-weight: 600;
 	}
 
+	.label-block {
+		display: block;
+	}
+
 	.section-value {
 		padding-left: 10px;
 		letter-spacing: 0.5px;
 		font-weight: 400;
 		overflow-wrap: break-word;
+	}
+
+	.text-note {
+		font-style: italic;
+		font-size: 0.7rem;
 	}
 }
