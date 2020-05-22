@@ -1,5 +1,6 @@
 @import '../../sass/_colors.scss';
 @import '../../sass/_variables.scss';
+@import '../../sass/_responsive.scss';
 
 .collapse-menu-container {
 	display: none;
@@ -20,24 +21,4 @@
 	}
 }
 
-@media (max-width: $nav-max-width) {
-	.setting-menu-container {
-		display: none;
-	}
-
-	.collapse-menu-container {
-		display: flex;
-		position: relative;
-		// width: 45%;
-		min-width: 270px;
-		padding-bottom: 10px;
-
-		.light-menu-icons,
-		.dark-menu-icons {
-			position: relative;
-			display: flex;
-			width: 100%;
-			justify-content: space-around;
-		}
-	}
-}
+@include menu-media;

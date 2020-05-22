@@ -1,6 +1,7 @@
 @import '../../../sass/_colors.scss';
 @import '../../../sass/_variables.scss';
 @import '../../../sass/_format.scss';
+@import '../../../sass/_responsive.scss';
 
 .main-container {
 	width: $content-width;
@@ -32,8 +33,4 @@
 	}
 }
 
-@media (max-width: $content-width) {
-	.main-container {
-		width: 100%;
-	}
-}
+@include content-media;
