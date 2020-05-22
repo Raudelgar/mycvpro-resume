@@ -1,4 +1,5 @@
 @import '../../sass/_colors.scss';
+@import '../../sass/_variables.scss';
 
 .collapse-menu-container {
 	display: none;
@@ -19,7 +20,7 @@
 	}
 }
 
-@media (max-width: 1180px) {
+@media (max-width: $nav-max-width) {
 	.setting-menu-container {
 		display: none;
 	}

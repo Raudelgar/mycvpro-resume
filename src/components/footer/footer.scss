@@ -1,8 +1,9 @@
 @import '../../sass/_colors.scss';
+@import '../../sass/_variables.scss';
 
 .footer-container {
 	display: flex;
-	width: 1000px;
+	width: $content-width;
 	height: 50px;
 	justify-content: space-between;
 	align-items: center;
@@ -14,14 +15,12 @@
 	.dark-text,
 	.light-footer-link,
 	.dark-footer-link {
-		// color: #5d5d5d;
 		color: $dark-gray;
 		font-size: 0.85rem;
 		padding: 0 3px;
 	}
 
 	.dark-text {
-		// color: #b4b4b4;
 		color: $light-gray;
 	}
 
@@ -33,7 +32,6 @@
 	.light-tab,
 	.dark-tab {
 		font-size: 1.2rem;
-		// color: #a9a9a9;
 		color: $footer-tab-gray;
 	}
 
@@ -44,31 +42,27 @@
 	}
 
 	.footer-left {
-		width: 70%;
+		width: 75%;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		margin-left: 10px;
 
 		.footer-nav > .light-footer-link {
-			// color: #464646;
 			color: $dark-gray;
 		}
 
 		.footer-nav > .dark-footer-link {
-			// color: #9c9c9c;
 			color: $light-gray;
 		}
 
 		.footer-nav > .light-footer-link:hover,
 		.dark-footer-link:hover {
-			// color: #2b2b2b;
 			color: $dark-hover-gray;
 			text-decoration: underline;
 		}
 
 		.footer-nav > .dark-footer-link:hover {
-			// color: #cccccc;
 			color: $light-hover-gray;
 		}
 	}
@@ -79,7 +73,7 @@
 	}
 }
 
-@media (max-width: 1000px) {
+@media (max-width: $content-width) {
 	.footer-container {
 		width: 100%;
 		height: 75px;
