@@ -33,7 +33,7 @@ export default function App() {
 	}, [userProfile]);
 
 	return (
-		<Router history={history}>
+		<Router basename='/cv'>
 			<ThemeContext.Provider value={{ theme, handleTheme }}>
 				{isLoading ? (
 					<LogoLoader />
