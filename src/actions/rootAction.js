@@ -11,8 +11,7 @@ export function handleInitData(id) {
 		//call API
 		fetchInitData(id)
 			.then(({ profile, skills, experience, education }) => {
-				console.log(profile, skills, experience, education) ||
-					dispatch(getProfile(profile));
+				dispatch(getProfile(profile));
 				dispatch(getSkills(skills));
 				dispatch(getExperience(experience));
 				dispatch(getEducation(education));
