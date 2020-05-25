@@ -3,7 +3,6 @@ import React from 'react';
 import '../sections.scss';
 
 export default function ExperienceContent({ content, theme }) {
-	console.log(content);
 	return (
 		<div className={`${theme}-section-content`}>
 			{content.map((obj) => (
