@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import queryString from 'query-string';
-import { createBrowserHistory } from 'history';
 
 import './main.scss';
 import NavBar from '../nav/NavBar.js';
@@ -14,8 +13,6 @@ import Footer from '../footer/Footer.js';
 import useLogoLoaderState from '../../hooks/useLogoLoaderState.js';
 import { handleInitData } from '../../actions/rootAction.js';
 import useProfileState from '../../hooks/useProfileState';
-
-const history = createBrowserHistory({ basename: process.env.PUBLIC_URL });
 
 export default function App() {
 	const [theme, handleTheme] = useTheme();
