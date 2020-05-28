@@ -48,6 +48,7 @@
 	.section-label {
 		text-transform: capitalize;
 		font-weight: 600;
+		padding-right: 10px;
 	}
 
 	.label-block {
@@ -55,10 +56,33 @@
 	}
 
 	.section-value {
-		padding-left: 10px;
+		// padding-left: 10px;
 		letter-spacing: 0.5px;
 		font-weight: 400;
 		overflow-wrap: break-word;
+	}
+
+	.section-value > ul {
+		margin-top: 10px;
+		list-style-position: inside;
+		list-style-type: square;
+		// list-style-image: linear-gradient(90deg, #01529e, #ffffff);
+		// list-style: none;
+	}
+
+	.section-task > ul {
+		// list-style: none;
+	}
+
+	.section-task > ul > li {
+		margin-bottom: 5px;
+	}
+
+	.section-desc > li {
+		margin-bottom: 5px;
+	}
+	.task {
+		// font-style: italic;
 	}
 
 	.text-note {
