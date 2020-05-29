@@ -21,7 +21,9 @@ export default function App() {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		const { cvid } = queryString.parse(window.location.search);
+		const { cvid, usr, share } = queryString.parse(window.location.search);
+		if (usr) console.log(usr);
+		if (share) console.log(share);
 		dispatch(handleInitData(cvid));
 	}, [dispatch]);
 

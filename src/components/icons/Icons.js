@@ -6,23 +6,34 @@ import { GiEvilMoon } from 'react-icons/gi';
 import './icons.scss';
 import TooltipLabel from '../tooltips/TooltipLabel.js';
 import { ThemeContext } from '../../context/Context.js';
+import useMenu from '../../hooks/useMenu';
 
 export default function Icons({ collapse }) {
 	const { theme, handleTheme } = useContext(ThemeContext);
+	const { types, menuAction } = useMenu();
 	return (
 		<>
 			<TooltipLabel label='Donwload PDF' collapse={collapse}>
-				<div className={`${theme}-content-icon`}>
+				<div
+					className={`${theme}-content-icon`}
+					onClick={() => menuAction(types.pdf)}
+				>
 					<FaRegFilePdf size={25} className={`${theme}-icon`} />
 				</div>
 			</TooltipLabel>
 			<TooltipLabel label='Send Email' collapse={collapse}>
-				<div className={`${theme}-content-icon`}>
+				<div
+					className={`${theme}-content-icon`}
+					onClick={() => menuAction(types.msg)}
+				>
 					<FaTelegramPlane size={25} className={`${theme}-icon`} />
 				</div>
 			</TooltipLabel>
 			<TooltipLabel label='Copy Link' collapse={collapse}>
-				<div className={`${theme}-content-icon`}>
+				<div
+					className={`${theme}-content-icon`}
+					onClick={() => menuAction(types.copy)}
+				>
 					<IoIosLink size={25} className={`${theme}-icon`} />
 				</div>
 			</TooltipLabel>
