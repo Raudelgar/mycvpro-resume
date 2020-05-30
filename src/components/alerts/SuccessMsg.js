@@ -8,8 +8,8 @@ export default function SuccessMsg({ msg }) {
 	const { show, hideAlert } = useContext(AlertContext);
 
 	useEffect(() => {
-		//remove alert element after 6s
-		const timerID = window.setTimeout(() => hideAlert(), 4500);
+		//remove alert element after 2.5s
+		const timerID = window.setTimeout(() => hideAlert(), 2500);
 		return () => window.clearTimeout(timerID);
 	}, [show]);
 
