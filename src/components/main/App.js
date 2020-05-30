@@ -1,27 +1,30 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { useDispatch } from 'react-redux';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import queryString from 'query-string';
 
 import './main.scss';
 import NavBar from '../nav/NavBar.js';
-import { ThemeContext } from '../../context/Context.js';
-import useTheme from '../../hooks/useTheme.js';
+import { ThemeContext } from '../../context/ThemeContext.js';
 import LogoLoader from '../loaders/LogoLoader.js';
 import Home from '../pages/home/Home.js';
 import Footer from '../footer/Footer.js';
 import useLogoLoaderState from '../../hooks/useLogoLoaderState.js';
 import { handleInitData } from '../../actions/rootAction.js';
 import useProfileState from '../../hooks/useProfileState';
+import SuccessMsg from '../alerts/SuccessMsg.js';
+import { AlertProvider } from '../../context/AlertContext';
 
 export default function App() {
-	const [theme, handleTheme] = useTheme();
+	const { theme } = useContext(ThemeContext);
 	const isLoading = useLogoLoaderState();
 	const userProfile = useProfileState();
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		const { cvid } = queryString.parse(window.location.search);
+		const { cvid, usr, share } = queryString.parse(window.location.search);
+		if (usr) console.log(usr);
+		if (share) console.log(share);
 		dispatch(handleInitData(cvid));
 	}, [dispatch]);
 
@@ -31,7 +34,7 @@ export default function App() {
 
 	return (
 		<Router>
-			<ThemeContext.Provider value={{ theme, handleTheme }}>
+			<AlertProvider>
 				{isLoading ? (
 					<LogoLoader />
 				) : (
@@ -39,9 +42,10 @@ export default function App() {
 						<NavBar />
 						<Home />
 						<Footer />
+						<SuccessMsg msg={'Copied To Clipboard!'} />
 					</div>
 				)}
-			</ThemeContext.Provider>
+			</AlertProvider>
 		</Router>
 	);
 }

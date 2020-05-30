@@ -1,0 +1,45 @@
+@import '../../sass/_colors.scss';
+
+.alert-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 45px;
+	display: flex;
+	justify-content: flex-end;
+
+	.success {
+		width: 100%;
+		height: 100%;
+		background-color: #48ad2afd;
+		color: $light-text-color;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 1.2rem;
+		position: absolute;
+	}
+
+	.close-alert {
+		width: 45px;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 1;
+
+		.close-icon {
+			color: $light-text-color;
+			width: 25px;
+			height: 25px;
+		}
+
+		&:hover {
+			background-color: #68c74dfd;
+			.close-icon {
+				color: $bright-white-color;
+			}
+		}
+	}
+}

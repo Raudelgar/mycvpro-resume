@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import './nav.scss';
 import SettingMenu from '../menu/SettingMenu.js';
-import { ThemeContext } from '../../context/Context.js';
+import { ThemeContext } from '../../context/ThemeContext.js';
 import { FaUserCircle } from 'react-icons/fa';
 import useProfileState from '../../hooks/useProfileState';
 

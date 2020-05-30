@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import Icons from '../icons/Icons.js';
-import { ThemeContext } from '../../context/Context.js';
+import { ThemeContext } from '../../context/ThemeContext.js';
 import './settingMenu.scss';
 
 export default function SettingMenu() {

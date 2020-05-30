@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import { ThemeContext } from '../../../context/Context.js';
+import { ThemeContext } from '../../../context/ThemeContext.js';
 import useEducationState from '../../../hooks/useEducationState.js';
 import SectionHeader from '../SectionHeader.js';
 import EducationContent from './EducationContent.js';
