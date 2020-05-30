@@ -5,7 +5,7 @@ import { IoIosLink } from 'react-icons/io';
 import { GiEvilMoon } from 'react-icons/gi';
 import './icons.scss';
 import TooltipLabel from '../tooltips/TooltipLabel.js';
-import { ThemeContext } from '../../context/Context.js';
+import { ThemeContext } from '../../context/ThemeContext.js';
 import useMenu from '../../hooks/useMenu';
 
 export default function Icons({ collapse }) {

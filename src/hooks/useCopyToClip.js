@@ -1,7 +1,11 @@
+import { useContext } from 'react';
 import useProfileState from './useProfileState.js';
+import { AlertContext } from '../context/AlertContext.js';
 
 export default function useCopyToClip() {
+	const { showAlert } = useContext(AlertContext);
 	const { id, username } = useProfileState();
+
 	const copyToClipBoard = () => {
 		let params = {
 			usr: window.encodeURIComponent(username),
@@ -13,9 +17,9 @@ export default function useCopyToClip() {
 		window.document.body.appendChild(textArea);
 		textArea.select();
 		window.document.execCommand('copy');
-		window.alert(`Copied To Clipboard!`);
 		textArea.remove();
+		showAlert();
 	};
 
-	return copyToClipBoard;
+	return { copyToClipBoard };
 }

@@ -1,7 +1,7 @@
 import useCopyToClip from './useCopyToClip.js';
 
 export default function useMenu() {
-	const copyToClipBoard = useCopyToClip();
+	const { copyToClipBoard } = useCopyToClip();
 
 	const types = {
 		copy: 'COPY_LINK',
@@ -17,6 +17,8 @@ export default function useMenu() {
 				break;
 			case 'MSG':
 				console.log('send messages');
+				break;
+			default:
 				break;
 		}
 	};
