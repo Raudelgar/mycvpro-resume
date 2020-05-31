@@ -2,44 +2,63 @@
 
 .alert-container {
 	position: absolute;
-	top: 0;
+	// top: 0;
 	left: 0;
 	width: 100%;
 	height: 45px;
 	display: flex;
 	justify-content: flex-end;
+	top: 0px;
 
 	.success {
+		position: relative;
 		width: 100%;
 		height: 100%;
 		background-color: #48ad2afd;
 		color: $light-text-color;
 		display: flex;
-		justify-content: center;
 		align-items: center;
 		font-size: 1.2rem;
-		position: absolute;
-	}
+		animation: animflowdown 2.5s;
+		animation-fill-mode: forwards;
 
-	.close-alert {
-		width: 45px;
-		height: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		z-index: 1;
-
-		.close-icon {
-			color: $light-text-color;
-			width: 25px;
-			height: 25px;
+		.alert-msg {
+			margin-left: 40%;
 		}
 
-		&:hover {
-			background-color: #68c74dfd;
+		.close-alert {
+			margin-left: auto;
+			width: 45px;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			z-index: 1;
+
 			.close-icon {
-				color: $bright-white-color;
+				color: $light-text-color;
+				width: 25px;
+				height: 25px;
 			}
+
+			&:hover {
+				background-color: #68c74dfd;
+				.close-icon {
+					color: $bright-white-color;
+				}
+			}
+		}
+	}
+
+	@keyframes animflowdown {
+		0% {
+			top: -45px;
+		}
+		50% {
+			top: 0;
+		}
+		100% {
+			top: -45px;
 		}
 	}
 }
