@@ -1,7 +1,6 @@
 import React, { useEffect, useContext } from 'react';
 import { useDispatch } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-import queryString from 'query-string';
 
 import './main.scss';
 import NavBar from '../nav/NavBar.js';
@@ -22,10 +21,7 @@ export default function App() {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		const { cvid, usr, share } = queryString.parse(window.location.search);
-		if (usr) console.log(usr);
-		if (share) console.log(share);
-		dispatch(handleInitData(cvid));
+		dispatch(handleInitData());
 	}, [dispatch]);
 
 	useEffect(() => {
