@@ -1,0 +1,49 @@
+@import '../../../sass/colors.scss';
+
+//Close Btn
+.close-alert {
+	margin-left: auto;
+	width: 45px;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+
+	.close-icon {
+		color: $light-text-color;
+		width: 25px;
+		height: 25px;
+	}
+
+	&:hover {
+		background-color: #68c74dfd;
+		.close-icon {
+			color: $bright-white-color;
+		}
+	}
+}
+
+.close-email {
+	width: 26px;
+	height: 24px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	margin-right: 5px;
+	cursor: pointer;
+
+	.close-icon {
+		color: $bg-light-app;
+		width: 18px;
+		height: 18px;
+	}
+
+	&:hover {
+		background-color: $bg-blue-hover;
+		.close-icon {
+			color: $bright-white-color;
+		}
+	}
+}

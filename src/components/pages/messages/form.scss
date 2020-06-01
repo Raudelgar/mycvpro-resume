@@ -1,0 +1,128 @@
+@import '../../../sass/_format.scss';
+@import '../../../sass/_colors.scss';
+
+.form-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #00000080;
+	z-index: 3;
+
+	.email-form {
+		width: 500px;
+		height: 500px;
+		// background-color: $light-text-color;
+		background-color: $base-blue;
+		border-radius: 0.5em 0.5em 0 0;
+		box-shadow: 0 8px 10px 1px #00000024, 0 3px 14px 2px #0000001f,
+			0 5px 5px -3px #00000033;
+
+		.email-form-header {
+			width: 100%;
+			height: 40px;
+			background-color: $base-blue;
+			border-radius: inherit;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.email-header-subject {
+				width: 100%;
+				color: $light-text-color;
+				margin-left: 10px;
+				cursor: default;
+			}
+		}
+
+		.email-content {
+			width: 100%;
+			height: 100%;
+			background-color: $bright-white-color;
+			padding: 0 15px;
+
+			.email-content-header {
+				display: flex;
+				flex-direction: column;
+
+				.email-content-name {
+					width: 100%;
+					height: 40px;
+					padding: 10px 0;
+					box-shadow: inset 0 -1px 0 0 #64798f1f;
+					line-height: 20px;
+					color: $dark-gray;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
+					label,
+					input {
+						font-size: 0.9rem;
+					}
+
+					input {
+						width: 100%;
+						height: calc(40px - 10px);
+						margin-left: 5px;
+						border: none;
+						background-color: transparent;
+						outline: none;
+					}
+				}
+			}
+
+			.email-textarea {
+				margin: 10px 0;
+				width: 100%;
+				height: 305px;
+				background-color: transparent;
+				border: none;
+				outline: none;
+				resize: none;
+				font-family: inherit;
+			}
+
+			.email-form-footer {
+				width: 100%;
+				height: 50px;
+				background-color: transparent;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+
+				.btn-send-email {
+					width: 80px;
+					height: 35px;
+					border: 0.5px solid $base-blue;
+					border-radius: 0.2em;
+					background-color: transparent;
+					outline: none;
+					color: $base-blue;
+					font-size: 1rem;
+					font-weight: 600;
+
+					&:hover {
+						background-color: $bg-blue-hover;
+						border-color: $fb-green-blue;
+						color: $bright-white-color;
+					}
+				}
+
+				.discard-icon {
+					width: 18px;
+					height: 18px;
+					color: $bg-dark-app;
+
+					&:hover {
+						color: #ce0a0ac7;
+					}
+				}
+			}
+		}
+	}
+}

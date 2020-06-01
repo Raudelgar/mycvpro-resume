@@ -1,7 +1,10 @@
+import { useContext } from 'react';
 import useCopyToClip from './useCopyToClip.js';
+import { EmailContext } from '../context/EmailContext.js';
 
 export default function useMenu() {
 	const { copyToClipBoard } = useCopyToClip();
+	const { openEmailForm } = useContext(EmailContext);
 
 	const types = {
 		copy: 'COPY_LINK',
@@ -16,8 +19,7 @@ export default function useMenu() {
 				console.log('download pdf');
 				break;
 			case 'MSG':
-				console.log('send messages');
-				break;
+				return openEmailForm();
 			default:
 				break;
 		}
