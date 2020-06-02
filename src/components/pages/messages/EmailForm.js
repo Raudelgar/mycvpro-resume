@@ -23,32 +23,23 @@ export default function EmailForm() {
 								<div className='email-content-header'>
 									<div className='email-content-name'>
 										<label htmlFor='name'>Name</label>
-										<input
-											type='text'
-											name='name'
-											id='name'
-											// placeholder='Your Name'
-											required
-										/>
+										<input type='text' name='name' id='name' required />
 									</div>
 									<div className='email-content-name'>
 										<label htmlFor='company'>Company</label>
-										<input
-											type='text'
-											name='company'
-											id='company'
-											// placeholder='You work for...'
-											required
-										/>
+										<input type='text' name='company' id='company' required />
 									</div>
 									<div className='email-content-name'>
 										<label htmlFor='email'>Email</label>
+										<input type='email' name='email' id='email' required />
+									</div>
+									<div className='email-content-name'>
 										<input
-											type='email'
-											name='email'
-											id='email'
-											// placeholder='example@domain.com'
-											required
+											className='email-subject'
+											type='text'
+											name='subject'
+											id='subject'
+											placeholder='Subject'
 										/>
 									</div>
 								</div>
