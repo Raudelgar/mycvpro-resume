@@ -1,5 +1,7 @@
 @import '../../../sass/_format.scss';
 @import '../../../sass/_colors.scss';
+@import '../../../sass/_responsive.scss';
+@import '../../../sass/_variables.scss';
 
 .form-container {
 	position: fixed;
@@ -144,4 +146,6 @@
 			}
 		}
 	}
+
+	@include email-form-media;
 }
