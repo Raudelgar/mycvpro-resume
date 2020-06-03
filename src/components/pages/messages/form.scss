@@ -31,12 +31,56 @@
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
+			position: relative;
 
 			.email-header-subject {
 				width: 100%;
 				color: $light-text-color;
 				margin-left: 10px;
 				cursor: default;
+			}
+
+			.mini-bottom,
+			.mini-top,
+			.mini-screen {
+				width: 24px;
+				height: 24px;
+				position: absolute;
+				right: 24px;
+				margin-right: 5px;
+				border-radius: 0.2em;
+				display: flex;
+				justify-content: center;
+				align-items: flex-end;
+				cursor: pointer;
+
+				.mini-bottom-icon,
+				.mini-screen-icon {
+					width: 18px;
+					height: 18px;
+					color: #dcdcdc;
+				}
+
+				&:hover {
+					background-color: $bg-blue-hover;
+					.mini-bottom-icon,
+					.mini-screen-icon {
+						color: $bright-white-color;
+					}
+				}
+			}
+
+			.mini-bottom,
+			.mini-top {
+				right: 48px;
+			}
+
+			.mini-top {
+				align-items: flex-start;
+			}
+
+			.mini-screen {
+				align-items: center;
 			}
 		}
 

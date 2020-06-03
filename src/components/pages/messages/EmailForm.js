@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { FaTrash } from 'react-icons/fa';
+import { FiMinus, FiMinimize2, FiMaximize2 } from 'react-icons/fi';
 
 import './form.scss';
 import { EmailContext } from '../../../context/EmailContext';
@@ -7,6 +8,8 @@ import CloseBtn from '../../view/buttons/CloseBtn';
 import useEmailState from '../../../hooks/useEmailState';
 
 export default function EmailForm() {
+	const [miniBottom, setMiniBottom] = useState(false);
+	const [miniScreen, setMiniScreen] = useState(false);
 	const { isOpen, cancelEmailForm, submitEmailForm } = useContext(EmailContext);
 	const {
 		name,
@@ -41,6 +44,28 @@ export default function EmailForm() {
 						<div className='email-form-header'>
 							<div className='email-header-subject'>
 								{subject ? subject : 'New Messages'}
+							</div>
+							{miniBottom ? (
+								<div className='mini-top' onClick={() => setMiniBottom(false)}>
+									<FiMinus className='mini-bottom-icon' />
+								</div>
+							) : (
+								<div
+									className='mini-bottom'
+									onClick={() => setMiniBottom(true)}
+								>
+									<FiMinus className='mini-bottom-icon' />
+								</div>
+							)}
+							<div
+								className='mini-screen'
+								onClick={() => setMiniScreen((curr) => !curr)}
+							>
+								{miniScreen ? (
+									<FiMinimize2 className='mini-screen-icon' />
+								) : (
+									<FiMaximize2 className='mini-screen-icon' />
+								)}
 							</div>
 							<CloseBtn
 								styles={{ container: 'close-email', icon: 'close-icon ' }}
