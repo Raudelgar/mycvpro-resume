@@ -10,9 +10,15 @@ export default function EmailComponent() {
 	return (
 		<>
 			{isOpen && (
-				<div className='form-container'>
-					<EmailForm />
-				</div>
+				<>
+					{miniScreen && !miniBottom ? (
+						<div className='form-container'>
+							<EmailForm />
+						</div>
+					) : (
+						<EmailForm />
+					)}
+				</>
 			)}
 		</>
 	);

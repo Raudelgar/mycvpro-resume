@@ -41,10 +41,18 @@ export default function EmailForm() {
 		console.log(name, company, email, subject, content);
 		handleCloseForm();
 	};
-	console.log(miniBottom);
+
 	return (
-		<div className='email-form'>
-			<div className='email-form-header'>
+		<div
+			className={`email-form ${miniScreen ? '' : 'email-form-mini-screen'} ${
+				!miniBottom ? '' : 'email-form-mini-bottom'
+			}`}
+		>
+			<div
+				className={`email-form-header ${
+					!miniBottom ? '' : 'email-form-header-mini'
+				}`}
+			>
 				<div className='email-header-subject'>
 					{subject ? subject : 'New Messages'}
 				</div>
@@ -69,7 +77,9 @@ export default function EmailForm() {
 					event={handleCloseForm}
 				/>
 			</div>
-			<div className='email-content'>
+			<div
+				className={`email-content ${!miniBottom ? '' : 'email-content-mini'}`}
+			>
 				<form onSubmit={hanldeSubmitEmail}>
 					<div className='email-content-header'>
 						<div className='email-content-name'>
@@ -120,7 +130,9 @@ export default function EmailForm() {
 					<textarea
 						name='email-textarea'
 						id='descreption'
-						className='email-textarea'
+						className={`email-textarea ${
+							miniScreen ? '' : 'email-textarea-mini'
+						}`}
 						value={content}
 						onChange={hanldeContent}
 					></textarea>
