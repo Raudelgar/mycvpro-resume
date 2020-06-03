@@ -13,8 +13,8 @@ import { handleInitData } from '../../actions/rootAction.js';
 import useProfileState from '../../hooks/useProfileState';
 import SuccessMsg from '../alerts/SuccessMsg.js';
 import { AlertProvider } from '../../context/AlertContext';
-import EmailForm from '../pages/messages/EmailForm';
 import { EmailProvider } from '../../context/EmailContext';
+import EmailComponent from '../pages/messages/EmailComponent';
 
 export default function App() {
 	const { theme } = useContext(ThemeContext);
@@ -39,7 +39,7 @@ export default function App() {
 					<EmailProvider>
 						<div className={`${theme}-App`}>
 							<SuccessMsg msg={'Copied To Clipboard!'} />
-							<EmailForm />
+							<EmailComponent />
 							<NavBar />
 							<Home />
 							<Footer />
