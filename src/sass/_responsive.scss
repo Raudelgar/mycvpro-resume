@@ -71,7 +71,8 @@
 
 @mixin email-form-media {
 	@media (min-width: $nav-main-width) {
-		.email-form {
+		.light-email-form,
+		.dark-email-form {
 			width: $footer-max-width;
 		}
 	}

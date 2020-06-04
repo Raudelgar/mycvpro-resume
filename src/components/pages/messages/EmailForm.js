@@ -6,15 +6,19 @@ import './form.scss';
 import { EmailContext } from '../../../context/EmailContext';
 import CloseBtn from '../../view/buttons/CloseBtn';
 import useEmailState from '../../../hooks/useEmailState';
+import { ThemeContext } from '../../../context/ThemeContext.js';
 
 export default function EmailForm() {
+	const { theme } = useContext(ThemeContext);
 	const {
 		miniBottom,
 		miniScreen,
 		cancelEmailForm,
 		submitEmailForm,
-		minimaxEmail,
-		minimaxScreen,
+		miniEmailBottom,
+		maxEmailBottom,
+		maxEmailScreen,
+		miniEmailScreen,
 	} = useContext(EmailContext);
 	const {
 		name,
@@ -44,45 +48,43 @@ export default function EmailForm() {
 
 	return (
 		<div
-			className={`email-form ${miniScreen ? '' : 'email-form-mini-screen'} ${
-				!miniBottom ? '' : 'email-form-mini-bottom'
-			}`}
+			className={`${theme}-email-form ${
+				miniBottom ? `${theme}-email-form-mini` : ''
+			} ${!miniScreen ? `${theme}-email-form-relative` : ''}`}
 		>
-			<div
-				className={`email-form-header ${
-					!miniBottom ? '' : 'email-form-header-mini'
-				}`}
-			>
+			<div className={`${theme}-email-form-header`}>
 				<div className='email-header-subject'>
 					{subject ? subject : 'New Messages'}
 				</div>
 				{miniBottom ? (
-					<div className='mini-top' onClick={minimaxEmail}>
+					<div className={`${theme}-mini-top`} onClick={maxEmailBottom}>
 						<FiMinus className='mini-bottom-icon' />
 					</div>
 				) : (
-					<div className='mini-bottom' onClick={minimaxEmail}>
+					<div className={`${theme}-mini-bottom`} onClick={miniEmailBottom}>
 						<FiMinus className='mini-bottom-icon' />
 					</div>
 				)}
-				<div className='mini-screen' onClick={minimaxScreen}>
-					{miniScreen ? (
-						<FiMinimize2 className='mini-screen-icon' />
-					) : (
+				{miniScreen ? (
+					<div className={`${theme}-mini-screen`} onClick={maxEmailScreen}>
 						<FiMaximize2 className='mini-screen-icon' />
-					)}
-				</div>
+					</div>
+				) : (
+					<div className={`${theme}-mini-screen`} onClick={miniEmailScreen}>
+						<FiMinimize2 className='mini-screen-icon' />
+					</div>
+				)}
 				<CloseBtn
-					styles={{ container: 'close-email', icon: 'close-icon ' }}
+					styles={{ container: `${theme}-close-email`, icon: 'close-icon ' }}
 					event={handleCloseForm}
 				/>
 			</div>
 			<div
-				className={`email-content ${!miniBottom ? '' : 'email-content-mini'}`}
+				className={`email-content ${miniBottom ? 'email-content-none' : ''}`}
 			>
 				<form onSubmit={hanldeSubmitEmail}>
 					<div className='email-content-header'>
-						<div className='email-content-name'>
+						<div className='email-content-header-info'>
 							<label htmlFor='name'>Name</label>
 							<input
 								type='text'
@@ -93,7 +95,7 @@ export default function EmailForm() {
 								required
 							/>
 						</div>
-						<div className='email-content-name'>
+						<div className='email-content-header-info'>
 							<label htmlFor='company'>Company</label>
 							<input
 								type='text'
@@ -104,7 +106,7 @@ export default function EmailForm() {
 								required
 							/>
 						</div>
-						<div className='email-content-name'>
+						<div className='email-content-header-info'>
 							<label htmlFor='email'>Email</label>
 							<input
 								type='email'
@@ -115,7 +117,7 @@ export default function EmailForm() {
 								required
 							/>
 						</div>
-						<div className='email-content-name'>
+						<div className='email-content-header-info'>
 							<input
 								className='email-subject'
 								type='text'
@@ -130,9 +132,7 @@ export default function EmailForm() {
 					<textarea
 						name='email-textarea'
 						id='descreption'
-						className={`email-textarea ${
-							miniScreen ? '' : 'email-textarea-mini'
-						}`}
+						className={`email-textarea`}
 						value={content}
 						onChange={hanldeContent}
 					></textarea>

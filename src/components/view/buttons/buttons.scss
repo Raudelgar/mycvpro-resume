@@ -24,7 +24,8 @@
 	}
 }
 
-.close-email {
+.light-close-email,
+.dark-close-email {
 	width: 26px;
 	height: 24px;
 	display: flex;
@@ -35,9 +36,9 @@
 	cursor: pointer;
 	position: absolute;
 	right: 0;
+	color: $bg-light-app;
 
 	.close-icon {
-		color: $bg-light-app;
 		width: 18px;
 		height: 18px;
 	}
@@ -47,5 +48,15 @@
 		.close-icon {
 			color: $bright-white-color;
 		}
+	}
+}
+
+.dark-close-email {
+	color: $fb-green-blue;
+
+	&:hover {
+		// background-color: $bg-dark-hover;
+		background-color: $dark-gray;
+		color: $bright-white-color;
 	}
 }
