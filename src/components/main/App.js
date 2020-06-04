@@ -13,6 +13,8 @@ import { handleInitData } from '../../actions/rootAction.js';
 import useProfileState from '../../hooks/useProfileState';
 import SuccessMsg from '../alerts/SuccessMsg.js';
 import { AlertProvider } from '../../context/AlertContext';
+import { EmailProvider } from '../../context/EmailContext';
+import EmailComponent from '../pages/messages/EmailComponent';
 
 export default function App() {
 	const { theme } = useContext(ThemeContext);
@@ -34,12 +36,15 @@ export default function App() {
 				{isLoading ? (
 					<LogoLoader />
 				) : (
-					<div className={`${theme}-App`}>
-						<NavBar />
-						<Home />
-						<Footer />
-						<SuccessMsg msg={'Copied To Clipboard!'} />
-					</div>
+					<EmailProvider>
+						<div className={`${theme}-App`}>
+							<SuccessMsg msg={'Copied To Clipboard!'} />
+							<EmailComponent />
+							<NavBar />
+							<Home />
+							<Footer />
+						</div>
+					</EmailProvider>
 				)}
 			</AlertProvider>
 		</Router>

@@ -3,6 +3,7 @@ import { IoMdClose } from 'react-icons/io';
 
 import './alerts.scss';
 import { AlertContext } from '../../context/AlertContext';
+import CloseBtn from '../view/buttons/CloseBtn';
 
 export default function SuccessMsg({ msg }) {
 	const { show, hideAlert } = useContext(AlertContext);
@@ -19,9 +20,10 @@ export default function SuccessMsg({ msg }) {
 				<div className='alert-container'>
 					<div className='success'>
 						<span className='alert-msg'>{msg}</span>
-						<div className='close-alert' onClick={hideAlert}>
-							<IoMdClose className='close-icon' />
-						</div>
+						<CloseBtn
+							event={hideAlert}
+							styles={{ container: 'close-alert', icon: 'close-icon' }}
+						/>
 					</div>
 				</div>
 			)}
