@@ -16,7 +16,11 @@ export default function EmailComponent() {
 					{miniScreen ? (
 						<EmailForm />
 					) : (
-						<div className='form-container' onClick={miniEmailScreen}>
+						<div
+							className={`form-container ${
+								miniBottom ? 'form-container-hide' : ''
+							}`}
+						>
 							<EmailForm />
 						</div>
 					)}

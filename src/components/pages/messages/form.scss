@@ -18,3 +18,10 @@
 
 	@include email-form-media;
 }
+
+.form-container-hide {
+	position: fixed;
+	width: 240px;
+	height: 40px;
+	background-color: transparent;
+}
