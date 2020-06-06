@@ -75,5 +75,11 @@
 		.dark-email-form {
 			width: $content-width;
 		}
+		.light-email-form-mini,
+		.dark-email-form-mini {
+			position: fixed;
+			width: 240px;
+			height: 40px;
+		}
 	}
 }

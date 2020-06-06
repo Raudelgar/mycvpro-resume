@@ -10,7 +10,6 @@
 
 	.grid-container {
 		display: grid;
-		// grid-auto-rows: minmax(150px, 300px);
 		grid-auto-rows: auto;
 		grid-gap: 10px 10px;
 		padding: 10px 0;
@@ -18,10 +17,10 @@
 
 		.light-grid-item,
 		.dark-grid-item {
-			background-color: $light-text-color;
+			background-color: $white;
 			border-radius: 0.2em;
 			padding: 10px;
-			color: $dark-text-color;
+			color: $eerie-black;
 			@include light-section-shadow;
 		}
 

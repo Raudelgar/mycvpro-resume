@@ -13,7 +13,8 @@
 	.dark-icon {
 		width: 25px;
 		height: 25px;
-		color: $light-text-color;
+		// color: $light-text-color;
+		color: $cultured;
 	}
 
 	.dark-icon {
@@ -22,7 +23,8 @@
 }
 
 .light-content-icon:hover {
-	background-color: $bg-blue-hover;
+	// background-color: $bg-blue-hover;
+	background-color: $bright-navy-blue;
 	.light-icon {
 		color: $bright-white-color;
 	}
@@ -38,7 +40,7 @@
 .light-collapse-icons,
 .dark-collapse-icons {
 	position: absolute;
-	background-color: $base-blue;
+	background-color: $lapis-lazuli;
 	top: 51px;
 	border-radius: 0.2em;
 }

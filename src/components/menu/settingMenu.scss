@@ -10,10 +10,11 @@
 	.light-menu-icons,
 	.dark-menu-icons {
 		position: absolute;
-		background-color: $base-blue;
+		background-color: $lapis-lazuli;
 		top: 70px;
 		right: 20px;
 		border-radius: 0.2em;
+		box-shadow: 0 0.5px 0 1px #b4b4b4;
 	}
 
 	.dark-menu-icons {

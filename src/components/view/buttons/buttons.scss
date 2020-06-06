@@ -1,4 +1,4 @@
-@import '../../../sass/colors.scss';
+@import '../../../sass/_colors.scss';
 
 //Close Btn
 .close-alert {
@@ -17,7 +17,7 @@
 	}
 
 	&:hover {
-		background-color: #68c74dfd;
+		background-color: $dark-sea-green;
 		.close-icon {
 			color: $bright-white-color;
 		}
@@ -36,7 +36,7 @@
 	cursor: pointer;
 	position: absolute;
 	right: 0;
-	color: $bg-light-app;
+	color: $cultured;
 
 	.close-icon {
 		width: 18px;
@@ -44,7 +44,7 @@
 	}
 
 	&:hover {
-		background-color: $bg-blue-hover;
+		background-color: $bright-navy-blue;
 		.close-icon {
 			color: $bright-white-color;
 		}
