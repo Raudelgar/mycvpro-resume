@@ -9,8 +9,8 @@
 		border-radius: 50%;
 		position: absolute;
 		border: calc(150px * 0.05) solid transparent;
-		border-top-color: $light-text-color;
-		border-left-color: $light-text-color;
+		border-top-color: $white;
+		border-left-color: $white;
 		animation: semipolar-spinner-animation 2000ms infinite;
 	}
 

@@ -1,10 +1,12 @@
+@import '../../sass/_colors.scss';
+
 .tooltip-label-content {
 	position: relative;
 
 	.tooltip-label,
 	.tooltip-label-collapse {
 		width: auto;
-		background-color: #d2e1ec;
+		background-color: $light-hover-gray;
 		position: absolute;
 		top: 37px;
 		right: 34px;
