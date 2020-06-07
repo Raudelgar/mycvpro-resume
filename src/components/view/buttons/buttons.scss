@@ -1,4 +1,4 @@
-@import '../../../sass/colors.scss';
+@import '../../../sass/_colors.scss';
 
 //Close Btn
 .close-alert {
@@ -11,15 +11,15 @@
 	z-index: 1;
 
 	.close-icon {
-		color: $light-text-color;
+		color: $white;
 		width: 25px;
 		height: 25px;
 	}
 
 	&:hover {
-		background-color: #68c74dfd;
+		background-color: $hover-green;
 		.close-icon {
-			color: $bright-white-color;
+			color: $bright-white;
 		}
 	}
 }
@@ -36,7 +36,7 @@
 	cursor: pointer;
 	position: absolute;
 	right: 0;
-	color: $bg-light-app;
+	color: $bg-white;
 
 	.close-icon {
 		width: 18px;
@@ -44,19 +44,19 @@
 	}
 
 	&:hover {
-		background-color: $bg-blue-hover;
+		background-color: $secondary-blue;
 		.close-icon {
-			color: $bright-white-color;
+			color: $bright-white;
 		}
 	}
 }
 
 .dark-close-email {
-	color: $fb-green-blue;
+	color: $component-blue-dark-theme;
 
 	&:hover {
 		// background-color: $bg-dark-hover;
 		background-color: $dark-gray;
-		color: $bright-white-color;
+		color: $bright-white;
 	}
 }

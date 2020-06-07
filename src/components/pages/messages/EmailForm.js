@@ -80,7 +80,9 @@ export default function EmailForm() {
 				/>
 			</div>
 			<div
-				className={`email-content ${miniBottom ? 'email-content-none' : ''}`}
+				className={`${theme}-email-content ${
+					miniBottom ? 'email-content-none' : ''
+				}`}
 			>
 				<form onSubmit={hanldeSubmitEmail}>
 					<div className='email-content-header'>

@@ -1,3 +1,5 @@
+@import '../../../sass/_responsive.scss';
+
 .light-email-form,
 .dark-email-form,
 .light-email-form-mini,
@@ -7,7 +9,7 @@
 	bottom: 0.5px;
 	width: 400px;
 	height: 500px;
-	background-color: $base-blue;
+	background-color: $primary-blue;
 	border-radius: 0.5em 0.5em 0 0;
 	box-shadow: 0 8px 10px 1px #00000024, 0 3px 14px 2px #0000001f,
 		0 5px 5px -3px #00000033;
@@ -17,7 +19,7 @@
 	.dark-email-form-header {
 		width: 100%;
 		height: 40px;
-		background-color: $base-blue;
+		background-color: $primary-blue;
 		border-radius: inherit;
 		display: flex;
 		justify-content: space-between;
@@ -26,7 +28,7 @@
 
 		.email-header-subject {
 			width: 100%;
-			color: $light-text-color;
+			color: $white;
 			margin-left: 10px;
 			cursor: default;
 		}
@@ -47,7 +49,7 @@
 			justify-content: center;
 			align-items: flex-end;
 			cursor: pointer;
-			color: #dcdcdc;
+			color: $bg-white;
 
 			.mini-bottom-icon,
 			.mini-screen-icon {
@@ -56,10 +58,10 @@
 			}
 
 			&:hover {
-				background-color: $bg-blue-hover;
+				background-color: $secondary-blue;
 				.mini-bottom-icon,
 				.mini-screen-icon {
-					color: $bright-white-color;
+					color: $bright-white;
 				}
 			}
 		}
@@ -84,25 +86,25 @@
 		.dark-mini-bottom,
 		.dark-mini-top,
 		.dark-mini-screen {
-			color: $fb-green-blue;
+			color: $component-blue-dark-theme;
 
 			&:hover {
 				// background-color: $bg-dark-hover;
 				background-color: $dark-gray;
-				color: $bright-white-color;
+				color: $bright-white;
 			}
 		}
 	}
 
 	.dark-email-form-header {
-		// background-color: $base-dark;
 		background-color: $bg-dark-hover;
 	}
 
-	.email-content {
+	.light-email-content,
+	.dark-email-content {
 		width: 100%;
 		height: calc(100% - 40px);
-		background-color: $bright-white-color;
+		background-color: $bg-white;
 		padding: 0 15px;
 
 		.email-content-header {
@@ -177,31 +179,35 @@
 			.btn-send-email {
 				width: 80px;
 				height: 35px;
-				border: 0.5px solid $base-blue;
+				border: 0.5px solid $primary-blue;
 				border-radius: 0.2em;
 				background-color: transparent;
 				outline: none;
-				color: $base-blue;
+				color: $primary-blue;
 				font-size: 1rem;
 				font-weight: 600;
 
 				&:hover {
-					background-color: $bg-blue-hover;
-					border-color: $fb-green-blue;
-					color: $bright-white-color;
+					background-color: $primary-blue;
+					border-color: $secondary-blue;
+					color: $bg-white;
 				}
 			}
 
 			.discard-icon {
 				width: 18px;
 				height: 18px;
-				color: $bg-dark-app;
+				color: $dark-gray;
 
 				&:hover {
-					color: #ce0a0ac7;
+					color: $primary-red;
 				}
 			}
 		}
+	}
+
+	.dark-email-content {
+		background-color: $light-gray-d6;
 	}
 
 	.email-content-none {
@@ -211,7 +217,7 @@
 
 .light-email-form-relative,
 .dark-email-form-relative {
-	position: relative;
+	position: initial;
 	z-index: 2;
 }
 
@@ -225,6 +231,5 @@
 .dark-email-form,
 .dark-email-form-mini,
 .dark-email-form-relative {
-	// background-color: $base-dark;
 	background-color: $bg-dark-hover;
 }

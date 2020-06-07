@@ -3,15 +3,14 @@
 .light-App,
 .dark-App {
 	font-family: sans-serif;
-	// background-color: #dcdcdc;
-	background-color: $bg-light-app;
+	// background-color: $bg-light-app;
+	background-color: $light-gray-d6;
 	min-height: 100vh;
 	animation: show linear 0.5s;
 }
 
 .dark-App {
-	// background-color: #444444;
-	background-color: $bg-dark-app;
+	background-color: $primary-black;
 }
 
 @keyframes show {

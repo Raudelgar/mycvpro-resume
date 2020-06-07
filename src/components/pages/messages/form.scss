@@ -4,7 +4,8 @@
 @import '../../../sass/_variables.scss';
 @import './emailForm.scss';
 
-.form-container {
+.form-container,
+.form-container-hide {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -13,8 +14,15 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #00000080;
+	background-color: $bg-modal-opacity;
 	z-index: 1;
 
 	@include email-form-media;
+}
+
+.form-container-hide {
+	position: fixed;
+	width: 40px;
+	height: 40px;
+	background-color: transparent;
 }
