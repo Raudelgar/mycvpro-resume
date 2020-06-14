@@ -7,9 +7,15 @@ import { EmailContext } from '../../../context/EmailContext';
 import CloseBtn from '../../view/buttons/CloseBtn';
 import useEmailState from '../../../hooks/useEmailState';
 import { ThemeContext } from '../../../context/ThemeContext.js';
+import { sendMessages } from '../../../api/v1/api';
+import useProfileState from '../../../hooks/useProfileState';
+import { AlertContext } from '../../../context/AlertContext';
+import SuccessMsg from '../../alerts/SuccessMsg';
 
 export default function EmailForm() {
+	const profile = useProfileState();
 	const { theme } = useContext(ThemeContext);
+	const { showAlert } = useContext(AlertContext);
 	const {
 		miniBottom,
 		miniScreen,
@@ -40,10 +46,35 @@ export default function EmailForm() {
 		cancelEmailForm();
 	};
 
-	const hanldeSubmitEmail = (e) => {
+	const hanldeSubmitEmail = async (e) => {
 		e.preventDefault();
-		console.log(name, company, email, subject, content);
-		handleCloseForm();
+		try {
+			const response = await sendMessages(
+				name,
+				company,
+				email,
+				subject,
+				content,
+				profile
+			);
+
+			if (response.messages === 'Success') {
+				showAlert(
+					<SuccessMsg
+						msg={'Messages Sent!!'}
+						styles={{
+							container: 'email-alert-container',
+							success: 'email-success ',
+							msg: 'email-alert-msg ',
+						}}
+					/>
+				);
+			}
+		} catch (error) {
+			console.log(error);
+		} finally {
+			handleCloseForm();
+		}
 	};
 
 	return (

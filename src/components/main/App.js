@@ -11,7 +11,7 @@ import Footer from '../footer/Footer.js';
 import useLogoLoaderState from '../../hooks/useLogoLoaderState.js';
 import { handleInitData } from '../../actions/rootAction.js';
 import useProfileState from '../../hooks/useProfileState';
-import SuccessMsg from '../alerts/SuccessMsg.js';
+import AlertComponent from '../alerts/AlertComponent.js';
 import { AlertProvider } from '../../context/AlertContext';
 import { EmailProvider } from '../../context/EmailContext';
 import EmailComponent from '../pages/messages/EmailComponent';
@@ -38,7 +38,7 @@ export default function App() {
 				) : (
 					<EmailProvider>
 						<div className={`${theme}-App`}>
-							<SuccessMsg msg={'Copied To Clipboard!'} />
+							<AlertComponent />
 							<EmailComponent />
 							<NavBar />
 							<Home />

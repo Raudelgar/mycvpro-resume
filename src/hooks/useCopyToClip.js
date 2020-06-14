@@ -1,6 +1,7 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import useProfileState from './useProfileState.js';
 import { AlertContext } from '../context/AlertContext.js';
+import SuccessMsg from '../components/alerts/SuccessMsg.js';
 
 export default function useCopyToClip() {
 	const { showAlert } = useContext(AlertContext);
@@ -18,7 +19,16 @@ export default function useCopyToClip() {
 		textArea.select();
 		window.document.execCommand('copy');
 		textArea.remove();
-		showAlert();
+		showAlert(
+			<SuccessMsg
+				msg={'Copied To Clipboard!'}
+				styles={{
+					container: 'cp-alert-container',
+					success: 'cp-success',
+					msg: 'cp-alert-msg',
+				}}
+			/>
+		);
 	};
 
 	return { copyToClipBoard };
