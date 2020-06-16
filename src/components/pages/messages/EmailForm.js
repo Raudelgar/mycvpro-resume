@@ -48,6 +48,7 @@ export default function EmailForm() {
 
 	const hanldeSubmitEmail = async (e) => {
 		e.preventDefault();
+		handleCloseForm();
 		try {
 			const response = await sendMessages(
 				name,
@@ -72,8 +73,6 @@ export default function EmailForm() {
 			}
 		} catch (error) {
 			console.log(error);
-		} finally {
-			handleCloseForm();
 		}
 	};
 
