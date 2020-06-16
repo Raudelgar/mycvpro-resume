@@ -1,5 +1,5 @@
-export function logoLoaderSelector({ isLogoLoader }) {
-	return isLogoLoader;
+export function loaderSelector({ isLoading }) {
+	return isLoading;
 }
 
 export function profileSelector({ profile }) {

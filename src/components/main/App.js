@@ -8,18 +8,19 @@ import { ThemeContext } from '../../context/ThemeContext.js';
 import LogoLoader from '../loaders/LogoLoader.js';
 import Home from '../pages/home/Home.js';
 import Footer from '../footer/Footer.js';
-import useLogoLoaderState from '../../hooks/useLogoLoaderState.js';
+import useLoaderState from '../../hooks/useLoaderState.js';
 import { handleInitData } from '../../actions/rootAction.js';
 import useProfileState from '../../hooks/useProfileState';
 import AlertComponent from '../alerts/AlertComponent.js';
 import { AlertProvider } from '../../context/AlertContext';
 import { EmailProvider } from '../../context/EmailContext';
 import EmailComponent from '../pages/messages/EmailComponent';
+import { isObjectEmpty } from '../../utils/helpers';
 
 export default function App() {
 	const { theme } = useContext(ThemeContext);
-	const isLoading = useLogoLoaderState();
 	const userProfile = useProfileState();
+	const isLoading = useLoaderState();
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -33,9 +34,8 @@ export default function App() {
 	return (
 		<Router>
 			<AlertProvider>
-				{isLoading ? (
-					<LogoLoader />
-				) : (
+				<LogoLoader />
+				{!isLoading.bool && (
 					<EmailProvider>
 						<div className={`${theme}-App`}>
 							<AlertComponent />

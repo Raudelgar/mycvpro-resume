@@ -2,12 +2,12 @@ import React from 'react';
 
 import './loaders.scss';
 import { IoIosDocument } from 'react-icons/io';
-import useLogoLoaderState from '../../hooks/useLogoLoaderState.js';
+import useLoaderState from '../../hooks/useLoaderState.js';
 
-const filterRender = (isLoading) => {
-	if (!isLoading) {
-		return null;
-	} else {
+export default function LogoLoader() {
+	const isLoading = useLoaderState();
+
+	if (isLoading.bool && isLoading.scope === 'main') {
 		return (
 			<div className='bg-loader'>
 				<div className='logo-container loader-center'>
@@ -17,10 +17,7 @@ const filterRender = (isLoading) => {
 				</div>
 			</div>
 		);
+	} else {
+		return null;
 	}
-};
-
-export default function LogoLoader() {
-	const isLoading = useLogoLoaderState();
-	return filterRender(isLoading);
 }

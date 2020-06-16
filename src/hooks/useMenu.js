@@ -1,10 +1,12 @@
 import { useContext } from 'react';
 import useCopyToClip from './useCopyToClip.js';
 import { EmailContext } from '../context/EmailContext.js';
+import usePdfDownload from './usePdfDownload.js';
 
 export default function useMenu() {
 	const { copyToClipBoard } = useCopyToClip();
 	const { openEmailForm } = useContext(EmailContext);
+	const { downLoadPdf } = usePdfDownload();
 
 	const types = {
 		copy: 'COPY_LINK',
@@ -16,8 +18,7 @@ export default function useMenu() {
 			case 'COPY_LINK':
 				return copyToClipBoard();
 			case 'PDF':
-				console.log('download pdf');
-				break;
+				return downLoadPdf();
 			case 'MSG':
 				return openEmailForm();
 			default:
