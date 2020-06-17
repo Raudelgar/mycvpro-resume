@@ -6,7 +6,9 @@
 	height: 1px;
 	background-color: $bg-white;
 	position: absolute;
-	bottom: 13px;
+	// bottom: 14px;
+	bottom: 1px;
+	// top: 1px;
 	left: 0;
 	overflow: hidden;
 
@@ -17,7 +19,7 @@
 		background-color: $secondary-blue;
 		border-radius: 0.2em;
 		transform: translateX(-95%);
-		animation: progress-lft-rgt 1s infinite forwards ease-out;
+		animation: progress-lft-rgt 0.5s infinite alternate ease-in-out;
 
 		@include progress-lft-rgt;
 	}

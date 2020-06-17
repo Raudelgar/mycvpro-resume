@@ -50,7 +50,8 @@
 
 .disable {
 	background-color: #cacaca7e;
-	.light-icon {
+	.light-icon,
+	.dark-icon {
 		color: $light-gray;
 	}
 }
@@ -58,7 +59,8 @@
 .disable:hover {
 	background-color: #a9a9a975;
 	cursor: wait;
-	.light-icon {
+	.light-icon,
+	.dark-icon {
 		color: $light-gray;
 	}
 }

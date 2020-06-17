@@ -5,7 +5,7 @@ import './loaders.scss';
 
 export default function BarLoader() {
 	const isLoading = useLoaderState();
-	console.log(isLoading);
+
 	if (isLoading.bool && isLoading.scope === 'pdf-btn') {
 		return (
 			<div className='bar-loader-container'>

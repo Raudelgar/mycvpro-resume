@@ -13,10 +13,10 @@ export default function PdfComponent({ collapse }) {
 	const dispatch = useDispatch();
 
 	const handlePdfRequest = () => {
-		dispatch(getPdf());
+		if (!isDisable) {
+			dispatch(getPdf());
+		}
 	};
-
-	console.log(isDisable);
 
 	return (
 		<TooltipLabel label='Donwload PDF' collapse={collapse}>
