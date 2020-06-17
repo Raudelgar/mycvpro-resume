@@ -35,7 +35,7 @@ export default function App() {
 		<Router>
 			<AlertProvider>
 				<LogoLoader />
-				{!isLoading.bool && (
+				{!isObjectEmpty(userProfile) && (
 					<EmailProvider>
 						<div className={`${theme}-App`}>
 							<AlertComponent />

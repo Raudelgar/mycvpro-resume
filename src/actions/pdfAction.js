@@ -10,8 +10,8 @@ export function getPdf() {
 		//Request PDF from API
 		setTimeout(() => {
 			//Once PDF is done,
-			dispatch(hideLoader());
 			dispatch(enablePdfBtn());
+			dispatch(hideLoader());
 		}, 3000);
 	};
 }

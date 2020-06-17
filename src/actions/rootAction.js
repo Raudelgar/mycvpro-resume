@@ -13,10 +13,10 @@ export function handleInitData() {
 			.then(({ id }) => {
 				fetchInitData(id)
 					.then(({ profile, skills, experience, education }) => {
-						dispatch(getProfile(profile));
 						dispatch(getSkills(skills));
 						dispatch(getExperience(experience));
 						dispatch(getEducation(education));
+						dispatch(getProfile(profile));
 					})
 					.catch((err) => console.log(err))
 					.then(() => dispatch(hideLoader()));
