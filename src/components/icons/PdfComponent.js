@@ -6,15 +6,17 @@ import { ThemeContext } from '../../context/ThemeContext';
 import BarLoader from '../loaders/BarLoader';
 import usePdfDownload from '../../hooks/usePdfDownload';
 import { getPdf } from '../../actions/pdfAction';
+import useProfileState from '../../hooks/useProfileState';
 
 export default function PdfComponent({ collapse }) {
 	const isDisable = usePdfDownload();
 	const { theme } = useContext(ThemeContext);
 	const dispatch = useDispatch();
+	const profile = useProfileState();
 
 	const handlePdfRequest = () => {
 		if (!isDisable) {
-			dispatch(getPdf());
+			dispatch(getPdf(profile));
 		}
 	};
 

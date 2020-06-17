@@ -34,14 +34,14 @@ export async function fetchInitData(id) {
 }
 
 export function getUrlParams() {
-	let urlId;
+	let url;
 
 	//On Development
 	//TODO: Remove for Production
 	if (process.env.NODE_ENV === 'development') {
-		urlId = 'wy0oc9ap0rj0u6euqdwqvrb';
+		url = 'wy0oc9ap0rj0u6euqdwqvrb';
 
-		return Promise.resolve({ id: urlId });
+		return Promise.resolve({ id: url });
 	} else {
 		const { cvid, usr, share } = queryString.parse(window.location.search);
 		if (usr) console.log(usr);
@@ -49,8 +49,8 @@ export function getUrlParams() {
 
 		return new Promise((resolve, reject) => {
 			if (cvid) {
-				urlId = cvid;
-				resolve({ id: urlId });
+				url = cvid;
+				resolve({ id: url });
 			} else {
 				reject('No query params');
 			}
@@ -64,8 +64,8 @@ export function getUrlParams() {
 
 	// 	return new Promise((resolve, reject) => {
 	// 		if (cvid) {
-	// 			urlId = cvid;
-	// 			resolve({ id: urlId });
+	// 			url = cvid;
+	// 			resolve({ id: url });
 	// 		} else {
 	// 			reject('No query params');
 	// 		}
@@ -80,12 +80,12 @@ export async function sendMessages(
 	content,
 	profile
 ) {
-	let urlMessages;
+	let url;
 
 	if (NODE_ENV !== 'production') {
-		urlMessages = services.messages.dev;
+		url = services.messages.dev;
 	} else {
-		urlMessages = services.messages.prod;
+		url = services.messages.prod;
 	}
 
 	const DATA = {
@@ -100,8 +100,31 @@ export async function sendMessages(
 	// console.log(name, company, email, subject, content);
 	// console.log(profile);
 	try {
-		const response = await axios.post(urlMessages, DATA);
+		const response = await axios.post(url, DATA);
 		const { data } = await response;
+		return data;
+	} catch (error) {
+		console.log(error);
+	}
+}
+
+export async function requestPdf(userId) {
+	let url;
+
+	if (NODE_ENV !== 'production') {
+		url = services.genPdf.dev;
+	} else {
+		url = services.genPdf.prod;
+	}
+
+	const DATA = {
+		userId,
+	};
+
+	try {
+		const response = await axios.post(url, DATA);
+		const { data } = await response;
+		console.log(data);
 		return data;
 	} catch (error) {
 		console.log(error);
