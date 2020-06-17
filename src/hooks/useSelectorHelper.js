@@ -17,3 +17,7 @@ export function experienceSelector({ experience }) {
 export function educationSelector({ education }) {
 	return education;
 }
+
+export function pdfSelector({ pdfState }) {
+	return pdfState;
+}

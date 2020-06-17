@@ -10,6 +10,7 @@ export default function NavBar() {
 	const { theme } = useContext(ThemeContext);
 	const { name, avatar_url } = useProfileState();
 	const userAvatar = avatar_url ? true : false;
+
 	return (
 		<nav className={`${theme}-nav`}>
 			<div className='main-header'>

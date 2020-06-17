@@ -2,17 +2,19 @@ import React, { useContext } from 'react';
 import { FaTelegramPlane } from 'react-icons/fa';
 import TooltipLabel from '../tooltips/TooltipLabel';
 import { ThemeContext } from '../../context/ThemeContext';
-import useMenu from '../../hooks/useMenu';
+import { EmailContext } from '../../context/EmailContext';
 
 export default function MessagesComponent({ collapse }) {
 	const { theme } = useContext(ThemeContext);
-	const { types, menuAction } = useMenu();
+	const { openEmailForm } = useContext(EmailContext);
+
+	const handleEmailForm = () => {
+		openEmailForm();
+	};
+
 	return (
 		<TooltipLabel label='Send Email' collapse={collapse}>
-			<div
-				className={`${theme}-content-icon`}
-				onClick={() => menuAction(types.msg)}
-			>
+			<div className={`${theme}-content-icon`} onClick={handleEmailForm}>
 				<FaTelegramPlane size={25} className={`${theme}-icon`} />
 			</div>
 		</TooltipLabel>
