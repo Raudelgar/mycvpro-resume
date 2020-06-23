@@ -12,8 +12,8 @@ export default function template(profile, skills, experience, education) {
 		pageMargins: [40, 60, 40, 20], // [left, top, right, bottom] or [horizontal, vertical] or just a number for equal margins
 		header: function (currentPage, pageCount, pageSize) {
 			return [
-				{ text: 'Raudel Garcia', style: 'headerName' },
-				{ text: 'raudel@gmail.com\t+1(919)592-6362', style: 'headerInfo' },
+				{ text: `${profile.name}`, style: 'headerName' },
+				{ text: `${profile.email}\t${profile.phone}`, style: 'headerInfo' },
 			];
 		},
 		footer: function (currentPage, pageCount, pageSize) {
@@ -21,7 +21,7 @@ export default function template(profile, skills, experience, education) {
 				{ text: 'Power By CvCodePro, Inc', style: ['headerInfo', 'footer'] },
 			];
 		},
-		content: setContent(skills, experience),
+		content: setContent(skills, experience, education),
 		styles: {
 			headerName: {
 				margin: 5,
@@ -67,13 +67,16 @@ export default function template(profile, skills, experience, education) {
 	return dd;
 }
 
-function setContent(skills, experience) {
+function setContent(skills, experience, education) {
 	return [
 		{
 			stack: skillStack(skills),
 		},
 		{
 			stack: experienceStack(experience),
+		},
+		{
+			stack: educationStack(education),
 		},
 	];
 }
@@ -188,5 +191,42 @@ function experienceStack(experience) {
 		stack[1].stack = stack[1].stack.concat([expTask]);
 	}
 
+	return stack;
+}
+
+function educationStack(education) {
+	let stack = [
+		{
+			text: `${education.section}`,
+			style: 'sectionTitle',
+		},
+		{
+			text: [],
+		},
+	];
+
+	for (let i = 0; i < education.content.length; i++) {
+		let edu = education.content[i];
+
+		let degree = {
+			text: `\u200B\t\u200B\t${edu.degree}\n`,
+			style: ['sectionInfo', 'sectionLabel'],
+		};
+
+		let loc = {
+			text: `\u200B\t\u200B\t${edu.college}. ${edu.location}\n\n`,
+			style: ['sectionInfo', 'sectionItems'],
+		};
+
+		if (edu.note) {
+			let note = {
+				text: `\u200B\t\u200B\t\t${edu.note}\n`,
+				style: ['sectionInfo', 'sectionItems', 'sectionNote'],
+			};
+			stack[1].text = stack[1].text.concat([degree, note, loc]);
+		} else {
+			stack[1].text = stack[1].text.concat([degree, loc]);
+		}
+	}
 	return stack;
 }

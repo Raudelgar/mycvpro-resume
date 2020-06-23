@@ -7,7 +7,7 @@
 
 # testing
 /coverage
-/resources/draft.js
+/src/resources/draft.js
 
 # production
 /build
