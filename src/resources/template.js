@@ -9,7 +9,7 @@ export default function template(profile, skills, experience, education) {
 		},
 		pageSize: 'A4',
 		pageOrientation: 'portrait',
-		pageMargins: [40, 60, 40, 20], // [left, top, right, bottom] or [horizontal, vertical] or just a number for equal margins
+		pageMargins: [30, 50, 20, 40], // [left, top, right, bottom] or [horizontal, vertical] or just a number for equal margins
 		header: function (currentPage, pageCount, pageSize) {
 			return [
 				{ text: `${profile.name}`, style: 'headerName' },
@@ -25,22 +25,27 @@ export default function template(profile, skills, experience, education) {
 		styles: {
 			headerName: {
 				margin: 5,
-				fontSize: 13,
+				fontSize: 12,
 				alignment: 'center',
+				color: '#05599e',
 			},
 			headerInfo: {
 				alignment: 'center',
-				// margin: [5, 0],
+				fontSize: 12,
+				lineHeight: 1.3,
+				color: '#05599e',
 			},
 			footer: {
 				color: '#9F9F9F',
 				fontSize: 10,
+				margin: [0, 20, 0, 5],
 			},
 			sectionTitle: {
 				fontSize: 13,
 				color: '#05599e',
 				bold: true,
 				lineHeight: 1.3,
+				margin: [0, 10, 0, 0],
 			},
 			sectionInfo: {
 				fontSize: 11,
@@ -61,9 +66,11 @@ export default function template(profile, skills, experience, education) {
 				margin: [60, 0, 5, 0],
 				alignment: 'justify',
 			},
+			lastItem: {
+				lineHeight: 1.3,
+			},
 		},
 	};
-
 	return dd;
 }
 
@@ -98,19 +105,10 @@ function skillStack(skills) {
 			text: `\u200B\t\u200B\t${skill.label}: `,
 			style: ['sectionInfo', 'sectionLabel', 'sectionSkills'],
 		};
-		let values;
-		if (i === skills.content.length - 1) {
-			values = {
-				text: `${skill.values.toString()}\n\n`,
-				style: ['sectionInfo', 'sectionItems'],
-			};
-		} else {
-			values = {
-				text: `${skill.values.toString()}\n`,
-				style: ['sectionInfo', 'sectionItems'],
-			};
-		}
-
+		let values = {
+			text: `${skill.values.toString()}\n`,
+			style: ['sectionInfo', 'sectionItems'],
+		};
 		stack[1].text = stack[1].text.concat([label, values]);
 	}
 
@@ -151,8 +149,8 @@ function experienceStack(experience) {
 			style: ['sectionInfo', 'sectionLabel'],
 		};
 		let note = {
-			text: `\u200B\t\u200B\t\t${expe.note}\n\n`,
-			style: ['sectionInfo', 'sectionLabel', 'sectionNote'],
+			text: `\u200B\t\u200B\t\t${expe.note}\n`,
+			style: ['sectionInfo', 'sectionLabel', 'sectionNote', 'lastItem'],
 		};
 
 		for (let j = 0; j < expe.description.length; j++) {
@@ -214,8 +212,8 @@ function educationStack(education) {
 		};
 
 		let loc = {
-			text: `\u200B\t\u200B\t${edu.college}. ${edu.location}\n\n`,
-			style: ['sectionInfo', 'sectionItems'],
+			text: `\u200B\t\u200B\t${edu.college}. ${edu.location}\n`,
+			style: ['sectionInfo', 'sectionItems', 'lastItem'],
 		};
 
 		if (edu.note) {

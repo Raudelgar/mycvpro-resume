@@ -7,7 +7,7 @@
 
 # testing
 /coverage
-/src/resources/draft.js
+.pdfDraft.js
 
 # production
 /build
