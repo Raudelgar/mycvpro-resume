@@ -1,0 +1,35 @@
+.pdf-template {
+	// display: none;
+	width: 563px;
+	height: 750px;
+	margin: 0 auto;
+
+	.pdf-header {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		.pdf-header-info {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			.pdf-info-user-email {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				span {
+					margin: 0 10px 0 3px;
+				}
+			}
+		}
+	}
+}
+
+/* 
+* Letter Paper 8.5" x 11" => width: 563px; height: 750px;
+* Legal Paper 8.5" x 14" => width: 563px; height: 975px;
+*/

@@ -16,6 +16,7 @@ import { AlertProvider } from '../../context/AlertContext';
 import { EmailProvider } from '../../context/EmailContext';
 import EmailComponent from '../pages/messages/EmailComponent';
 import { isObjectEmpty } from '../../utils/helpers';
+import PdfTemplate from '../view/pdf/PdfTemplate';
 
 export default function App() {
 	const { theme } = useContext(ThemeContext);
@@ -43,6 +44,7 @@ export default function App() {
 							<NavBar />
 							<Home />
 							<Footer />
+							<PdfTemplate />
 						</div>
 					</EmailProvider>
 				)}

@@ -10,7 +10,7 @@ export default function SkillsComponent() {
 	const { section, content } = useSkillsState();
 
 	return (
-		<div className={`${theme}-grid-item`}>
+		<div id='section-skill' className={`${theme}-grid-item`}>
 			<SectionHeader header={section} theme={theme} />
 			<SkillContent content={content} theme={theme} />
 		</div>

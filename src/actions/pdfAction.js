@@ -1,14 +1,15 @@
 import { GET_PDF, PDF_DONE } from './types.js';
 import { showLoader, hideLoader } from './loaderAction.js';
-import { requestPdf } from '../api/v1/api.js';
+import { requestPdf, generatePdf } from '../api/v1/api.js';
 
-export function getPdf(profile) {
+export function getPdf(profile, skills, experience, education) {
 	return (dispatch) => {
 		dispatch(showLoader('pdf-btn'));
 		//Disable PDF Btn
 		dispatch(disbalePdfBtn());
 		//Request PDF from API
-		requestPdf(profile.id)
+		// requestPdf(profile.id)
+		generatePdf(profile, skills, experience, education)
 			.then((res) => res)
 			.catch((error) => console.log(error))
 			.then(() => {

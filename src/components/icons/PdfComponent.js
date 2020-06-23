@@ -7,16 +7,22 @@ import BarLoader from '../loaders/BarLoader';
 import usePdfDownload from '../../hooks/usePdfDownload';
 import { getPdf } from '../../actions/pdfAction';
 import useProfileState from '../../hooks/useProfileState';
+import useSkillsState from '../../hooks/useSkillsState';
+import useExperienceState from '../../hooks/useExperienceState';
+import useEducationState from '../../hooks/useEducationState';
 
 export default function PdfComponent({ collapse }) {
 	const isDisable = usePdfDownload();
 	const { theme } = useContext(ThemeContext);
 	const dispatch = useDispatch();
 	const profile = useProfileState();
+	const skills = useSkillsState();
+	const experience = useExperienceState();
+	const education = useEducationState();
 
 	const handlePdfRequest = () => {
 		if (!isDisable) {
-			dispatch(getPdf(profile));
+			dispatch(getPdf(profile, skills, experience, education));
 		}
 	};
 
