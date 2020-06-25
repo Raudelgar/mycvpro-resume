@@ -1,5 +1,6 @@
 import React from 'react';
-import { MdMail } from 'react-icons/md';
+import { MdMail, MdPhone } from 'react-icons/md';
+import { GiMoebiusStar } from 'react-icons/gi';
 
 import './pdfTemplate.scss';
 import useProfileState from '../../../hooks/useProfileState';
@@ -22,7 +23,11 @@ export default function PdfTemplate() {
 						<MdMail />
 						<span>{profile.email}</span>
 					</div>
-					<div className='pdf-info-user-phone'>{profile.phone}</div>
+					<GiMoebiusStar />
+					<div className='pdf-info-user-phone'>
+						<MdPhone />
+						<span>{profile.phone}</span>
+					</div>
 				</div>
 			</div>
 		</div>
