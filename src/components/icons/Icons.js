@@ -1,51 +1,18 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
-import { FaRegFilePdf, FaTelegramPlane, FaSun } from 'react-icons/fa';
-import { IoIosLink } from 'react-icons/io';
-import { GiEvilMoon } from 'react-icons/gi';
 import './icons.scss';
-import TooltipLabel from '../tooltips/TooltipLabel.js';
-import { ThemeContext } from '../../context/ThemeContext.js';
-import useMenu from '../../hooks/useMenu';
+import PdfComponent from './PdfComponent';
+import MessagesComponent from './MessagesComponent';
+import CopyLinkComponent from './CopyLinkComponent';
+import ThemeComponent from './ThemeComponent';
 
 export default function Icons({ collapse }) {
-	const { theme, handleTheme } = useContext(ThemeContext);
-	const { types, menuAction } = useMenu();
 	return (
 		<>
-			<TooltipLabel label='Donwload PDF' collapse={collapse}>
-				<div
-					className={`${theme}-content-icon`}
-					onClick={() => menuAction(types.pdf)}
-				>
-					<FaRegFilePdf size={25} className={`${theme}-icon`} />
-				</div>
-			</TooltipLabel>
-			<TooltipLabel label='Send Email' collapse={collapse}>
-				<div
-					className={`${theme}-content-icon`}
-					onClick={() => menuAction(types.msg)}
-				>
-					<FaTelegramPlane size={25} className={`${theme}-icon`} />
-				</div>
-			</TooltipLabel>
-			<TooltipLabel label='Copy Link' collapse={collapse}>
-				<div
-					className={`${theme}-content-icon`}
-					onClick={() => menuAction(types.copy)}
-				>
-					<IoIosLink size={25} className={`${theme}-icon`} />
-				</div>
-			</TooltipLabel>
-			<TooltipLabel label='Theme' collapse={collapse}>
-				<div className={`${theme}-content-icon`} onClick={handleTheme}>
-					{theme === 'light' ? (
-						<GiEvilMoon size={25} className={`${theme}-icon`} />
-					) : (
-						<FaSun size={25} className={`${theme}-icon`} />
-					)}
-				</div>
-			</TooltipLabel>
+			<PdfComponent collapse={collapse} />
+			<MessagesComponent collapse={collapse} />
+			<CopyLinkComponent collapse={collapse} />
+			<ThemeComponent collapse={collapse} />
 		</>
 	);
 }

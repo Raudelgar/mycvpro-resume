@@ -1,0 +1,10 @@
+@mixin progress-lft-rgt {
+	@keyframes progress-lft-rgt {
+		0% {
+			transform: translateX(0%);
+		}
+		100% {
+			transform: translateX(300%);
+		}
+	}
+}

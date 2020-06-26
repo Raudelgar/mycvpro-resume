@@ -23,7 +23,36 @@
 
 		.logo {
 			margin-left: 10px;
-			font-weight: bold;
+			width: 39px;
+			height: 38px;
+
+			.light-logo-bg,
+			.dark-logo-bg {
+				width: 110px;
+				height: 40px;
+				// background-color: $primary-blue;
+				background-color: transparent;
+				// border: 1.1px solid $primary-blue;
+				// border-radius: 0.2em;
+
+				.logo-icon {
+					width: 110px;
+					height: 40px;
+					color: $bg-white;
+					g {
+						fill: $bg-white;
+						stroke-width: 80;
+						stroke-linecap: square;
+					}
+				}
+			}
+			.dark-logo-bg {
+				.logo-icon {
+					g {
+						fill: $component-blue-dark-theme;
+					}
+				}
+			}
 		}
 
 		.user-avatar {

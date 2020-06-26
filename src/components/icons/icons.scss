@@ -1,7 +1,8 @@
 @import '../../sass/_colors.scss';
 
 .light-content-icon,
-.dark-content-icon {
+.dark-content-icon,
+.disable {
 	height: 35px;
 	width: 35px;
 	padding: 5px;
@@ -45,4 +46,21 @@
 
 .dark-collapse-icons {
 	background-color: $bg-component;
+}
+
+.disable {
+	background-color: #cacaca7e;
+	.light-icon,
+	.dark-icon {
+		color: $light-gray;
+	}
+}
+
+.disable:hover {
+	background-color: #a9a9a975;
+	cursor: wait;
+	.light-icon,
+	.dark-icon {
+		color: $light-gray;
+	}
 }

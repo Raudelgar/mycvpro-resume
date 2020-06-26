@@ -8,9 +8,9 @@ import SkillContent from './SkillContent.js';
 export default function SkillsComponent() {
 	const { theme } = useContext(ThemeContext);
 	const { section, content } = useSkillsState();
-	// console.log(section, content);
+
 	return (
-		<div className={`${theme}-grid-item`}>
+		<div id='section-skill' className={`${theme}-grid-item`}>
 			<SectionHeader header={section} theme={theme} />
 			<SkillContent content={content} theme={theme} />
 		</div>
