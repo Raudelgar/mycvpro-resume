@@ -7,27 +7,27 @@ export default function useEmailState() {
 	const [subject, setSubject] = useState('');
 	const [content, setContent] = useState('');
 
-	const hanldeName = (e) => {
+	const handleName = (e) => {
 		e.preventDefault();
 		setName(e.target.value);
 	};
 
-	const hanldeCompany = (e) => {
+	const handleCompany = (e) => {
 		e.preventDefault();
 		setCompany(e.target.value);
 	};
 
-	const hanldeEmail = (e) => {
+	const handleEmail = (e) => {
 		e.preventDefault();
 		setEmail(e.target.value);
 	};
 
-	const hanldeSubject = (e) => {
+	const handleSubject = (e) => {
 		e.preventDefault();
 		setSubject(e.target.value);
 	};
 
-	const hanldeContent = (e) => {
+	const handleContent = (e) => {
 		e.preventDefault();
 		setContent(e.target.value);
 	};
@@ -50,11 +50,11 @@ export default function useEmailState() {
 		email,
 		subject,
 		content,
-		hanldeName,
-		hanldeCompany,
-		hanldeEmail,
-		hanldeSubject,
-		hanldeContent,
+		handleName,
+		handleCompany,
+		handleEmail,
+		handleSubject,
+		handleContent,
 		cleanUpForm,
 		discardEmailContent,
 	};

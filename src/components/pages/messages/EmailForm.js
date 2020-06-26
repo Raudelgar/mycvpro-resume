@@ -5,7 +5,6 @@ import { FiMinus, FiMinimize2, FiMaximize2 } from 'react-icons/fi';
 import './form.scss';
 import { EmailContext } from '../../../context/EmailContext';
 import CloseBtn from '../../view/buttons/CloseBtn';
-import useEmailState from '../../../hooks/useEmailState';
 import { ThemeContext } from '../../../context/ThemeContext.js';
 import { sendMessages } from '../../../api/v1/api';
 import useProfileState from '../../../hooks/useProfileState';
@@ -25,21 +24,19 @@ export default function EmailForm() {
 		maxEmailBottom,
 		maxEmailScreen,
 		miniEmailScreen,
-	} = useContext(EmailContext);
-	const {
 		name,
 		company,
 		email,
 		subject,
 		content,
-		hanldeName,
-		hanldeCompany,
-		hanldeEmail,
-		hanldeSubject,
-		hanldeContent,
+		handleName,
+		handleCompany,
+		handleEmail,
+		handleSubject,
+		handleContent,
 		cleanUpForm,
 		discardEmailContent,
-	} = useEmailState();
+	} = useContext(EmailContext);
 
 	const handleCloseForm = () => {
 		cleanUpForm();
@@ -123,7 +120,7 @@ export default function EmailForm() {
 								name='name'
 								id='name'
 								value={name}
-								onChange={hanldeName}
+								onChange={handleName}
 								required
 							/>
 						</div>
@@ -134,7 +131,7 @@ export default function EmailForm() {
 								name='company'
 								id='company'
 								value={company}
-								onChange={hanldeCompany}
+								onChange={handleCompany}
 								required
 							/>
 						</div>
@@ -145,7 +142,7 @@ export default function EmailForm() {
 								name='email'
 								id='email'
 								value={email}
-								onChange={hanldeEmail}
+								onChange={handleEmail}
 								required
 							/>
 						</div>
@@ -157,7 +154,7 @@ export default function EmailForm() {
 								id='subject'
 								placeholder='Subject'
 								value={subject}
-								onChange={hanldeSubject}
+								onChange={handleSubject}
 							/>
 						</div>
 					</div>
@@ -166,7 +163,7 @@ export default function EmailForm() {
 						id='descreption'
 						className={`email-textarea`}
 						value={content}
-						onChange={hanldeContent}
+						onChange={handleContent}
 					></textarea>
 					<div className='email-form-footer'>
 						<button type='submit' className='btn-send-email'>
