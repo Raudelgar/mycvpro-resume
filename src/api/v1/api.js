@@ -46,8 +46,8 @@ export function getUrlParams() {
 		return Promise.resolve({ id: url });
 	} else {
 		const { cvid, usr, share } = queryString.parse(window.location.search);
-		if (usr) console.log(usr);
-		if (share) console.log(share);
+		// if (usr) console.log(usr);
+		// if (share) console.log(share);
 
 		return new Promise((resolve, reject) => {
 			if (cvid) {
@@ -98,35 +98,10 @@ export async function sendMessages(
 		subject,
 		content,
 	};
-	// console.log(URL);
-	// console.log(name, company, email, subject, content);
-	// console.log(profile);
-	try {
-		const response = await axios.post(url, DATA);
-		const { data } = await response;
-		return data;
-	} catch (error) {
-		console.log(error);
-	}
-}
-
-export async function requestPdf(userId) {
-	let url;
-
-	if (NODE_ENV !== 'production') {
-		url = services.genPdf.dev;
-	} else {
-		url = services.genPdf.prod;
-	}
-
-	const DATA = {
-		userId,
-	};
 
 	try {
 		const response = await axios.post(url, DATA);
 		const { data } = await response;
-		console.log(data);
 		return data;
 	} catch (error) {
 		console.log(error);
@@ -146,72 +121,3 @@ export function generatePdf(profile, skills, experience, education) {
 		}, 1000);
 	});
 }
-
-/* 
-export function generatePdf(name) {
-	let fileName = name.split(' ').join('');
-	let margins = {
-		left: 15,
-		top: 15,
-		width: 563,
-		height: 750,
-	};
-
-	function headerFooterFormatting(doc) {
-		const totalPages = doc.internal.getNumberOfPages();
-
-		for (let i = totalPages; i >= 1; i--) {
-			doc.setPage(i);
-			header(doc);
-			// footer(doc, i, totalPages);
-		}
-	}
-
-	function header(doc) {
-		doc.setFontSize(30);
-		doc.setTextColor(40);
-		doc.setFontStyle('normal');
-
-		doc.text('Testing a Header Template', margins.left + 50, 40);
-		doc.line(3, 70, margins.width, 70);
-	}
-	return new Promise((resolve, reject) => {
-		const template = window.document.getElementById('pdf');
-		const pdf = new jsPDF();
-		pdf.setFontSize(10);
-		html2canvas(template, { scale: 3 })
-			.then((canvas) => {
-				pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 5, 40, 211, 298);
-				pdf.save(`${fileName}.pdf`);
-			})
-			.then(() => {
-				setTimeout(() => resolve(true), 1000);
-			});
-
-		// doc.fromHTML(
-		// 	template,
-		// 	margins.left,
-		// 	margins.top,
-		// 	{ width: margins.width },
-		// 	() => {
-		// 		// headerFooterFormatting(doc);
-		// 	},
-		// 	margins
-		// );
-		// doc.addPage([2], 'p');
-		// doc.fromHTML(
-		// 	'Hello World',
-		// 	margins.left,
-		// 	margins.top,
-		// 	{ width: margins.width },
-		// 	() => {
-		// 		// headerFooterFormatting(doc);
-		// 	},
-		// 	margins
-		// );
-		// doc.save(`${fileName}-cv.pdf`, { returnPromise: true }).then(() => {
-		// 	setTimeout(() => resolve(), 1000);
-		// });
-	});
-}
-*/
