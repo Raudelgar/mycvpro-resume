@@ -20,18 +20,26 @@ export default function ExperienceContent({ content, theme }) {
 						</span>
 					) : null}
 					<span className='section-value'>
-						{obj.description.map(({ taskId, task, subtasks }) => (
-							<div key={taskId} className='section-desc'>
-								<span className='section-value'>{task}</span>
-								<div className='section-task'>
-									{subtasks.map(({ subtaskId, subtask }) => (
-										<div key={subtaskId}>
-											<span className='section-value sub-task'>{subtask}</span>
-										</div>
-									))}
+						<ul>
+							{obj.description.map(({ taskId, task, subtasks }) => (
+								<div key={taskId} className='section-desc'>
+									<li>
+										<span className='section-value task'>{task}</span>
+									</li>
+									<div className='section-task'>
+										<ul>
+											{subtasks.map(({ subtaskId, subtask }) => (
+												<li key={subtaskId}>
+													<span className='section-value sub-task'>
+														{subtask}
+													</span>
+												</li>
+											))}
+										</ul>
+									</div>
 								</div>
-							</div>
-						))}
+							))}
+						</ul>
 					</span>
 					<div className={`${theme}-section-border`}></div>
 				</div>

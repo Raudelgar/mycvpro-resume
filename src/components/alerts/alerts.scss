@@ -1,0 +1,85 @@
+@import '../../sass/_colors.scss';
+
+//Copy Link Success
+.cp-alert-container {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 45px;
+	display: flex;
+	justify-content: flex-end;
+	top: 0px;
+
+	.cp-success {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		background-color: $bg-green;
+		color: $text-green;
+		display: flex;
+		align-items: center;
+		font-size: 1.2rem;
+		animation: animflowdown 2.5s;
+		animation-fill-mode: forwards;
+
+		.cp-alert-msg {
+			margin-left: 40%;
+		}
+	}
+}
+
+//Messages Sent Success
+.email-alert-container {
+	position: fixed;
+	width: 100%;
+	height: 45px;
+	display: flex;
+	justify-content: center;
+	bottom: 0px;
+	z-index: 1;
+
+	.email-success {
+		position: relative;
+		width: 100%;
+		min-width: 275px;
+		max-width: 400px;
+		height: 100%;
+		background-color: $bg-green;
+		color: $text-green;
+		display: flex;
+		align-items: center;
+		font-size: 1.2rem;
+		border-radius: 0.2em;
+		border: 1px solid $text-green;
+		animation: animflowup 2.5s;
+		animation-fill-mode: forwards;
+
+		.email-alert-msg {
+			margin-left: auto;
+		}
+	}
+}
+
+@keyframes animflowdown {
+	0% {
+		top: -45px;
+	}
+	50% {
+		top: 0;
+	}
+	100% {
+		top: -45px;
+	}
+}
+
+@keyframes animflowup {
+	0% {
+		bottom: -45px;
+	}
+	50% {
+		bottom: 1px;
+	}
+	100% {
+		bottom: -45px;
+	}
+}

@@ -1,5 +1,5 @@
-export function logoLoaderSelector({ isLogoLoader }) {
-	return isLogoLoader;
+export function loaderSelector({ isLoading }) {
+	return isLoading;
 }
 
 export function profileSelector({ profile }) {
@@ -16,4 +16,8 @@ export function experienceSelector({ experience }) {
 
 export function educationSelector({ education }) {
 	return education;
+}
+
+export function pdfSelector({ pdfState }) {
+	return pdfState;
 }

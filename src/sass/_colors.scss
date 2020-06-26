@@ -1,18 +1,35 @@
-$base-blue: #1768aa;
-$bg-blue-hover: #1d90d2;
-$fb-green-blue: #61dafb;
-$base-dark: #1f2020;
-$dark-text-color: #000000e6;
-$bg-loader-opacity: #1818189a;
+/********************/
+// LIGHT-THEME
+$primary-blue: #05599e;
+$secondary-blue: #0670c6;
+
+$text-green: #0c6e3d;
+$hover-green: #8fcc94;
+$bg-green: #c7e5c9;
+
+$primary-red: #cc2900;
+
 $dark-hover-gray: #2b2b2b;
-$bg-dark-hover: #37383a;
-$bg-dark-app: #444444;
 $dark-gray: #5d5d5d;
-$light-gray: #b4b4b4;
 $footer-tab-gray: #a9a9a9;
-$bg-light-app: #dcdcdc;
+$light-gray: #b4b4b4;
 $light-hover-gray: #cccccc;
-// $light-text-color: #ffff;
-// $light-text-color: #ffffffe6;
-$light-text-color: #fffffff2;
-$bright-white-color: #fffefe;
+$light-gray-d6: #d6d6d6;
+$bg-white: #f5f5f5;
+$white: #ffffffe3;
+$bright-white: #fffefe;
+
+$rich-black-froga: #0a0a0a;
+$text-color-light-theme: #141414;
+$bg-loader-opacity: #1818189a;
+$bg-modal-opacity: #0000005d;
+
+//DARK-THEME
+// $smoky-black: #121212;
+$primary-black: #292929; //jet
+$jet: #292929;
+$bg-component: #424242; //onyx
+// $bg-component: #474747;
+$bg-dark-hover: #37383a;
+
+$component-blue-dark-theme: #81d4fa;

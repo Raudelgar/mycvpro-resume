@@ -20,6 +20,7 @@ const usersInfo = [
 		[userId]: {
 			id: userId,
 			section: 'profile',
+			username: 'raudelgar',
 			name: 'Raudel Garcia',
 			email: 'raudel24@gmail.com',
 			phone: '+1(919)-592-6362',

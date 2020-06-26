@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import { ThemeContext } from '../../../context/Context.js';
+import { ThemeContext } from '../../../context/ThemeContext.js';
 import useExperienceState from '../../../hooks/useExperienceState.js';
 import SectionHeader from '../SectionHeader.js';
 import ExperienceContent from './ExperienceContent.js';

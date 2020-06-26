@@ -1,0 +1,62 @@
+@import '../../../sass/_colors.scss';
+
+//Close Btn
+.close-alert {
+	margin-left: auto;
+	width: 45px;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+
+	.close-icon {
+		color: $white;
+		width: 25px;
+		height: 25px;
+	}
+
+	&:hover {
+		background-color: $hover-green;
+		.close-icon {
+			color: $bright-white;
+		}
+	}
+}
+
+.light-close-email,
+.dark-close-email {
+	width: 26px;
+	height: 24px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0.2em;
+	margin-right: 5px;
+	cursor: pointer;
+	position: absolute;
+	right: 0;
+	color: $bg-white;
+
+	.close-icon {
+		width: 18px;
+		height: 18px;
+	}
+
+	&:hover {
+		background-color: $secondary-blue;
+		.close-icon {
+			color: $bright-white;
+		}
+	}
+}
+
+.dark-close-email {
+	color: $component-blue-dark-theme;
+
+	&:hover {
+		// background-color: $bg-dark-hover;
+		background-color: $dark-gray;
+		color: $bright-white;
+	}
+}

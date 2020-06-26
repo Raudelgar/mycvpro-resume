@@ -7,6 +7,11 @@
 		"@testing-library/jest-dom": "^4.2.4",
 		"@testing-library/react": "^9.5.0",
 		"@testing-library/user-event": "^7.2.1",
+		"axios": "^0.19.2",
+		"html2canvas": "^1.0.0-rc.5",
+		"jspdf": "^1.5.3",
+		"node-sass-chokidar": "^1.4.0",
+		"pdfmake": "^0.1.65",
 		"query-string": "^6.12.1",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
@@ -40,7 +45,6 @@
 	},
 	"devDependencies": {
 		"history": "^4.10.1",
-		"node-sass": "^4.14.1",
 		"uuid": "^8.0.0"
 	}
 }

@@ -10,7 +10,6 @@
 
 	.grid-container {
 		display: grid;
-		// grid-auto-rows: minmax(150px, 300px);
 		grid-auto-rows: auto;
 		grid-gap: 10px 10px;
 		padding: 10px 0;
@@ -18,17 +17,20 @@
 
 		.light-grid-item,
 		.dark-grid-item {
-			background-color: $light-text-color;
+			background-color: $white;
 			border-radius: 0.2em;
 			padding: 10px;
-			color: $dark-text-color;
+			color: $text-color-light-theme;
 			@include light-section-shadow;
 		}
 
 		.dark-grid-item {
-			background-color: $base-dark;
-			color: $light-text-color;
-			@include dark-section-shadow;
+			background-color: $bg-component;
+			color: $bg-white;
+			// @include dark-section-shadow;
+			// transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+			box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+				0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 		}
 	}
 }

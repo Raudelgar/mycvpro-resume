@@ -64,6 +64,22 @@
 	@media (max-width: $content-width) {
 		.main-container {
 			width: 100%;
+			// overflow-y: scroll;
+		}
+	}
+}
+
+@mixin email-form-media {
+	@media (min-width: $nav-main-width) {
+		.light-email-form,
+		.dark-email-form {
+			width: $content-width;
+		}
+		.light-email-form-mini,
+		.dark-email-form-mini {
+			position: fixed;
+			width: 240px;
+			height: 40px;
 		}
 	}
 }

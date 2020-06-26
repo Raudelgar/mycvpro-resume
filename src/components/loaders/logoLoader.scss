@@ -2,11 +2,32 @@
 
 .logo-container {
 	position: relative;
+	width: 120px;
+	height: 120px;
+	// background-color: #777;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-	.logo-icon {
-		width: 100px;
-		height: 100px;
-		color: $base-blue;
+	.loader-center {
+		position: absolute;
+		margin: 0;
+		width: 68px;
+		height: 66px;
+		// border: 0.5px solid $secondary-blue;
+		// border-top-left-radius: 0.3em;
+		// border-top-right-radius: 0.3em;
+		background-color: $secondary-blue;
+		border-radius: 0.2em;
+
+		.logo-icon {
+			width: 68px;
+			height: 68px;
+			// color: $primary-blue;
+			g {
+				fill: $bg-white;
+			}
+		}
 	}
 
 	.logo-label {
@@ -14,7 +35,7 @@
 		top: 40px;
 		left: 25px;
 		font-size: 2.5rem;
-		color: $light-text-color;
+		color: $bg-white;
 		font-weight: bold;
 		font-family: monospace;
 	}
@@ -23,10 +44,10 @@
 		width: 120px;
 		height: 120px;
 		position: absolute;
-		top: -10px;
-		left: -10px;
+		top: 0;
+		left: 0;
 		border: 2px solid transparent;
-		border-top-color: $base-blue;
+		border-top-color: #1768aa;
 		border-right-color: #1768aae0;
 		border-bottom-color: #1768aa85;
 		border-left-color: #1768aa14;

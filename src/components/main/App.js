@@ -1,28 +1,31 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { useDispatch } from 'react-redux';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import queryString from 'query-string';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import './main.scss';
 import NavBar from '../nav/NavBar.js';
-import { ThemeContext } from '../../context/Context.js';
-import useTheme from '../../hooks/useTheme.js';
+import { ThemeContext } from '../../context/ThemeContext.js';
 import LogoLoader from '../loaders/LogoLoader.js';
 import Home from '../pages/home/Home.js';
 import Footer from '../footer/Footer.js';
-import useLogoLoaderState from '../../hooks/useLogoLoaderState.js';
+import useLoaderState from '../../hooks/useLoaderState.js';
 import { handleInitData } from '../../actions/rootAction.js';
 import useProfileState from '../../hooks/useProfileState';
+import AlertComponent from '../alerts/AlertComponent.js';
+import { AlertProvider } from '../../context/AlertContext';
+import { EmailProvider } from '../../context/EmailContext';
+import EmailComponent from '../pages/messages/EmailComponent';
+import { isObjectEmpty } from '../../utils/helpers';
+import PdfTemplate from '../view/pdf/PdfTemplate';
 
 export default function App() {
-	const [theme, handleTheme] = useTheme();
-	const isLoading = useLogoLoaderState();
+	const { theme } = useContext(ThemeContext);
 	const userProfile = useProfileState();
+	const isLoading = useLoaderState();
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		const { cvid } = queryString.parse(window.location.search);
-		dispatch(handleInitData(cvid));
+		dispatch(handleInitData());
 	}, [dispatch]);
 
 	useEffect(() => {
@@ -31,17 +34,36 @@ export default function App() {
 
 	return (
 		<Router>
-			<ThemeContext.Provider value={{ theme, handleTheme }}>
-				{isLoading ? (
-					<LogoLoader />
-				) : (
-					<div className={`${theme}-App`}>
-						<NavBar />
-						<Home />
-						<Footer />
-					</div>
+			<AlertProvider>
+				<LogoLoader />
+				{!isObjectEmpty(userProfile) && (
+					<EmailProvider>
+						<div className={`${theme}-App`}>
+							<AlertComponent />
+							<EmailComponent />
+							<NavBar />
+							<Home />
+							<Footer />
+							<PdfTemplate />
+						</div>
+					</EmailProvider>
 				)}
-			</ThemeContext.Provider>
+			</AlertProvider>
 		</Router>
 	);
 }
+
+/*
+{!isObjectEmpty(userProfile) && (
+					<EmailProvider>
+						<div className={`${theme}-App`}>
+							<AlertComponent />
+							<EmailComponent />
+							<NavBar />
+							<Home />
+							<Footer />
+							<PdfTemplate />
+						</div>
+					</EmailProvider>
+				)}
+*/

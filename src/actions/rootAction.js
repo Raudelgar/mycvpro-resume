@@ -1,21 +1,26 @@
-import { showLogoLoader, hideLogoLoader } from './logoLoaderAction.js';
-import { fetchInitData } from '../api/v1/api.js';
+import { showLoader, hideLoader } from './loaderAction.js';
+import { fetchInitData, getUrlParams } from '../api/v1/api.js';
 import { getProfile } from './profileAction.js';
 import { getSkills } from './skillsAction.js';
 import { getExperience } from './experienceAction.js';
 import { getEducation } from './educationAction.js';
 
-export function handleInitData(id) {
+export function handleInitData() {
 	return (dispatch) => {
-		dispatch(showLogoLoader());
+		dispatch(showLoader('main'));
 		//call API
-		fetchInitData(id)
-			.then(({ profile, skills, experience, education }) => {
-				dispatch(getProfile(profile));
-				dispatch(getSkills(skills));
-				dispatch(getExperience(experience));
-				dispatch(getEducation(education));
+		getUrlParams()
+			.then(({ id }) => {
+				fetchInitData(id)
+					.then(({ profile, skills, experience, education }) => {
+						dispatch(getSkills(skills));
+						dispatch(getExperience(experience));
+						dispatch(getEducation(education));
+						dispatch(getProfile(profile));
+					})
+					.catch((err) => console.log(err))
+					.then(() => dispatch(hideLoader()));
 			})
-			.then((_) => dispatch(hideLogoLoader()));
+			.catch((error) => console.log('redirect to login page', error));
 	};
 }
