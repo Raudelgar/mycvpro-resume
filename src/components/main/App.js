@@ -52,3 +52,18 @@ export default function App() {
 		</Router>
 	);
 }
+
+/*
+{!isObjectEmpty(userProfile) && (
+					<EmailProvider>
+						<div className={`${theme}-App`}>
+							<AlertComponent />
+							<EmailComponent />
+							<NavBar />
+							<Home />
+							<Footer />
+							<PdfTemplate />
+						</div>
+					</EmailProvider>
+				)}
+*/
