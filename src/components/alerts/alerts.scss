@@ -60,6 +60,83 @@
 	}
 }
 
+//Error Modal
+.error-alert-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	// background-color: $footer-tab-gray;
+	background-image: url('/assets/unsplash-notebook.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	z-index: 1;
+
+	.notfound-icon {
+		position: absolute;
+		width: 375px;
+		height: 375px;
+		top: 80px;
+	}
+
+	.error-msg {
+		width: 350px;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+
+		.error-msg-title,
+		.error-msg-content {
+			width: 100%;
+			font-family: 'Courier New', Courier, monospace;
+			text-align: center;
+		}
+
+		.error-msg-title {
+			margin-bottom: 20px;
+			font-size: 1.5rem;
+			font-weight: 700;
+		}
+
+		.error-msg-content {
+			font-size: 1rem;
+			font-weight: 600;
+
+			.btn-home {
+				font: inherit;
+				width: 90px;
+				height: 25px;
+				background-color: transparent;
+			}
+		}
+	}
+
+	.error {
+		position: relative;
+		width: 400px;
+		height: 100px;
+		background-color: $bg-white;
+		color: $primary-red;
+		display: flex;
+		align-items: center;
+		font-size: 1.2rem;
+		border-radius: 0.2em;
+		border: 1px solid $primary-red;
+		// animation: animflowup 2.5s;
+		// animation-fill-mode: forwards;
+
+		.error-alert-msg {
+			margin-left: auto;
+		}
+	}
+}
+
 @keyframes animflowdown {
 	0% {
 		top: -45px;

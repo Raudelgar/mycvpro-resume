@@ -38,40 +38,29 @@ export async function fetchInitData(id) {
 export function getUrlParams() {
 	let url;
 
-	//On Development
-	//TODO: Remove for Production
-	if (process.env.NODE_ENV === 'development') {
-		url = '8n20r82m3v3mo2kviusagq';
+	const { cvid, usr, share } = queryString.parse(window.location.search);
+	// if (usr) console.log(usr);
+	// if (share) console.log(share);
 
-		return Promise.resolve({ id: url });
-	} else {
-		const { cvid, usr, share } = queryString.parse(window.location.search);
-		// if (usr) console.log(usr);
-		// if (share) console.log(share);
-
-		return new Promise((resolve, reject) => {
+	return new Promise((resolve, reject) => {
+		if (NODE_ENV !== 'production') {
+			setTimeout(() => {
+				if (cvid) {
+					url = cvid;
+					resolve({ id: url });
+				} else {
+					reject('No query params');
+				}
+			}, 1000);
+		} else {
 			if (cvid) {
 				url = cvid;
 				resolve({ id: url });
 			} else {
 				reject('No query params');
 			}
-		});
-	}
-
-	//TODO: PROD Code
-	// const { cvid, usr, share } = queryString.parse(window.location.search);
-	// 	if (usr) console.log(usr);
-	// 	if (share) console.log(share);
-
-	// 	return new Promise((resolve, reject) => {
-	// 		if (cvid) {
-	// 			url = cvid;
-	// 			resolve({ id: url });
-	// 		} else {
-	// 			reject('No query params');
-	// 		}
-	// 	});
+		}
+	});
 }
 
 export async function sendMessages(

@@ -6,3 +6,4 @@ export const INIT_EXPE = 'INIT_EXPE';
 export const INIT_EDU = 'INIT_EDU';
 export const GET_PDF = 'GET_PDF';
 export const PDF_DONE = 'PDF_DONE';
+export const ERROR_PARAM = 'ERROR_PARAM';
