@@ -11,6 +11,7 @@ import useProfileState from '../../../hooks/useProfileState';
 import { AlertContext } from '../../../context/AlertContext';
 import SuccessMsg from '../../alerts/SuccessMsg';
 
+//TODO: Create a discard messages body btn. The action is discardEmailContent
 export default function EmailForm() {
 	const profile = useProfileState();
 	const { theme } = useContext(ThemeContext);
@@ -169,7 +170,7 @@ export default function EmailForm() {
 						<button type='submit' className='btn-send-email'>
 							Send
 						</button>
-						<FaTrash className='discard-icon' onClick={discardEmailContent} />
+						<FaTrash className='discard-icon' onClick={handleCloseForm} />
 					</div>
 				</form>
 			</div>
