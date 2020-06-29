@@ -1,10 +1,10 @@
 @import '../../sass/_colors.scss';
+@import '../../sass/_variables.scss';
 
 .light-App,
 .dark-App {
-	font-family: sans-serif;
-	// background-color: $bg-light-app;
 	background-color: $light-gray-d6;
+	width: $mobile-width;
 	min-height: 100vh;
 	animation: show linear 0.5s;
 }

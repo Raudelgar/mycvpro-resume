@@ -4,7 +4,7 @@
 @import '../../../sass/_responsive.scss';
 
 .main-container {
-	width: $content-width;
+	width: 365px;
 	position: relative;
 	margin: 0 auto;
 
@@ -35,4 +35,4 @@
 	}
 }
 
-@include content-media;
+// @include content-media;
