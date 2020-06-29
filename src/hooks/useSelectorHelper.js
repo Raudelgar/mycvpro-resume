@@ -21,3 +21,7 @@ export function educationSelector({ education }) {
 export function pdfSelector({ pdfState }) {
 	return pdfState;
 }
+
+export function errorSelector({ error }) {
+	return error;
+}

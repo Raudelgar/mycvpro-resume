@@ -5,12 +5,15 @@ import App from './components/main/App';
 import store from './store.js';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from './context/ThemeContext';
+import { AlertProvider } from './context/AlertContext';
 
 ReactDOM.render(
 	<React.StrictMode>
 		<Provider store={store}>
 			<ThemeProvider>
-				<App />
+				<AlertProvider>
+					<App />
+				</AlertProvider>
 			</ThemeProvider>
 		</Provider>
 	</React.StrictMode>,

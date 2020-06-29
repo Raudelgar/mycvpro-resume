@@ -5,6 +5,7 @@ import skilsReducer from './skilsReducer.js';
 import experienceReducer from './experienceReducer.js';
 import educationReducer from './educationReducer.js';
 import pdfReducer from './pdfReducer.js';
+import errorReducer from './errorReducer.js';
 
 const STATE = {
 	isLoading: loaderReducer,
@@ -13,6 +14,7 @@ const STATE = {
 	experience: experienceReducer,
 	education: educationReducer,
 	pdfState: pdfReducer,
+	error: errorReducer,
 };
 
 export default combineReducers(STATE);
