@@ -41,7 +41,7 @@ export function getUrlParams() {
 	//On Development
 	//TODO: Remove for Production
 	if (process.env.NODE_ENV === 'development') {
-		url = 'n0ccdo4t1gjl1rrq466xr';
+		url = '8n20r82m3v3mo2kviusagq';
 
 		return Promise.resolve({ id: url });
 	} else {
@@ -82,14 +82,15 @@ export async function sendMessages(
 	content,
 	profile
 ) {
-	let url;
+	let baseUrl;
 
 	if (NODE_ENV !== 'production') {
-		url = services.messages.dev;
+		baseUrl = services.messages.dev;
 	} else {
-		url = services.messages.prod;
+		baseUrl = services.messages.prod;
 	}
 
+	const URL = `${baseUrl}${profile.id}`;
 	const DATA = {
 		name,
 		company,
@@ -100,7 +101,7 @@ export async function sendMessages(
 	};
 
 	try {
-		const response = await axios.post(url, DATA);
+		const response = await axios.post(URL, DATA);
 		const { data } = await response;
 		return data;
 	} catch (error) {
