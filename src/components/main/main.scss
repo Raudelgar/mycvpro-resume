@@ -1,5 +1,6 @@
 @import '../../sass/_colors.scss';
 @import '../../sass/_variables.scss';
+@import '../../sass/_responsive.scss';
 
 .light-App,
 .dark-App {
@@ -22,3 +23,5 @@
 		opacity: 1;
 	}
 }
+
+@include main-media;
