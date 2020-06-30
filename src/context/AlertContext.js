@@ -9,14 +9,14 @@ export const AlertProvider = (props) => {
 		error: false,
 	});
 
-	useEffect(() => {
-		//remove alert element after 2.5s
-		let timerID = 0;
-		if (show.bool && !show.error) {
-			timerID = window.setTimeout(() => hideAlert(), 2500);
-		}
-		return () => window.clearTimeout(timerID);
-	}, [show]);
+	// useEffect(() => {
+	// 	//remove alert element after 2.5s
+	// 	let timerID = 0;
+	// 	if (show.bool && !show.error) {
+	// 		timerID = window.setTimeout(() => hideAlert(), 2500);
+	// 	}
+	// 	return () => window.clearTimeout(timerID);
+	// }, [show]);
 
 	const showAlert = (component, error = false) =>
 		setShow({ bool: true, component, error });

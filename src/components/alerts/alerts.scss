@@ -23,7 +23,8 @@
 		animation-fill-mode: forwards;
 
 		.cp-alert-msg {
-			margin-left: 40%;
+			width: 100%;
+			text-align: center;
 		}
 	}
 }
@@ -55,7 +56,8 @@
 		animation-fill-mode: forwards;
 
 		.email-alert-msg {
-			margin-left: auto;
+			text-align: center;
+			width: 100%;
 		}
 	}
 }
