@@ -107,10 +107,23 @@
 }
 
 @mixin email-container-media {
-	@media (min-width: $nav-main-width) {
+	@media (min-width: 460px) {
 		.light-email-form,
 		.dark-email-form {
-			width: $content-width;
+			position: fixed;
+			top: auto;
+			left: auto;
+			right: 10px;
+			bottom: 0.5px;
+			width: 310px;
+			height: 500px;
+		}
+		.light-email-form-relative,
+		.dark-email-form-relative {
+			position: initial;
+			z-index: 2;
+			width: 80%;
+			max-width: $content-width;
 		}
 		.light-email-form-mini,
 		.dark-email-form-mini {
@@ -120,7 +133,7 @@
 		}
 	}
 
-	@media screen and (orientation: landscape) {
+	@media only screen and (min-device-width: 320px) and (max-device-width: 780px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
 		.light-email-form,
 		.dark-email-form {
 			height: 100%;
@@ -140,14 +153,3 @@
 		}
 	}
 }
-
-// @mixin email-form-media {
-// 	@media screen and (orientation: landscape) {
-// 		.light-email-form,
-// 		.dark-email-form,
-// 		.light-email-form-mini,
-// 		.dark-email-form-mini {
-// 			height: 200px;
-// 		}
-// 	}
-// }
