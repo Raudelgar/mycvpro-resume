@@ -10,6 +10,9 @@ import { sendMessages } from '../../../api/v1/api';
 import useProfileState from '../../../hooks/useProfileState';
 import { AlertContext } from '../../../context/AlertContext';
 import SuccessMsg from '../../alerts/SuccessMsg';
+import { useRef } from 'react';
+import { useEffect } from 'react';
+import useWindowSize from '../../../hooks/useWindowSize';
 
 //TODO: Create a discard messages body btn. The action is discardEmailContent
 export default function EmailForm() {
@@ -38,6 +41,20 @@ export default function EmailForm() {
 		cleanUpForm,
 		discardEmailContent,
 	} = useContext(EmailContext);
+	const textAreaRef = useRef(null);
+	const emailModalRef = useRef(null);
+	const [textAreaHeight, setTextAreaHeight] = useState('');
+	const windowSize = useWindowSize();
+
+	useEffect(() => {
+		const baseHeight = emailModalRef.current.offsetHeight;
+		const DIFF = 265; //header: 40px, form: 160px, margin: 20px, footer: 40px, marginBootom: 5px
+		setTextAreaHeight(baseHeight - DIFF);
+	}, [windowSize]);
+
+	useEffect(() => {
+		textAreaRef.current.style.height = `${textAreaHeight}px`;
+	}, [textAreaHeight]);
 
 	const handleCloseForm = () => {
 		cleanUpForm();
@@ -79,6 +96,7 @@ export default function EmailForm() {
 			className={`${theme}-email-form ${
 				miniBottom ? `${theme}-email-form-mini` : ''
 			} ${!miniScreen ? `${theme}-email-form-relative` : ''}`}
+			ref={emailModalRef}
 		>
 			<div className={`${theme}-email-form-header`}>
 				<div className='email-header-subject'>
@@ -160,6 +178,7 @@ export default function EmailForm() {
 						</div>
 					</div>
 					<textarea
+						ref={textAreaRef}
 						name='email-textarea'
 						id='descreption'
 						className={`email-textarea`}

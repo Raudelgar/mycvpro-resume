@@ -17,7 +17,7 @@
 	background-color: $bg-modal-opacity;
 	z-index: 1;
 
-	@include email-form-media;
+	@include email-container-media;
 }
 
 .form-container-hide {
