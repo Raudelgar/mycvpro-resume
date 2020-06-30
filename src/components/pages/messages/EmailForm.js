@@ -50,7 +50,7 @@ export default function EmailForm() {
 		const baseHeight = emailModalRef.current.offsetHeight;
 		const DIFF = 265; //header: 40px, form: 160px, margin: 20px, footer: 40px, marginBootom: 5px
 		setTextAreaHeight(baseHeight - DIFF);
-	}, [windowSize]);
+	}, [windowSize, miniBottom, miniScreen]);
 
 	useEffect(() => {
 		textAreaRef.current.style.height = `${textAreaHeight}px`;

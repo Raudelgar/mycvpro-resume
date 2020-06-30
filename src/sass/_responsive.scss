@@ -122,12 +122,21 @@
 
 	@media screen and (orientation: landscape) {
 		.light-email-form,
-		.dark-email-form,
-		.light-email-form-mini,
-		.dark-email-form-mini {
+		.dark-email-form {
 			height: 100%;
 			width: 100%;
 			right: 0;
+		}
+
+		.light-email-form-mini,
+		.dark-email-form-mini {
+			position: fixed;
+			width: 240px;
+			height: 40px;
+			bottom: 0.5px;
+			right: 10px;
+			top: auto;
+			left: auto;
 		}
 	}
 }
