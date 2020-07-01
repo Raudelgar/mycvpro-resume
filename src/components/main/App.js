@@ -19,6 +19,7 @@ import { isObjectEmpty } from '../../utils/helpers';
 import PdfTemplate from '../view/pdf/PdfTemplate';
 import useErrorState from '../../hooks/useErrorState.js';
 import ErrorMsg from '../alerts/ErrorMesg';
+import { Animated } from 'react-animated-css';
 
 export default function App() {
 	const { theme } = useContext(ThemeContext);
@@ -52,18 +53,22 @@ export default function App() {
 		<Router>
 			<LogoLoader />
 			{!isObjectEmpty(userProfile) && (
-				<EmailProvider>
-					<div className={`${theme}-App`}>
-						<AlertComponent />
-						<EmailComponent />
-						<NavBar />
-						<Home />
-						<Footer />
-						<PdfTemplate />
-					</div>
-				</EmailProvider>
+				<Animated animationIn='fadeIn' animationInDelay={900}>
+					<EmailProvider>
+						<div className={`${theme}-App`}>
+							<AlertComponent />
+							<EmailComponent />
+							<NavBar />
+							<Home />
+							<Footer />
+							<PdfTemplate />
+						</div>
+					</EmailProvider>
+				</Animated>
 			)}
-			<AlertComponent />
+			<Animated animationIn='fadeIn' animationInDelay={900}>
+				<AlertComponent />
+			</Animated>
 		</Router>
 	);
 }

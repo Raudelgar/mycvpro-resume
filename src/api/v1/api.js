@@ -43,22 +43,11 @@ export function getUrlParams() {
 	// if (share) console.log(share);
 
 	return new Promise((resolve, reject) => {
-		if (NODE_ENV !== 'production') {
-			setTimeout(() => {
-				if (cvid) {
-					url = cvid;
-					resolve({ id: url });
-				} else {
-					reject('No query params');
-				}
-			}, 1000);
+		if (cvid) {
+			url = cvid;
+			resolve({ id: url });
 		} else {
-			if (cvid) {
-				url = cvid;
-				resolve({ id: url });
-			} else {
-				reject('No query params');
-			}
+			reject('No query params');
 		}
 	});
 }

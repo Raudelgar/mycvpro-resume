@@ -1,7 +1,7 @@
 @import './_variables.scss';
 
 @mixin main-media {
-	@media (min-width: $mobile-width) {
+	@media (min-width: $mobile-media-width) {
 		.light-App,
 		.dark-App {
 			width: 100%;
@@ -10,7 +10,7 @@
 }
 
 @mixin content-media {
-	@media (min-width: $mobile-width) {
+	@media (min-width: $mobile-media-width) {
 		.main-container {
 			width: 95%;
 		}
@@ -24,7 +24,7 @@
 }
 
 @mixin footer-media {
-	@media (min-width: $mobile-width) {
+	@media (min-width: $mobile-media-width) {
 		.footer-container {
 			width: 100%;
 		}
