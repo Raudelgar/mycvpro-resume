@@ -153,3 +153,27 @@
 		}
 	}
 }
+
+@mixin pagenotfound-media {
+	@media only screen and (min-device-width: 320px) and (max-device-width: 815px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+		.error-alert-container {
+			.notfound-icon {
+				width: 30%;
+				height: 80px;
+			}
+
+			.error-msg {
+				width: 30%;
+
+				.error-msg-title {
+					margin: 5px 0 10px 0;
+					font-size: 1rem;
+				}
+
+				.error-msg-content {
+					font-size: 0.8rem;
+				}
+			}
+		}
+	}
+}
