@@ -73,22 +73,27 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	// background-color: $footer-tab-gray;
+	background-color: $footer-tab-gray;
 	background-image: url('/assets/unsplash-notebook.jpg');
-	background-position: center;
+	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-attachment: fixed;
+	overflow: hidden;
 	z-index: 1;
 
 	.notfound-icon {
-		position: absolute;
-		width: 375px;
-		height: 375px;
-		top: 80px;
+		// position: absolute;
+		// top: calc(100% - 85%);
+		width: 70%;
+		// width: 375px;
+		// height: 375px;
+		// top: 80px;
 	}
 
 	.error-msg {
-		width: 350px;
+		width: 80%;
+		// width: 350px;
 		display: flex;
 		flex-direction: column;
 		flex-wrap: wrap;
@@ -101,7 +106,7 @@
 		}
 
 		.error-msg-title {
-			margin-bottom: 20px;
+			margin: 5px 0 20px 0;
 			font-size: 1.5rem;
 			font-weight: 700;
 		}
@@ -109,6 +114,7 @@
 		.error-msg-content {
 			font-size: 1rem;
 			font-weight: 600;
+			line-height: 20px;
 
 			.btn-home {
 				font: inherit;
