@@ -9,7 +9,9 @@ export default function SuccessMsg({ msg, styles }) {
 	return (
 		<div className={styles.container}>
 			<div className={styles.success}>
-				<span className={styles.msg}>{msg}</span>
+				<div className={styles.msg}>
+					<span>{msg}</span>
+				</div>
 				<CloseBtn
 					event={hideAlert}
 					styles={{ container: 'close-alert', icon: 'close-icon' }}
