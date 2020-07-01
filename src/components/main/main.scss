@@ -5,9 +5,10 @@
 .light-App,
 .dark-App {
 	background-color: $light-gray-d6;
-	width: $mobile-width;
+	// width: $mobile-width;
+	width: 100vw;
 	min-height: 100vh;
-	animation: show linear 0.5s;
+	// animation: show linear 0.3s;
 }
 
 .dark-App {
