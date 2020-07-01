@@ -84,17 +84,11 @@
 	z-index: 1;
 
 	.notfound-icon {
-		// position: absolute;
-		// top: calc(100% - 85%);
 		width: 70%;
-		// width: 375px;
-		// height: 375px;
-		// top: 80px;
 	}
 
 	.error-msg {
 		width: 80%;
-		// width: 350px;
 		display: flex;
 		flex-direction: column;
 		flex-wrap: wrap;
@@ -125,25 +119,6 @@
 			}
 		}
 	}
-
-	// .error {
-	// 	position: relative;
-	// 	width: 400px;
-	// 	height: 100px;
-	// 	background-color: $bg-white;
-	// 	color: $primary-red;
-	// 	display: flex;
-	// 	align-items: center;
-	// 	font-size: 1.2rem;
-	// 	border-radius: 0.2em;
-	// 	border: 1px solid $primary-red;
-	// 	// animation: animflowup 2.5s;
-	// 	// animation-fill-mode: forwards;
-
-	// 	.error-alert-msg {
-	// 		margin-left: auto;
-	// 	}
-	// }
 }
 
 @include pagenotfound-media;

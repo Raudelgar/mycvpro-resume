@@ -176,4 +176,26 @@
 			}
 		}
 	}
+
+	@media (min-width: $ipad-width) {
+		.error-alert-container {
+			.notfound-icon {
+				width: 375px;
+				height: 200px;
+			}
+
+			.error-msg {
+				width: 350px;
+
+				.error-msg-title {
+					margin: 20px 0 20px 0;
+					font-size: 2rem;
+				}
+
+				.error-msg-content {
+					font-size: 1.2rem;
+				}
+			}
+		}
+	}
 }
