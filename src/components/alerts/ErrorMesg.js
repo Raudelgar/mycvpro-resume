@@ -1,12 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
 import './alerts.scss';
-import { AlertContext } from '../../context/AlertContext';
-import CloseBtn from '../view/buttons/CloseBtn';
 
 export default function ErrorMsg({ msg, styles }) {
-	const { hideAlert } = useContext(AlertContext);
-
 	const handleGoHome = () => {
 		window.location.replace('https://cvcodepro.com');
 	};

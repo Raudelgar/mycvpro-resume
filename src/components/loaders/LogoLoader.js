@@ -1,31 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './loaders.scss';
 import useLoaderState from '../../hooks/useLoaderState.js';
 import { Animated } from 'react-animated-css';
-import { useState } from 'react';
-import { useEffect } from 'react';
 
 export default function LogoLoader() {
 	const isLoading = useLoaderState();
 	const [render, setRender] = useState(false);
 
 	useEffect(() => {
+		let delay = 0;
 		if (isLoading.bool && isLoading.scope === 'main') {
 			setRender(true);
-		}
-	}, []);
-
-	useEffect(() => {
-		let delay = 0;
-		if (!isLoading.bool) {
+		} else if (!isLoading.bool) {
 			delay = window.setTimeout(() => {
 				setRender(false);
 			}, 2000);
 		}
 
 		return () => clearTimeout(delay);
-	}, [isLoading.bool]);
+	}, [isLoading]);
 
 	if (render) {
 		return (

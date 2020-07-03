@@ -1,4 +1,4 @@
-import { useSelector, shallowEqual } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { loaderSelector } from './useSelectorHelper.js';
 

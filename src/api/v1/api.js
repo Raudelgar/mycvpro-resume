@@ -1,7 +1,6 @@
 import axios from 'axios';
 import queryString from 'query-string';
 import services from '../services.js';
-import { pdfSelector } from '../../hooks/useSelectorHelper.js';
 import pdfTemplate from '../../resources/template.js';
 const NODE_ENV = process.env.NODE_ENV;
 
@@ -38,9 +37,7 @@ export async function fetchInitData(id) {
 export function getUrlParams() {
 	let url;
 
-	const { cvid, usr, share } = queryString.parse(window.location.search);
-	// if (usr) console.log(usr);
-	// if (share) console.log(share);
+	const { cvid } = queryString.parse(window.location.search);
 
 	return new Promise((resolve, reject) => {
 		if (cvid) {
