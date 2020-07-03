@@ -38,40 +38,18 @@ export async function fetchInitData(id) {
 export function getUrlParams() {
 	let url;
 
-	//On Development
-	//TODO: Remove for Production
-	if (process.env.NODE_ENV === 'development') {
-		url = '24z7oatl1xj1i9v2v687zj';
+	const { cvid, usr, share } = queryString.parse(window.location.search);
+	// if (usr) console.log(usr);
+	// if (share) console.log(share);
 
-		return Promise.resolve({ id: url });
-	} else {
-		const { cvid, usr, share } = queryString.parse(window.location.search);
-		// if (usr) console.log(usr);
-		// if (share) console.log(share);
-
-		return new Promise((resolve, reject) => {
-			if (cvid) {
-				url = cvid;
-				resolve({ id: url });
-			} else {
-				reject('No query params');
-			}
-		});
-	}
-
-	//TODO: PROD Code
-	// const { cvid, usr, share } = queryString.parse(window.location.search);
-	// 	if (usr) console.log(usr);
-	// 	if (share) console.log(share);
-
-	// 	return new Promise((resolve, reject) => {
-	// 		if (cvid) {
-	// 			url = cvid;
-	// 			resolve({ id: url });
-	// 		} else {
-	// 			reject('No query params');
-	// 		}
-	// 	});
+	return new Promise((resolve, reject) => {
+		if (cvid) {
+			url = cvid;
+			resolve({ id: url });
+		} else {
+			reject('No query params');
+		}
+	});
 }
 
 export async function sendMessages(
@@ -82,14 +60,15 @@ export async function sendMessages(
 	content,
 	profile
 ) {
-	let url;
+	let baseUrl;
 
 	if (NODE_ENV !== 'production') {
-		url = services.messages.dev;
+		baseUrl = services.messages.dev;
 	} else {
-		url = services.messages.prod;
+		baseUrl = services.messages.prod;
 	}
 
+	const URL = `${baseUrl}${profile.id}`;
 	const DATA = {
 		name,
 		company,
@@ -100,7 +79,7 @@ export async function sendMessages(
 	};
 
 	try {
-		const response = await axios.post(url, DATA);
+		const response = await axios.post(URL, DATA);
 		const { data } = await response;
 		return data;
 	} catch (error) {

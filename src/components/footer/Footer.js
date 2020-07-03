@@ -50,7 +50,7 @@ export default function Footer() {
 			<div className='region'>
 				<span className={`${theme}-lenguage ${theme}-text`}>en</span>
 				<span className={`${theme}-tab ${theme}-text`}>|</span>
-				<span className={`${theme}-country ${theme}-text`}>United State</span>
+				<span className={`${theme}-country ${theme}-text`}>United States</span>
 			</div>
 		</footer>
 	);

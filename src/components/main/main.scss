@@ -1,12 +1,14 @@
 @import '../../sass/_colors.scss';
+@import '../../sass/_variables.scss';
+@import '../../sass/_responsive.scss';
 
 .light-App,
 .dark-App {
-	font-family: sans-serif;
-	// background-color: $bg-light-app;
 	background-color: $light-gray-d6;
+	// width: $mobile-width;
+	width: 100vw;
 	min-height: 100vh;
-	animation: show linear 0.5s;
+	// animation: show linear 0.3s;
 }
 
 .dark-App {
@@ -22,3 +24,5 @@
 		opacity: 1;
 	}
 }
+
+@include main-media;

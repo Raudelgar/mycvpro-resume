@@ -5,61 +5,50 @@
 .light-nav,
 .dark-nav {
 	width: 100%;
-	height: 50px;
+	height: 110px;
 	background-color: $primary-blue;
 	color: $bg-white;
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
 	align-items: center;
 
 	.main-header {
-		width: $nav-main-width;
-		max-width: $nav-main-width;
-		height: 100%;
+		width: 100%;
+		height: 55px;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
 
-		.logo {
-			margin-left: 10px;
-			width: 39px;
-			height: 38px;
+		.light-logo,
+		.dark-logo {
+			margin-left: 5px;
+			width: 60px;
+			height: 41px;
+			background-color: transparent;
 
-			.light-logo-bg,
-			.dark-logo-bg {
-				width: 110px;
+			.logo-icon {
+				width: 60px;
 				height: 40px;
-				// background-color: $primary-blue;
-				background-color: transparent;
-				// border: 1.1px solid $primary-blue;
-				// border-radius: 0.2em;
+				color: $bg-white;
+				g {
+					fill: $bg-white;
+					stroke-width: 80;
+					stroke-linecap: square;
+				}
+			}
+		}
 
-				.logo-icon {
-					width: 110px;
-					height: 40px;
-					color: $bg-white;
-					g {
-						fill: $bg-white;
-						stroke-width: 80;
-						stroke-linecap: square;
-					}
-				}
-			}
-			.dark-logo-bg {
-				.logo-icon {
-					g {
-						fill: $component-blue-dark-theme;
-					}
-				}
-			}
+		.user-name {
+			font-size: 1.2rem;
+			font-weight: 600;
 		}
 
 		.user-avatar {
 			border-radius: 50%;
 			height: 50px;
 			width: 50px;
-			margin-right: 10px;
+			margin-right: 5px;
 			display: flex;
 			align-items: center;
 			padding: 5px;
@@ -78,6 +67,14 @@
 			height: 40px;
 			padding: 0;
 			border-radius: 50%;
+		}
+
+		.dark-logo {
+			.logo-icon {
+				g {
+					fill: $component-blue-dark-theme;
+				}
+			}
 		}
 	}
 }

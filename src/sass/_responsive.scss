@@ -1,85 +1,201 @@
+@import './_variables.scss';
+
+@mixin main-media {
+	@media (min-width: $mobile-media-width) {
+		.light-App,
+		.dark-App {
+			width: 100%;
+		}
+	}
+}
+
+@mixin content-media {
+	@media (min-width: $mobile-media-width) {
+		.main-container {
+			width: 95%;
+		}
+	}
+
+	@media (min-width: $content-width) {
+		.main-container {
+			width: $content-width;
+		}
+	}
+}
+
 @mixin footer-media {
-	@media (max-width: $footer-max-width) {
+	@media (min-width: $mobile-media-width) {
 		.footer-container {
 			width: 100%;
-			height: 75px;
-			flex-direction: column;
-			justify-content: center;
+		}
+	}
+	@media (min-width: $nav-max-width) {
+		.footer-container {
+			width: $content-width;
+			height: 55px;
+			flex-direction: row;
+			justify-content: space-between;
 			align-items: center;
 
+			.footer-nav,
+			.region {
+				display: flex;
+				align-items: center;
+			}
+
 			.footer-left {
-				width: 100%;
-				height: auto;
-				flex-direction: column;
-				justify-content: center;
+				width: 770px;
+				height: 100%;
+				flex-direction: row;
+				justify-content: flex-start;
+			}
+
+			.region {
+				margin-top: 0;
+				margin-bottom: 5px;
 			}
 		}
 	}
 }
 
 @mixin menu-media {
-	@media (max-width: $nav-max-width) {
-		.setting-menu-container {
+	@media (min-width: $nav-max-width) {
+		.collapse-menu-container {
 			display: none;
 		}
 
-		.collapse-menu-container {
+		.setting-menu-container {
 			display: flex;
-			position: relative;
-			// width: 45%;
-			min-width: 270px;
-			padding-bottom: 10px;
-
 			.light-menu-icons,
 			.dark-menu-icons {
-				position: relative;
-				display: flex;
-				width: 100%;
-				justify-content: space-around;
+				position: absolute;
+				background-color: $primary-blue;
+				top: 70px;
+				right: 20px;
+				border-radius: 0.2em;
+				box-shadow: 0 0.5px 0 1px #b4b4b4;
+			}
+
+			.dark-menu-icons {
+				background-color: $bg-component;
+				// transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+				box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+					0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+					0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 			}
 		}
 	}
 }
 
 @mixin nav-media {
-	@media (max-width: $nav-max-width) {
+	@media (min-width: $nav-max-width) {
 		.light-nav,
 		.dark-nav {
-			height: 100px;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			align-content: center;
-			font-size: 1.2rem;
+			height: 55px;
+			// display: flex;
+			// flex-direction: column;
+			// justify-content: center;
+			// align-items: center;
+			// align-content: center;
+			// font-size: 1.2rem;
 
 			.main-header {
-				width: 100%;
+				width: $nav-main-width;
 			}
 		}
 	}
 }
 
-@mixin content-media {
-	@media (max-width: $content-width) {
-		.main-container {
-			width: 100%;
-			// overflow-y: scroll;
-		}
-	}
-}
-
-@mixin email-form-media {
-	@media (min-width: $nav-main-width) {
+@mixin email-container-media {
+	@media (min-width: 460px) {
 		.light-email-form,
 		.dark-email-form {
-			width: $content-width;
+			position: fixed;
+			top: auto;
+			left: auto;
+			right: 10px;
+			bottom: 0.5px;
+			width: 310px;
+			height: 500px;
+		}
+		.light-email-form-relative,
+		.dark-email-form-relative {
+			position: initial;
+			z-index: 2;
+			width: 80%;
+			max-width: $content-width;
 		}
 		.light-email-form-mini,
 		.dark-email-form-mini {
 			position: fixed;
 			width: 240px;
 			height: 40px;
+		}
+	}
+
+	@media only screen and (min-device-width: 320px) and (max-device-width: 780px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+		.light-email-form,
+		.dark-email-form {
+			height: 100%;
+			width: 100%;
+			right: 0;
+		}
+
+		.light-email-form-mini,
+		.dark-email-form-mini {
+			position: fixed;
+			width: 240px;
+			height: 40px;
+			bottom: 0.5px;
+			right: 10px;
+			top: auto;
+			left: auto;
+		}
+	}
+}
+
+@mixin pagenotfound-media {
+	@media only screen and (min-device-width: 320px) and (max-device-width: 815px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+		.error-alert-container {
+			.notfound-icon {
+				width: 30%;
+				height: 80px;
+			}
+
+			.error-msg {
+				width: 30%;
+
+				.error-msg-title {
+					margin: 5px 0 10px 0;
+					font-size: 1rem;
+				}
+
+				.error-msg-content {
+					font-size: 0.8rem;
+				}
+			}
+		}
+	}
+
+	@media (min-width: $ipad-width) {
+		.error-alert-container {
+			.notfound-icon {
+				width: 375px;
+				height: 200px;
+			}
+
+			.error-msg {
+				width: 350px;
+
+				.error-msg-title {
+					margin: 20px 0 20px 0;
+					font-size: 2rem;
+				}
+
+				.error-msg-content {
+					font-size: 1.2rem;
+				}
+			}
 		}
 	}
 }

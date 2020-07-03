@@ -4,6 +4,7 @@ import { getProfile } from './profileAction.js';
 import { getSkills } from './skillsAction.js';
 import { getExperience } from './experienceAction.js';
 import { getEducation } from './educationAction.js';
+import { hanldeError } from './errorAction.js';
 
 export function handleInitData() {
 	return (dispatch) => {
@@ -18,9 +19,17 @@ export function handleInitData() {
 						dispatch(getEducation(education));
 						dispatch(getProfile(profile));
 					})
-					.catch((err) => console.log(err))
+					.catch((error) => {
+						// debugger;
+						dispatch(hanldeError(error));
+					})
 					.then(() => dispatch(hideLoader()));
 			})
-			.catch((error) => console.log('redirect to login page', error));
+			.catch((error) => {
+				// debugger;
+				dispatch(hanldeError(error));
+				// console.log('redirect to login page', error);
+			})
+			.then(() => dispatch(hideLoader()));
 	};
 }

@@ -1,4 +1,5 @@
 @import '../../sass/_colors.scss';
+@import '../../sass/_responsive.scss';
 
 //Copy Link Success
 .cp-alert-container {
@@ -23,7 +24,8 @@
 		animation-fill-mode: forwards;
 
 		.cp-alert-msg {
-			margin-left: 40%;
+			width: 100%;
+			text-align: center;
 		}
 	}
 }
@@ -55,10 +57,71 @@
 		animation-fill-mode: forwards;
 
 		.email-alert-msg {
-			margin-left: auto;
+			text-align: center;
+			width: 100%;
 		}
 	}
 }
+
+//Error Modal
+.error-alert-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: $footer-tab-gray;
+	background-image: url('/assets/unsplash-notebook.jpg');
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	overflow: hidden;
+	z-index: 1;
+
+	.notfound-icon {
+		width: 70%;
+	}
+
+	.error-msg {
+		width: 80%;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+
+		.error-msg-title,
+		.error-msg-content {
+			width: 100%;
+			font-family: 'Courier New', Courier, monospace;
+			text-align: center;
+		}
+
+		.error-msg-title {
+			margin: 5px 0 20px 0;
+			font-size: 1.5rem;
+			font-weight: 700;
+		}
+
+		.error-msg-content {
+			font-size: 1rem;
+			font-weight: 600;
+			line-height: 20px;
+
+			.btn-home {
+				font: inherit;
+				width: 90px;
+				height: 25px;
+				background-color: transparent;
+			}
+		}
+	}
+}
+
+@include pagenotfound-media;
 
 @keyframes animflowdown {
 	0% {
