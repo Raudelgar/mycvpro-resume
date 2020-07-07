@@ -5,21 +5,21 @@
 .light-App,
 .dark-App {
 	background-color: $light-gray-d6;
-	// width: $mobile-width;
 	width: 100vw;
 	min-height: 100vh;
-	// animation: show linear 0.3s;
+	opacity: 0;
+	animation: fade-in 0.5s ease-in forwards;
+	animation-delay: 0.5s;
 }
 
 .dark-App {
 	background-color: $primary-black;
 }
 
-@keyframes show {
+@keyframes fade-in {
 	0% {
 		opacity: 0;
 	}
-
 	100% {
 		opacity: 1;
 	}

@@ -1,6 +1,6 @@
 {
-	"name": "mycvpro-resume",
-	"version": "0.1.0",
+	"name": "cvcodepro-resume",
+	"version": "1.0.4",
 	"private": true,
 	"homepage": "https://cv.cvcodepro.com",
 	"dependencies": {

@@ -17,7 +17,6 @@ import EmailComponent from '../pages/messages/EmailComponent';
 import { isObjectEmpty } from '../../utils/helpers';
 import useErrorState from '../../hooks/useErrorState.js';
 import ErrorMsg from '../alerts/ErrorMesg';
-import { Animated } from 'react-animated-css';
 
 export default function App() {
 	const { theme } = useContext(ThemeContext);
@@ -44,27 +43,23 @@ export default function App() {
 				true
 			);
 		}
-	}, [error, showAlert]);
+	}, [error]);
 
 	return (
 		<Router>
 			<LogoLoader />
 			{!isObjectEmpty(userProfile) && (
-				<Animated animationIn='fadeIn' animationInDelay={900}>
-					<EmailProvider>
-						<div className={`${theme}-App`}>
-							<AlertComponent />
-							<EmailComponent />
-							<NavBar />
-							<Home />
-							<Footer />
-						</div>
-					</EmailProvider>
-				</Animated>
+				<EmailProvider>
+					<div className={`${theme}-App`}>
+						<AlertComponent />
+						<EmailComponent />
+						<NavBar />
+						<Home />
+						<Footer />
+					</div>
+				</EmailProvider>
 			)}
-			<Animated animationIn='fadeIn' animationInDelay={900}>
-				<AlertComponent />
-			</Animated>
+			<AlertComponent />
 		</Router>
 	);
 }
