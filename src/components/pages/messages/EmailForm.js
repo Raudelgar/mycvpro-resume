@@ -23,7 +23,6 @@ export default function EmailForm() {
 		miniBottom,
 		miniScreen,
 		cancelEmailForm,
-		submitEmailForm,
 		miniEmailBottom,
 		maxEmailBottom,
 		maxEmailScreen,
@@ -39,7 +38,6 @@ export default function EmailForm() {
 		handleSubject,
 		handleContent,
 		cleanUpForm,
-		discardEmailContent,
 	} = useContext(EmailContext);
 	const textAreaRef = useRef(null);
 	const emailModalRef = useRef(null);

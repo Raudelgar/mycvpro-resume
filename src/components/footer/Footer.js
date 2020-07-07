@@ -17,6 +17,7 @@ export default function Footer() {
 					<a
 						href='https://cvcodepro.com/'
 						target='_blank'
+						rel='noopener noreferrer'
 						className={`${theme}-footer-link`}
 					>
 						Privacy Policy
@@ -25,6 +26,7 @@ export default function Footer() {
 					<a
 						href='https://cvcodepro.com/'
 						target='_blank'
+						rel='noopener noreferrer'
 						className={`${theme}-footer-link`}
 					>
 						About Us
@@ -33,6 +35,7 @@ export default function Footer() {
 					<a
 						href='https://cvcodepro.com/'
 						target='_blank'
+						rel='noopener noreferrer'
 						className={`${theme}-footer-link`}
 					>
 						Contact Us
@@ -41,6 +44,7 @@ export default function Footer() {
 					<a
 						href='https://cvcodepro.com/'
 						target='_blank'
+						rel='noopener noreferrer'
 						className={`${theme}-footer-link`}
 					>
 						Social Media
