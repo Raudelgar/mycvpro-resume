@@ -169,7 +169,7 @@ function skillStack(skills) {
 			style: ['sectionInfo', 'sectionLabel', 'sectionSkills'],
 		};
 		let values = {
-			text: `${skill.values.toString()}\n`,
+			text: `${skill.values.join(', ')}\n`,
 			style: ['sectionInfo', 'sectionItems'],
 		};
 		stack[1].text = stack[1].text.concat([label, values]);

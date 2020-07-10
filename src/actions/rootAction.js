@@ -20,16 +20,14 @@ export function handleInitData() {
 						dispatch(getProfile(profile));
 					})
 					.catch((error) => {
-						// debugger;
 						dispatch(hanldeError(error));
 					})
 					.then(() => dispatch(hideLoader()));
 			})
 			.catch((error) => {
-				// debugger;
 				dispatch(hanldeError(error));
-				// console.log('redirect to login page', error);
-			})
-			.then(() => dispatch(hideLoader()));
+				dispatch(hideLoader());
+			});
+		// .finally(() => dispatch(hideLoader()));
 	};
 }
