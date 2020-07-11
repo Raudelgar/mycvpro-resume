@@ -22,12 +22,14 @@ export async function fetchInitData(id) {
 			userSkills,
 			userExperience,
 			userEduction,
+			userProjects,
 		} = data.payload.user;
 		return {
 			profile: userInfo,
 			skills: userSkills,
 			experience: userExperience,
 			education: userEduction,
+			projects: userProjects,
 		};
 	} catch (error) {
 		console.log(error);
@@ -84,14 +86,16 @@ export async function sendMessages(
 	}
 }
 
-export function generatePdf(profile, skills, experience, education) {
+export function generatePdf(profile, skills, experience, education, projects) {
 	return new Promise((resolve, reject) => {
 		const pdfMake = window.pdfMake;
 
 		const fileName = profile.name.split(' ').join('');
 		setTimeout(() => {
 			pdfMake
-				.createPdf(pdfTemplate(profile, skills, experience, education))
+				.createPdf(
+					pdfTemplate(profile, skills, experience, education, projects)
+				)
 				.download(`${fileName}-CV`);
 			resolve(true);
 		}, 1000);

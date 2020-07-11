@@ -10,6 +10,7 @@ import useProfileState from '../../hooks/useProfileState';
 import useSkillsState from '../../hooks/useSkillsState';
 import useExperienceState from '../../hooks/useExperienceState';
 import useEducationState from '../../hooks/useEducationState';
+import useProjectsState from '../../hooks/useProjectsState';
 
 export default function PdfComponent({ collapse }) {
 	const isDisable = usePdfDownload();
@@ -19,10 +20,11 @@ export default function PdfComponent({ collapse }) {
 	const skills = useSkillsState();
 	const experience = useExperienceState();
 	const education = useEducationState();
+	const projects = useProjectsState();
 
 	const handlePdfRequest = () => {
 		if (!isDisable) {
-			dispatch(getPdf(profile, skills, experience, education));
+			dispatch(getPdf(profile, skills, experience, education, projects));
 		}
 	};
 
