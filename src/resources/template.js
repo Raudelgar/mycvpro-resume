@@ -1,4 +1,10 @@
-export default function template(profile, skills, experience, education) {
+export default function template(
+	profile,
+	skills,
+	experience,
+	education,
+	projects
+) {
 	const fileName = profile.name.split(' ').join('');
 	const emailWidth = calEmailWidth(profile.email);
 	const emailIconWidth = 286 - emailWidth;
@@ -11,7 +17,7 @@ export default function template(profile, skills, experience, education) {
 		},
 		pageSize: 'A4',
 		pageOrientation: 'portrait',
-		pageMargins: [30, 50, 30, 40], // [left, top, right, bottom] or [horizontal, vertical] or just a number for equal margins
+		pageMargins: [30, 70, 30, 40], // [left, top, right, bottom] or [horizontal, vertical] or just a number for equal margins
 		header: function (currentPage, pageCount, pageSize) {
 			return [
 				{ text: `${profile.name}`, style: 'headerName' },
@@ -70,7 +76,7 @@ export default function template(profile, skills, experience, education) {
 				},
 			];
 		},
-		content: setContent(skills, experience, education),
+		content: setContent(skills, experience, education, projects),
 		styles: {
 			headerName: {
 				margin: 5,
@@ -137,7 +143,7 @@ export default function template(profile, skills, experience, education) {
 	return dd;
 }
 
-function setContent(skills, experience, education) {
+function setContent(skills, experience, education, projects) {
 	return [
 		{
 			stack: skillStack(skills),
@@ -147,6 +153,9 @@ function setContent(skills, experience, education) {
 		},
 		{
 			stack: educationStack(education),
+		},
+		{
+			stack: projectsStack(projects),
 		},
 	];
 }
@@ -287,6 +296,56 @@ function educationStack(education) {
 			stack[1].text = stack[1].text.concat([degree, note, loc]);
 		} else {
 			stack[1].text = stack[1].text.concat([degree, loc]);
+		}
+	}
+	return stack;
+}
+
+function projectsStack(projects) {
+	let stack = [
+		{
+			text: `${projects.section}`,
+			style: 'sectionTitle',
+		},
+	];
+
+	for (let i = 0; i < projects.content.length; i++) {
+		let proj = projects.content[i];
+
+		let projName = {
+			text: `\u200B\t\u200B\t${proj.name}\n`,
+			style: ['sectionInfo', 'sectionLabel'],
+		};
+
+		let desc = {
+			columns: [
+				{
+					width: 'auto',
+					margin: [30, 0, 5, 5],
+					text: proj.description,
+					style: ['sectionInfo', 'sectionItems'],
+				},
+			],
+		};
+
+		let anchor = {
+			text: `\u200B\t\u200B\t${proj.anchor}`,
+			link: proj.link,
+		};
+
+		if (proj.note) {
+			let note = {
+				text: `\u200B\t\u200B\t\t${proj.note}\n`,
+				style: ['sectionInfo', 'sectionItems', 'sectionNote'],
+			};
+			stack.push(projName);
+			stack.push(desc);
+			stack.push(note);
+			stack.push(anchor);
+		} else {
+			stack.push(projName);
+			stack.push(desc);
+			stack.push(anchor);
 		}
 	}
 	return stack;

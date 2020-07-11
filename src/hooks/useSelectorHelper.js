@@ -18,6 +18,10 @@ export function educationSelector({ education }) {
 	return education;
 }
 
+export function projectsSelector({ projects }) {
+	return projects;
+}
+
 export function pdfSelector({ pdfState }) {
 	return pdfState;
 }
