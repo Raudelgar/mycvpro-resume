@@ -18,7 +18,7 @@ export function handleInitData() {
 						dispatch(getSkills(skills));
 						dispatch(getExperience(experience));
 						dispatch(getEducation(education));
-						dispatch(getProjects(projects));
+						// dispatch(getProjects(projects));
 						dispatch(getProfile(profile));
 					})
 					.catch((error) => {

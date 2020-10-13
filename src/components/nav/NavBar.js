@@ -5,6 +5,7 @@ import SettingMenu from '../menu/SettingMenu.js';
 import { ThemeContext } from '../../context/ThemeContext.js';
 import { FaUserCircle } from 'react-icons/fa';
 import useProfileState from '../../hooks/useProfileState';
+import avatarImg from '../../assets/linkedingAvatar.jpeg';
 
 export default function NavBar() {
 	const { theme } = useContext(ThemeContext);
@@ -133,7 +134,7 @@ m1148 -5 c309 -73 382 -452 122 -627 -30 -20 -56 -42 -58 -48 -3 -7 59 -74
 				<div className='user-name'>{name}</div>
 				<div className='user-avatar'>
 					{userAvatar ? (
-						<img src={avatar_url} alt='User Avatar' className='avatar-img' />
+						<img src={avatarImg} alt='User Avatar' className='avatar-img' />
 					) : (
 						<FaUserCircle className='avatar-container' />
 					)}
