@@ -5,6 +5,7 @@ import { getSkills } from './skillsAction.js';
 import { getExperience } from './experienceAction.js';
 import { getEducation } from './educationAction.js';
 import { hanldeError } from './errorAction.js';
+import { getProjects } from './projectsAction.js';
 
 export function handleInitData() {
 	return (dispatch) => {
@@ -13,23 +14,22 @@ export function handleInitData() {
 		getUrlParams()
 			.then(({ id }) => {
 				fetchInitData(id)
-					.then(({ profile, skills, experience, education }) => {
+					.then(({ profile, skills, experience, education, projects }) => {
 						dispatch(getSkills(skills));
 						dispatch(getExperience(experience));
 						dispatch(getEducation(education));
+						// dispatch(getProjects(projects));
 						dispatch(getProfile(profile));
 					})
 					.catch((error) => {
-						// debugger;
 						dispatch(hanldeError(error));
 					})
 					.then(() => dispatch(hideLoader()));
 			})
 			.catch((error) => {
-				// debugger;
 				dispatch(hanldeError(error));
-				// console.log('redirect to login page', error);
-			})
-			.then(() => dispatch(hideLoader()));
+				dispatch(hideLoader());
+			});
+		// .finally(() => dispatch(hideLoader()));
 	};
 }

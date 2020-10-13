@@ -3,7 +3,7 @@ import React from 'react';
 import './home.scss';
 import SkillsComponent from '../../sections/skills/SkillsComponent.js';
 import ExperienceComponent from '../../sections/experience/ExperienceComponent.js';
-import EducationComponent from '../../sections/education/EducationComponent';
+import EducationComponent from '../../sections/education/EducationComponent.js';
 
 export default function Home() {
 	return (

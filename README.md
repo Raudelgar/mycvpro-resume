@@ -66,3 +66,8 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## How Load mock user data
+
+After staring 'cvcodepro-resume-node' (see projects readme), add the following query params:
+?cvid=MOCK_ID_GENERATED&usr=USER_ID_INFO&share=true
