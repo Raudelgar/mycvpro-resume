@@ -188,7 +188,7 @@ function skillStack(skills) {
 }
 
 function experienceStack(experience) {
-	let stack = [
+	let mainStack = [
 		{
 			text: `${experience.section}`,
 			style: 'sectionTitle',
@@ -203,9 +203,15 @@ function experienceStack(experience) {
 		let expTask = {
 			stack: [],
 		};
-		let descTask = {
-			ol: [],
+		let expHeaderTask = {
+			columns: [],
 		};
+		let descTask = {
+			type: 'square',
+			ul: [],
+		};
+
+		//Header sections
 		let title = {
 			text: `\u200B\t\u200B\t${expe.title}\n`,
 			style: ['sectionInfo', 'sectionLabel'],
@@ -215,6 +221,7 @@ function experienceStack(experience) {
 			style: ['sectionInfo', 'sectionLabel'],
 		};
 		let date = {
+			width: 130,
 			text: `\u200B\t\u200B\t${expe.from} - ${
 				expe.current ? 'Present' : expe.to
 			}\n`,
@@ -224,6 +231,13 @@ function experienceStack(experience) {
 			text: `\u200B\t\u200B\t\t${expe.note}\n`,
 			style: ['sectionInfo', 'sectionLabel', 'sectionNote', 'lastItem'],
 		};
+
+		//filling experience header
+		let leftSideStack = [];
+		leftSideStack.push(title);
+		leftSideStack.push(coAndLoc);
+		leftSideStack.push(note);
+		expHeaderTask.columns = [].concat([{ stack: leftSideStack }], [date]);
 
 		for (let j = 0; j < expe.description.length; j++) {
 			let desc = expe.description[j];
@@ -249,19 +263,13 @@ function experienceStack(experience) {
 					});
 				}
 			}
-			descTask.ol.push(task, subTasks);
+			descTask.ul.push(task, subTasks);
 		}
-		expTask.stack = expTask.stack.concat([
-			title,
-			coAndLoc,
-			date,
-			note,
-			descTask,
-		]);
-		stack[1].stack = stack[1].stack.concat([expTask]);
+		expTask.stack = expTask.stack.concat([expHeaderTask, descTask]);
+		mainStack[1].stack = mainStack[1].stack.concat([expTask]);
 	}
 
-	return stack;
+	return mainStack;
 }
 
 function educationStack(education) {
