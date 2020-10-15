@@ -71,3 +71,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 After staring 'cvcodepro-resume-node' (see projects readme), add the following query params:
 ?cvid=MOCK_ID_GENERATED&usr=USER_ID_INFO&share=true
+
+## Update pdf template
+
+At the root find the .pdfDraft.js file, it contains the raw structure for each section in the pdf template.
