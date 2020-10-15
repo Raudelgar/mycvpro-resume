@@ -7,18 +7,24 @@ export default function ExperienceContent({ content, theme }) {
 		<div className={`${theme}-section-content`}>
 			{content.map((obj) => (
 				<div key={obj.contentId} className='sub-section'>
-					<span className='section-label label-block'>{obj.title}</span>
-					<span className='section-label label-block'>
-						{obj.company}, {obj.location}
-					</span>
-					<span className='section-label label-block'>
-						{obj.from} - {obj.current ? 'Present' : obj.to}
-					</span>
-					{obj.note ? (
-						<span className='section-label label-block text-note'>
-							{obj.note}
-						</span>
-					) : null}
+					<div className='sub-section-header'>
+						<div>
+							<span className='section-label label-block'>{obj.title}</span>
+							<span className='section-label label-block'>
+								{obj.company}, {obj.location}
+							</span>
+							{obj.note ? (
+								<span className='section-label label-block text-note'>
+									{obj.note}
+								</span>
+							) : null}
+						</div>
+						<div className='dates-sub-section'>
+							<span className='section-label label-block'>
+								{obj.from} - {obj.current ? 'Present' : obj.to}
+							</span>
+						</div>
+					</div>
 					<span className='section-value'>
 						<ul>
 							{obj.description.map(({ taskId, task, subtasks }) => (

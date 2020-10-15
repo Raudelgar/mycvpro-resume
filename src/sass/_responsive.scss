@@ -199,3 +199,13 @@
 		}
 	}
 }
+
+@mixin sub-section-header-media {
+	@media (min-width: $ipad-width) {
+		.sub-section-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+}
