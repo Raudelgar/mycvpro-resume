@@ -1,5 +1,5 @@
 import { showLoader, hideLoader } from './loaderAction.js';
-import { fetchInitData, getUrlParams } from '../api/v1/api.js';
+import { fetchInitData, getUrlParams } from 'api/v1/api.js';
 import { getProfile } from './profileAction.js';
 import { getSkills } from './skillsAction.js';
 import { getExperience } from './experienceAction.js';

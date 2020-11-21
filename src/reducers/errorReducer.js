@@ -1,4 +1,4 @@
-import { ERROR_PARAM } from '../actions/types.js';
+import { ERROR_PARAM } from 'actions/types.js';
 
 export default function errorReducer(
 	state = { bool: false, msg: '' },

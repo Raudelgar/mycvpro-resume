@@ -1,4 +1,4 @@
-import { GET_PDF, PDF_DONE } from '../actions/types.js';
+import { GET_PDF, PDF_DONE } from 'actions/types.js';
 
 export default function pdfReducer(state = false, { type, isDisable }) {
 	switch (type) {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import useLoaderState from '../../hooks/useLoaderState.js';
+import useLoaderState from 'hooks/useLoaderState.js';
 import './loaders.scss';
 
 export default function BarLoader() {

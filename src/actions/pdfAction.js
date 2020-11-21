@@ -1,6 +1,6 @@
 import { GET_PDF, PDF_DONE } from './types.js';
 import { showLoader, hideLoader } from './loaderAction.js';
-import { generatePdf } from '../api/v1/api.js';
+import { generatePdf } from 'api/v1/api.js';
 
 export function getPdf(profile, skills, experience, education, projects) {
 	return (dispatch) => {

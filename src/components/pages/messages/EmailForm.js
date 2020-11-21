@@ -1,18 +1,15 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useRef,useEffect } from 'react';
 import { FaTrash } from 'react-icons/fa';
 import { FiMinus, FiMinimize2, FiMaximize2 } from 'react-icons/fi';
-
+import { EmailContext } from 'context/EmailContext';
+import CloseBtn from 'components/view/buttons/CloseBtn';
+import { ThemeContext } from 'context/ThemeContext.js';
+import { sendMessages } from 'api/v1/api';
+import useProfileState from 'hooks/useProfileState';
+import { AlertContext } from 'context/AlertContext';
+import SuccessMsg from 'components/alerts/SuccessMsg';
+import useWindowSize from 'hooks/useWindowSize';
 import './form.scss';
-import { EmailContext } from '../../../context/EmailContext';
-import CloseBtn from '../../view/buttons/CloseBtn';
-import { ThemeContext } from '../../../context/ThemeContext.js';
-import { sendMessages } from '../../../api/v1/api';
-import useProfileState from '../../../hooks/useProfileState';
-import { AlertContext } from '../../../context/AlertContext';
-import SuccessMsg from '../../alerts/SuccessMsg';
-import { useRef } from 'react';
-import { useEffect } from 'react';
-import useWindowSize from '../../../hooks/useWindowSize';
 
 //TODO: Create a discard messages body btn. The action is discardEmailContent
 export default function EmailForm() {

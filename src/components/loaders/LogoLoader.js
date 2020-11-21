@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import './loaders.scss';
-import useLoaderState from '../../hooks/useLoaderState.js';
+import useLoaderState from 'hooks/useLoaderState.js';
 
 export default function LogoLoader() {
 	const isLoading = useLoaderState();

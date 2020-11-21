@@ -1,16 +1,16 @@
 import React, { useContext } from 'react';
 import { useDispatch } from 'react-redux';
 import { FaRegFilePdf } from 'react-icons/fa';
-import TooltipLabel from '../tooltips/TooltipLabel';
-import { ThemeContext } from '../../context/ThemeContext';
-import BarLoader from '../loaders/BarLoader';
-import usePdfDownload from '../../hooks/usePdfDownload';
-import { getPdf } from '../../actions/pdfAction';
-import useProfileState from '../../hooks/useProfileState';
-import useSkillsState from '../../hooks/useSkillsState';
-import useExperienceState from '../../hooks/useExperienceState';
-import useEducationState from '../../hooks/useEducationState';
-import useProjectsState from '../../hooks/useProjectsState';
+import TooltipLabel from 'components/tooltips/TooltipLabel';
+import { ThemeContext } from 'context/ThemeContext';
+import BarLoader from 'components/loaders/BarLoader';
+import usePdfDownload from 'hooks/usePdfDownload';
+import { getPdf } from 'actions/pdfAction';
+import useProfileState from 'hooks/useProfileState';
+import useSkillsState from 'hooks/useSkillsState';
+import useExperienceState from 'hooks/useExperienceState';
+import useEducationState from 'hooks/useEducationState';
+import useProjectsState from 'hooks/useProjectsState';
 
 export default function PdfComponent({ collapse }) {
 	const isDisable = usePdfDownload();

@@ -1,9 +1,9 @@
 import React from 'react';
 
 import './home.scss';
-import SkillsComponent from '../../sections/skills/SkillsComponent.js';
-import ExperienceComponent from '../../sections/experience/ExperienceComponent.js';
-import EducationComponent from '../../sections/education/EducationComponent.js';
+import SkillsComponent from 'components/sections/skills/SkillsComponent.js';
+import ExperienceComponent from 'components/sections/experience/ExperienceComponent.js';
+import EducationComponent from 'components/sections/education/EducationComponent.js';
 
 export default function Home() {
 	return (

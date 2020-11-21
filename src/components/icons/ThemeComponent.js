@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { FaSun } from 'react-icons/fa';
 import { MdBrightness4 } from 'react-icons/md';
-import TooltipLabel from '../tooltips/TooltipLabel';
-import { ThemeContext } from '../../context/ThemeContext';
+import TooltipLabel from 'components/tooltips/TooltipLabel';
+import { ThemeContext } from 'context/ThemeContext';
 
 export default function ThemeComponent({ collapse }) {
 	const { theme, handleTheme } = useContext(ThemeContext);

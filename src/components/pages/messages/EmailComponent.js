@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import './form.scss';
-import { EmailContext } from '../../../context/EmailContext';
+import { EmailContext } from 'context/EmailContext';
 import EmailForm from './EmailForm';
 
 export default function EmailComponent() {

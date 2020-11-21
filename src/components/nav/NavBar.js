@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 
 import './nav.scss';
-import SettingMenu from '../menu/SettingMenu.js';
-import { ThemeContext } from '../../context/ThemeContext.js';
+import SettingMenu from 'components/menu/SettingMenu.js';
+import { ThemeContext } from 'context/ThemeContext.js';
 import { FaUserCircle } from 'react-icons/fa';
-import useProfileState from '../../hooks/useProfileState';
-import avatarImg from '../../assets/linkedingAvatar.jpeg';
+import useProfileState from 'hooks/useProfileState';
+import avatarImg from 'assets/linkedingAvatar.jpeg';
 
 export default function NavBar() {
 	const { theme } = useContext(ThemeContext);

@@ -1,4 +1,4 @@
-import { SHOW_LOADER, HIDE_LOADER } from '../actions/types.js';
+import { SHOW_LOADER, HIDE_LOADER } from 'actions/types.js';
 
 export default function loaderReducer(
 	state = { bool: true, scope: 'main' },

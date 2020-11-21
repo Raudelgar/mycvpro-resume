@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import useEmailState from '../hooks/useEmailState';
+import useEmailState from 'hooks/useEmailState';
 
 export const EmailContext = createContext();
 

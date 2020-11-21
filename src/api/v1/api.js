@@ -1,14 +1,15 @@
 import axios from 'axios';
 import queryString from 'query-string';
-import services from '../services.js';
-import pdfTemplate from '../../resources/template.js';
+import services from 'api/services.js';
+import pdfTemplate from 'resources/template.js';
 const NODE_ENV = process.env.NODE_ENV;
 
 export async function fetchInitData(id) {
 	let url;
 
 	if (NODE_ENV !== 'production') {
-		url = `${services.users.dev}${id}`;
+		// url = `${services.users.dev}${id}`;
+		url = `${services.users.prod}${id}`;
 	} else {
 		url = `${services.users.prod}${id}`;
 	}

@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { IoIosLink } from 'react-icons/io';
-import TooltipLabel from '../tooltips/TooltipLabel';
-import { ThemeContext } from '../../context/ThemeContext';
-import useCopyToClip from '../../hooks/useCopyToClip';
+import TooltipLabel from 'components/tooltips/TooltipLabel';
+import { ThemeContext } from 'context/ThemeContext';
+import useCopyToClip from 'hooks/useCopyToClip';
 
 export default function CopyLinkComponent({ collapse }) {
 	const { theme } = useContext(ThemeContext);

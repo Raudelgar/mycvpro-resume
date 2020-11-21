@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { FaTelegramPlane } from 'react-icons/fa';
-import TooltipLabel from '../tooltips/TooltipLabel';
-import { ThemeContext } from '../../context/ThemeContext';
-import { EmailContext } from '../../context/EmailContext';
+import TooltipLabel from 'components/tooltips/TooltipLabel';
+import { ThemeContext } from 'context/ThemeContext';
+import { EmailContext } from 'context/EmailContext';
 
 export default function MessagesComponent({ collapse }) {
 	const { theme } = useContext(ThemeContext);

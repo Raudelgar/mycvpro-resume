@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import './footer.scss';
-import { ThemeContext } from '../../context/ThemeContext.js';
+import { ThemeContext } from 'context/ThemeContext.js';
 
 export default function Footer() {
 	const { theme } = useContext(ThemeContext);

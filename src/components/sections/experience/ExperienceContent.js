@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../sections.scss';
+import 'components/sections/sections.scss';
 
 export default function ExperienceContent({ content, theme }) {
 	return (

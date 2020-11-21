@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './tooltip.scss';
-import useHover from '../../hooks/useHover.js';
+import useHover from 'hooks/useHover.js';
 
 export default function TooltipLabel({
 	label = 'Tooltip',

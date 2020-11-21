@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 
-import { ThemeContext } from '../../../context/ThemeContext.js';
-import useSkillsState from '../../../hooks/useSkillsState.js';
-import SectionHeader from '../SectionHeader.js';
+import { ThemeContext } from 'context/ThemeContext.js';
+import useSkillsState from 'hooks/useSkillsState.js';
+import SectionHeader from 'components/sections/SectionHeader.js';
 import SkillContent from './SkillContent.js';
 
 export default function SkillsComponent() {
