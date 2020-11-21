@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import './alerts.scss';
 import { AlertContext } from 'context/AlertContext';
-import CloseBtn from 'components/view/buttons/CloseBtn';
+import CloseBtn from 'components/buttons/CloseBtn';
 
 export default function SuccessMsg({ msg, styles }) {
 	const { hideAlert } = useContext(AlertContext);

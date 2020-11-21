@@ -1,22 +1,21 @@
 import React, { useEffect, useContext } from 'react';
 import { useDispatch } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-
-import './main.scss';
-import NavBar from 'components/nav/NavBar.js';
+import NavBar from 'view/nav/NavBar.js';
 import { ThemeContext } from 'context/ThemeContext.js';
 import LogoLoader from 'components/loaders/LogoLoader.js';
-import Home from 'components/pages/home/Home.js';
-import Footer from 'components/footer/Footer.js';
+import Home from 'pages/home/Home.js';
+import Footer from 'view/footer/Footer.js';
 import { handleInitData } from 'actions/rootAction.js';
 import useProfileState from 'hooks/useProfileState';
 import AlertComponent from 'components/alerts/AlertComponent.js';
 import { AlertContext } from 'context/AlertContext';
 import { EmailProvider } from 'context/EmailContext';
-import EmailComponent from 'components/pages/messages/EmailComponent';
+import EmailComponent from 'view/messages/EmailComponent';
 import { isObjectEmpty } from 'utils/helpers';
 import useErrorState from 'hooks/useErrorState.js';
 import ErrorMsg from 'components/alerts/ErrorMesg';
+import './main.scss';
 
 export default function App() {
 	const { theme } = useContext(ThemeContext);
