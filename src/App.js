@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import NavBar from 'view/nav/NavBar.js';
 import { ThemeContext } from 'context/ThemeContext.js';
@@ -7,21 +7,19 @@ import LogoLoader from 'components/loaders/LogoLoader.js';
 import Home from 'pages/home/Home.js';
 import Footer from 'view/footer/Footer.js';
 import { handleInitData } from 'redux/actions/rootAction.js';
-import useProfileState from 'hooks/useProfileState';
 import AlertComponent from 'components/alerts/AlertComponent.js';
 import { AlertContext } from 'context/AlertContext';
 import { EmailProvider } from 'context/EmailContext';
 import EmailComponent from 'view/messages/EmailComponent';
 import { isObjectEmpty } from 'utils/helpers';
-import useErrorState from 'hooks/useErrorState.js';
 import ErrorMsg from 'components/alerts/ErrorMesg';
 import './main.scss';
 
 export default function App() {
 	const { theme } = useContext(ThemeContext);
 	const { showAlert } = useContext(AlertContext);
-	const userProfile = useProfileState();
-	const error = useErrorState();
+	const userProfile = useSelector(store => store.profile);
+	const error = useSelector(store => store.error);
 	const dispatch = useDispatch();
 
 	useEffect(() => {

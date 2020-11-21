@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-
+import {useSelector} from 'react-redux';
 import './loaders.scss';
-import useLoaderState from 'hooks/useLoaderState.js';
 
 export default function LogoLoader() {
-	const isLoading = useLoaderState();
+	const isLoading = useSelector(store => store.isLoading);
 	const [render, setRender] = useState(false);
 
 	useEffect(() => {

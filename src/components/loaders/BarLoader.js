@@ -1,10 +1,9 @@
 import React from 'react';
-
-import useLoaderState from 'hooks/useLoaderState.js';
+import {useSelector} from 'react-redux';
 import './loaders.scss';
 
 export default function BarLoader() {
-	const isLoading = useLoaderState();
+	const isLoading = useSelector(store => store.isLoading);
 
 	if (isLoading.bool && isLoading.scope === 'pdf-btn') {
 		return (

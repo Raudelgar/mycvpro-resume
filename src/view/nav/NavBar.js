@@ -1,15 +1,14 @@
 import React, { useContext } from 'react';
-
-import './nav.scss';
+import {useSelector} from 'react-redux';
 import SettingMenu from 'view/menu/SettingMenu.js';
 import { ThemeContext } from 'context/ThemeContext.js';
 import { FaUserCircle } from 'react-icons/fa';
-import useProfileState from 'hooks/useProfileState';
 import avatarImg from 'assets/linkedingAvatar.jpeg';
+import './nav.scss';
 
 export default function NavBar() {
 	const { theme } = useContext(ThemeContext);
-	const { name, avatar_url } = useProfileState();
+	const { name, avatar_url } = useSelector(store => store.profile);
 	const userAvatar = avatar_url ? true : false;
 
 	return (

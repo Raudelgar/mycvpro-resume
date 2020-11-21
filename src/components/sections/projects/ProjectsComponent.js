@@ -1,13 +1,12 @@
 import React, { useContext } from 'react';
-
+import {useSelector} from 'react-redux';
 import { ThemeContext } from 'context/ThemeContext.js';
-import useProjectsState from 'hooks/useProjectsState.js';
 import SectionHeader from 'components/sections/SectionHeader.js';
 import ProjectsContent from './ProjectsContent.js';
 
 export default function ProjectsComponent() {
 	const { theme } = useContext(ThemeContext);
-	const { section, content } = useProjectsState();
+	const { section, content } = useSelector(store => store.projects);
 
 	return (
 		<div className={`${theme}-grid-item`}>

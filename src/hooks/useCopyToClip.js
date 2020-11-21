@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import useProfileState from './useProfileState.js';
+import {useSelector} from 'react-redux';
 import { AlertContext } from 'context/AlertContext.js';
 import SuccessMsg from 'components/alerts/SuccessMsg.js';
 
 export default function useCopyToClip() {
 	const { showAlert } = useContext(AlertContext);
-	const { id, username } = useProfileState();
+	const { id, username } = useSelector(store => store.profile);
 
 	const copyToClipBoard = () => {
 		let params = {
