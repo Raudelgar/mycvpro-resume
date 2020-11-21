@@ -1,4 +1,4 @@
-import { INIT_PROFILE } from 'actions/types.js';
+import { INIT_PROFILE } from 'redux/types.js';
 
 export default function profileReducer(state = {}, { type, payload }) {
 	switch (type) {

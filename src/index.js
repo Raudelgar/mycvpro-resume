@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import App from 'App';
-import store from './store.js';
+import store from 'redux/store.js';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from 'context/ThemeContext';
 import { AlertProvider } from 'context/AlertContext';

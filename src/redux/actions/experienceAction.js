@@ -1,4 +1,4 @@
-import { INIT_EXPE } from './types.js';
+import { INIT_EXPE } from 'redux/types.js';
 
 export function getExperience(experience) {
 	return {

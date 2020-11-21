@@ -1,4 +1,4 @@
-import { INIT_PROJ } from 'actions/types.js';
+import { INIT_PROJ } from 'redux/types.js';
 
 export default function projectsReducer(state = {}, { type, payload }) {
 	switch (type) {

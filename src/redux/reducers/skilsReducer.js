@@ -1,4 +1,4 @@
-import { INIT_SKILLS } from 'actions/types.js';
+import { INIT_SKILLS } from 'redux/types.js';
 
 export default function skillsReducer(state = {}, { type, payload }) {
 	switch (type) {

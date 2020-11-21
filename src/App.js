@@ -6,7 +6,7 @@ import { ThemeContext } from 'context/ThemeContext.js';
 import LogoLoader from 'components/loaders/LogoLoader.js';
 import Home from 'pages/home/Home.js';
 import Footer from 'view/footer/Footer.js';
-import { handleInitData } from 'actions/rootAction.js';
+import { handleInitData } from 'redux/actions/rootAction.js';
 import useProfileState from 'hooks/useProfileState';
 import AlertComponent from 'components/alerts/AlertComponent.js';
 import { AlertContext } from 'context/AlertContext';

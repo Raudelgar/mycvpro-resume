@@ -1,4 +1,4 @@
-import { SHOW_LOADER, HIDE_LOADER } from './types.js';
+import { SHOW_LOADER, HIDE_LOADER } from 'redux/types.js';
 
 export function showLoader(scope = '') {
 	return {

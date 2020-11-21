@@ -1,4 +1,4 @@
-import { INIT_EDU } from './types.js';
+import { INIT_EDU } from '../types.js';
 
 export function getEducation(education) {
 	return {

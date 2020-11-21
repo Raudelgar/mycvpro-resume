@@ -1,4 +1,4 @@
-import { INIT_PROFILE } from './types.js';
+import { INIT_PROFILE } from 'redux/types.js';
 
 export function getProfile(profile) {
 	return {

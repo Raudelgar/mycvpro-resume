@@ -1,4 +1,4 @@
-import { GET_PDF, PDF_DONE } from './types.js';
+import { GET_PDF, PDF_DONE } from '../types.js';
 import { showLoader, hideLoader } from './loaderAction.js';
 import { generatePdf } from 'api/services';
 

@@ -30,6 +30,5 @@ export function handleInitData() {
 				dispatch(hanldeError(error));
 				dispatch(hideLoader());
 			});
-		// .finally(() => dispatch(hideLoader()));
 	};
 }

@@ -1,4 +1,4 @@
-import { INIT_PROJ } from './types.js';
+import { INIT_PROJ } from '../types.js';
 
 export function getProjects(projects) {
 	return {

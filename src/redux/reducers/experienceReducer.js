@@ -1,4 +1,4 @@
-import { INIT_EXPE } from 'actions/types.js';
+import { INIT_EXPE } from 'redux/types.js';
 
 export default function experienceReducer(state = {}, { type, payload }) {
 	switch (type) {
