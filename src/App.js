@@ -43,20 +43,20 @@ export default function App() {
 	}, [error]);
 
 	return (
+		<div className={`${theme}-App`} data-testid='cvapp'>
 		<Router>
 			<LogoLoader />
 			{!isObjectEmpty(userProfile) && (
 				<EmailProvider>
-					<div className={`${theme}-App`}>
-						<AlertComponent />
-						<EmailComponent />
-						<NavBar />
-						<Home />
-						<Footer />
-					</div>
+					<AlertComponent />
+					<EmailComponent />
+					<NavBar />
+					<Home />
+					<Footer />
 				</EmailProvider>
 			)}
 			<AlertComponent />
 		</Router>
+		</div>
 	);
 }

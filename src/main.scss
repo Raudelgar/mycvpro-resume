@@ -2,6 +2,9 @@
 @import 'sass/_variables.scss';
 @import 'sass/_responsive.scss';
 
+.app{
+	background-color: $white;
+}
 .light-App,
 .dark-App {
 	background-color: $light-gray-d6;
