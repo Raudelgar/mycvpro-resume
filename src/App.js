@@ -40,7 +40,7 @@ export default function App() {
 				true
 			);
 		}
-	}, [error]);
+	}, [error, showAlert]);
 
 	return (
 		<div data-testid='cvapp'>
