@@ -1,6 +1,6 @@
 import React from 'react';
-
-import '../sections.scss';
+import PropTypes from 'prop-types';
+import 'components/sections/sections.scss';
 
 export default function ExperienceContent({ content, theme }) {
 	return (
@@ -53,3 +53,8 @@ export default function ExperienceContent({ content, theme }) {
 		</div>
 	);
 }
+
+ExperienceContent.propTypes = {
+	content: PropTypes.array,
+	theme: PropTypes.string.isRequired,
+};

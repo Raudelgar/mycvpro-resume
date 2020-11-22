@@ -1,6 +1,6 @@
 {
 	"name": "cvcodepro-resume",
-	"version": "1.0.4",
+	"version": "1.0.8",
 	"private": true,
 	"homepage": "https://cv.cvcodepro.com",
 	"dependencies": {
@@ -12,6 +12,7 @@
 		"jspdf": "^1.5.3",
 		"node-sass-chokidar": "^1.4.0",
 		"pdfmake": "^0.1.65",
+		"prop-types": "^15.7.2",
 		"query-string": "^6.12.1",
 		"react": "^16.13.1",
 		"react-animated-css": "^1.2.1",

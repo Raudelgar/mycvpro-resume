@@ -6,8 +6,8 @@ export default function template(
 	projects
 ) {
 	const fileName = profile.name.split(' ').join('');
-	const emailWidth = calEmailWidth(profile.email);
-	const emailIconWidth = 286 - emailWidth;
+	// const emailWidth = calEmailWidth(profile.email);
+	// const emailIconWidth = 286 - emailWidth;
 	const dd = {
 		info: {
 			title: `${fileName}-CV`,
@@ -362,11 +362,11 @@ function projectsStack(projects) {
 	return stack;
 }
 
-function calEmailWidth(str) {
-	const strLen = str.length;
-	if (strLen <= 18) {
-		return Math.ceil(strLen * 7);
-	} else {
-		return Math.floor(strLen * 6.3);
-	}
-}
+// function calEmailWidth(str) {
+// 	const strLen = str.length;
+// 	if (strLen <= 18) {
+// 		return Math.ceil(strLen * 7);
+// 	} else {
+// 		return Math.floor(strLen * 6.3);
+// 	}
+// }

@@ -1,8 +1,8 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import './alerts.scss';
 
-export default function ErrorMsg({ msg, styles }) {
+export default function ErrorMsg({ msg = '', styles }) {
 	const handleGoHome = () => {
 		window.location.replace('https://cvcodepro.com');
 	};
@@ -452,3 +452,8 @@ c6 -28 5 -39 -5 -46z m20 -214 l20 -35 -37 0 c-20 0 -48 -3 -62 -7 l-25 -6 26
 		</div>
 	);
 }
+
+ErrorMsg.propTypes = {
+	styles: PropTypes.object.isRequired,
+	msg: PropTypes.string,
+};

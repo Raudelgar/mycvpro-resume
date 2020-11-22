@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
-
+import PropTypes from 'prop-types';
 export const AlertContext = createContext();
 
 export const AlertProvider = (props) => {
@@ -29,4 +29,8 @@ export const AlertProvider = (props) => {
 			{props.children}
 		</AlertContext.Provider>
 	);
+};
+
+AlertProvider.propTypes = {
+	children: PropTypes.node.isRequired,
 };
