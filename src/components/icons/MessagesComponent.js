@@ -3,8 +3,9 @@ import { FaTelegramPlane } from 'react-icons/fa';
 import TooltipLabel from 'components/tooltips/TooltipLabel';
 import { ThemeContext } from 'context/ThemeContext';
 import { EmailContext } from 'context/EmailContext';
+import './icons.scss';
 
-export default function MessagesComponent({ collapse }) {
+export default function MessagesComponent({ collapse = true }) {
 	const { theme } = useContext(ThemeContext);
 	const { openEmailForm } = useContext(EmailContext);
 

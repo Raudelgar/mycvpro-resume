@@ -3,8 +3,9 @@ import { FaSun } from 'react-icons/fa';
 import { MdBrightness4 } from 'react-icons/md';
 import TooltipLabel from 'components/tooltips/TooltipLabel';
 import { ThemeContext } from 'context/ThemeContext';
+import './icons.scss';
 
-export default function ThemeComponent({ collapse }) {
+export default function ThemeComponent({ collapse = true }) {
 	const { theme, handleTheme } = useContext(ThemeContext);
 	return (
 		<TooltipLabel label='Theme' collapse={collapse}>

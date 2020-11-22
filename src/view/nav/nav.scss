@@ -77,6 +77,27 @@
 			}
 		}
 	}
+
+	.collapse-menu-container {
+		display: flex;
+		width: 200px;
+		justify-content: center;
+		align-items: center;
+		margin-top: 10px;
+
+		.light-menu-icons,
+		.dark-menu-icons {
+			display: flex;
+			width: 100%;
+			justify-content: space-around;
+		}
+	}
+
+	.setting-menu-container {
+		display: none;
+	}
+
+	@include menu-media;
 }
 .dark-nav {
 	background-color: $bg-component;

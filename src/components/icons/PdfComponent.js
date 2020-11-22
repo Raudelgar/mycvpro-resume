@@ -5,15 +5,23 @@ import TooltipLabel from 'components/tooltips/TooltipLabel';
 import { ThemeContext } from 'context/ThemeContext';
 import BarLoader from 'components/loaders/BarLoader';
 import { getPdf } from 'redux/actions/pdfAction';
+import './icons.scss';
 
-export default function PdfComponent({ collapse }) {
+export default function PdfComponent({ collapse = true }) {
 	const { theme } = useContext(ThemeContext);
 	const dispatch = useDispatch();
-	const {profile,skills,pdfState:isDisable,experience,education,projects }= useSelector(store => store);
+	const {
+		profile,
+		skills,
+		pdfState: isDisable,
+		experience,
+		education,
+		projects,
+	} = useSelector((store) => store);
 
 	const handlePdfRequest = () => {
 		if (!isDisable) {
-			dispatch(getPdf(profile, skills, experience, education,projects));
+			dispatch(getPdf(profile, skills, experience, education, projects));
 		}
 	};
 

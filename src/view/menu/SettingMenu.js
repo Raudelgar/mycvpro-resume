@@ -1,24 +1,18 @@
 import React, { useContext } from 'react';
-
-import Icons from 'components/icons/Icons.js';
+import PdfComponent from 'components/icons/PdfComponent';
+import MessagesComponent from 'components/icons/MessagesComponent';
+import CopyLinkComponent from 'components/icons/CopyLinkComponent';
+import ThemeComponent from 'components/icons/ThemeComponent';
 import { ThemeContext } from 'context/ThemeContext.js';
-import './settingMenu.scss';
 
 export default function SettingMenu() {
 	const { theme } = useContext(ThemeContext);
-
 	return (
-		<>
-			<div className='setting-menu-container'>
-				<div className={`${theme}-menu-icons`}>
-					<Icons collapse={true} />
-				</div>
-			</div>
-			<div className='collapse-menu-container'>
-				<div className={`${theme}-menu-icons`}>
-					<Icons collapse={true} />
-				</div>
-			</div>
-		</>
+		<div className={`${theme}-menu-icons`}>
+			<PdfComponent />
+			<MessagesComponent />
+			<CopyLinkComponent />
+			<ThemeComponent />
+		</div>
 	);
 }

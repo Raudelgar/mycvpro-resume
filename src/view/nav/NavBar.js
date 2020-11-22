@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import SettingMenu from 'view/menu/SettingMenu.js';
 import { ThemeContext } from 'context/ThemeContext.js';
 import { FaUserCircle } from 'react-icons/fa';
@@ -8,7 +8,7 @@ import './nav.scss';
 
 export default function NavBar() {
 	const { theme } = useContext(ThemeContext);
-	const { name, avatar_url } = useSelector(store => store.profile);
+	const { name, avatar_url } = useSelector((store) => store.profile);
 	const userAvatar = avatar_url ? true : false;
 
 	return (
@@ -139,7 +139,12 @@ m1148 -5 c309 -73 382 -452 122 -627 -30 -20 -56 -42 -58 -48 -3 -7 59 -74
 					)}
 				</div>
 			</div>
-			<SettingMenu />
+			<div className='setting-menu-container'>
+				<SettingMenu />
+			</div>
+			<div className='collapse-menu-container'>
+				<SettingMenu />
+			</div>
 		</nav>
 	);
 }

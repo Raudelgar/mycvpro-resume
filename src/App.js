@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react';
-import { useDispatch,useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import NavBar from 'view/nav/NavBar.js';
 import { ThemeContext } from 'context/ThemeContext.js';
@@ -18,8 +18,8 @@ import './main.scss';
 export default function App() {
 	const { theme } = useContext(ThemeContext);
 	const { showAlert } = useContext(AlertContext);
-	const userProfile = useSelector(store => store.profile);
-	const error = useSelector(store => store.error);
+	const userProfile = useSelector((store) => store.profile);
+	const error = useSelector((store) => store.error);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -43,20 +43,22 @@ export default function App() {
 	}, [error]);
 
 	return (
-		<div className={`${theme}-App`} data-testid='cvapp'>
-		<Router>
-			<LogoLoader />
-			{!isObjectEmpty(userProfile) && (
-				<EmailProvider>
-					<AlertComponent />
-					<EmailComponent />
-					<NavBar />
-					<Home />
-					<Footer />
-				</EmailProvider>
-			)}
-			<AlertComponent />
-		</Router>
+		<div data-testid='cvapp'>
+			<Router>
+				<LogoLoader />
+				{!isObjectEmpty(userProfile) && (
+					<EmailProvider>
+						<div className={`${theme}-App`}>
+							<AlertComponent />
+							<EmailComponent />
+							<NavBar />
+							<Home />
+							<Footer />
+						</div>
+					</EmailProvider>
+				)}
+				<AlertComponent />
+			</Router>
 		</div>
 	);
 }
