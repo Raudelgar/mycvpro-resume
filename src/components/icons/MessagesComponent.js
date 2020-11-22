@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import { FaTelegramPlane } from 'react-icons/fa';
 import TooltipLabel from 'components/tooltips/TooltipLabel';
 import { ThemeContext } from 'context/ThemeContext';
@@ -21,3 +22,7 @@ export default function MessagesComponent({ collapse = true }) {
 		</TooltipLabel>
 	);
 }
+
+MessagesComponent.propTypes = {
+	collapse: PropTypes.bool,
+};

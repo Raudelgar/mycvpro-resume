@@ -1,6 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { IoMdClose } from 'react-icons/io';
-
 import './buttons.scss';
 
 export default function CloseBtn({ event, styles }) {
@@ -11,3 +11,8 @@ export default function CloseBtn({ event, styles }) {
 		</div>
 	);
 }
+
+CloseBtn.propTypes = {
+	event: PropTypes.func.isRequired,
+	styles: PropTypes.object.isRequired,
+};

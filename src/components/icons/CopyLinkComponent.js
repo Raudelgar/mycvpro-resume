@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import { IoIosLink } from 'react-icons/io';
 import TooltipLabel from 'components/tooltips/TooltipLabel';
 import { ThemeContext } from 'context/ThemeContext';
@@ -21,3 +22,7 @@ export default function CopyLinkComponent({ collapse = true }) {
 		</TooltipLabel>
 	);
 }
+
+CopyLinkComponent.propTypes = {
+	collapse: PropTypes.bool,
+};

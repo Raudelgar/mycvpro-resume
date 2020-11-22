@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import 'components/sections/sections.scss';
 
 export default function SkillContent({ content, theme }) {
@@ -14,3 +14,8 @@ export default function SkillContent({ content, theme }) {
 		</div>
 	);
 }
+
+SkillContent.propTypes = {
+	content: PropTypes.array,
+	theme: PropTypes.string.isRequired,
+};

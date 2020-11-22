@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { FaRegFilePdf } from 'react-icons/fa';
 import TooltipLabel from 'components/tooltips/TooltipLabel';
@@ -37,3 +38,7 @@ export default function PdfComponent({ collapse = true }) {
 		</TooltipLabel>
 	);
 }
+
+PdfComponent.propTypes = {
+	collapse: PropTypes.bool,
+};

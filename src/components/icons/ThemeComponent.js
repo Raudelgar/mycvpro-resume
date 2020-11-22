@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import { FaSun } from 'react-icons/fa';
 import { MdBrightness4 } from 'react-icons/md';
 import TooltipLabel from 'components/tooltips/TooltipLabel';
@@ -19,3 +20,7 @@ export default function ThemeComponent({ collapse = true }) {
 		</TooltipLabel>
 	);
 }
+
+ThemeComponent.propTypes = {
+	collapse: PropTypes.bool,
+};

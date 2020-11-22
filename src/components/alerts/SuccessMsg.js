@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-
-import './alerts.scss';
+import PropTypes from 'prop-types';
 import { AlertContext } from 'context/AlertContext';
 import CloseBtn from 'components/buttons/CloseBtn';
+import './alerts.scss';
 
 export default function SuccessMsg({ msg, styles }) {
 	const { hideAlert } = useContext(AlertContext);
@@ -20,3 +20,8 @@ export default function SuccessMsg({ msg, styles }) {
 		</div>
 	);
 }
+
+SuccessMsg.propTypes = {
+	styles: PropTypes.object.isRequired,
+	msg: PropTypes.string,
+};

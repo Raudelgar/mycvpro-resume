@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import 'components/sections/sections.scss';
 
 export default function ProjectsContent({ content, theme }) {
@@ -20,3 +20,8 @@ export default function ProjectsContent({ content, theme }) {
 		</div>
 	);
 }
+
+ProjectsContent.propTypes = {
+	content: PropTypes.array,
+	theme: PropTypes.string.isRequired,
+};
