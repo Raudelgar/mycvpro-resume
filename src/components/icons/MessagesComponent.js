@@ -16,7 +16,11 @@ export default function MessagesComponent({ collapse = true }) {
 
 	return (
 		<TooltipLabel label='Send Email' collapse={collapse}>
-			<div className={`${theme}-content-icon`} onClick={handleEmailForm}>
+			<div
+				data-testid='btn-messages-form'
+				className={`${theme}-content-icon`}
+				onClick={handleEmailForm}
+			>
 				<FaTelegramPlane size={25} className={`${theme}-icon`} />
 			</div>
 		</TooltipLabel>

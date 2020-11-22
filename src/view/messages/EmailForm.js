@@ -1,5 +1,5 @@
-import React, { useContext, useState, useRef,useEffect } from 'react';
-import {useSelector} from 'react-redux';
+import React, { useContext, useState, useRef, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { FaTrash } from 'react-icons/fa';
 import { FiMinus, FiMinimize2, FiMaximize2 } from 'react-icons/fi';
 import { EmailContext } from 'context/EmailContext';
@@ -13,7 +13,7 @@ import './form.scss';
 
 //TODO: Create a discard messages body btn. The action is discardEmailContent
 export default function EmailForm() {
-	const profile = useSelector(store => store.profile);
+	const profile = useSelector((store) => store.profile);
 	const { theme } = useContext(ThemeContext);
 	const { showAlert } = useContext(AlertContext);
 	const {
@@ -88,6 +88,7 @@ export default function EmailForm() {
 
 	return (
 		<div
+			data-testid='email-form-component'
 			className={`${theme}-email-form ${
 				miniBottom ? `${theme}-email-form-mini` : ''
 			} ${!miniScreen ? `${theme}-email-form-relative` : ''}`}

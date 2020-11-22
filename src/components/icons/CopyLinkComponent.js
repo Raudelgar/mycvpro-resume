@@ -16,7 +16,11 @@ export default function CopyLinkComponent({ collapse = true }) {
 
 	return (
 		<TooltipLabel label='Copy Link' collapse={collapse}>
-			<div className={`${theme}-content-icon`} onClick={handleCopyLink}>
+			<div
+				data-testid='cp-link'
+				className={`${theme}-content-icon`}
+				onClick={handleCopyLink}
+			>
 				<IoIosLink size={25} className={`${theme}-icon`} />
 			</div>
 		</TooltipLabel>
