@@ -1,0 +1,159 @@
+@import 'sass/_colors.scss';
+@import 'sass/_variables.scss';
+@import 'sass/_responsive.scss';
+
+.footer-container {
+	display: flex;
+	width: $mobile-width;
+	height: 120px;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 auto;
+
+	.light-text,
+	.dark-text,
+	.light-footer-link,
+	.dark-footer-link {
+		color: $dark-gray;
+		font-size: 0.85rem;
+		padding: 0 3px;
+	}
+
+	.dark-text {
+		color: $light-gray;
+	}
+
+	.light-footer-link,
+	.dark-footer-link {
+		text-decoration: none;
+	}
+
+	.light-tab,
+	.dark-tab {
+		font-size: 1.2rem;
+		color: $footer-tab-gray;
+	}
+
+	.footer-nav,
+	.region {
+		display: flex;
+		align-items: center;
+	}
+
+	.footer-left {
+		width: 100%;
+		height: 100px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+
+		.copyright,
+		.footer-nav {
+			text-align: center;
+			margin-bottom: 5px;
+		}
+
+		.copyright {
+			margin-bottom: 10px;
+		}
+
+		.footer-nav > .light-footer-link {
+			color: $dark-gray;
+		}
+
+		.footer-nav > .dark-footer-link {
+			color: $light-gray;
+		}
+
+		.footer-nav > .light-footer-link:hover,
+		.dark-footer-link:hover {
+			color: $dark-hover-gray;
+			text-decoration: underline;
+		}
+
+		.footer-nav > .dark-footer-link:hover {
+			color: $light-hover-gray;
+		}
+	}
+
+	.region {
+		margin-top: 5px;
+	}
+}
+@include footer-media;
+/*
+
+.footer-container {
+	display: flex;
+	width: $mobile-width;
+	// height: 50px;
+	height: 75px;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 auto;
+	flex-wrap: wrap;
+	align-content: center;
+
+	.light-text,
+	.dark-text,
+	.light-footer-link,
+	.dark-footer-link {
+		color: $dark-gray;
+		font-size: 0.85rem;
+		padding: 0 3px;
+	}
+
+	.dark-text {
+		color: $light-gray;
+	}
+
+	.light-footer-link,
+	.dark-footer-link {
+		text-decoration: none;
+	}
+
+	.light-tab,
+	.dark-tab {
+		font-size: 1.2rem;
+		color: $footer-tab-gray;
+	}
+
+	.footer-nav,
+	.region {
+		display: flex;
+		align-items: center;
+	}
+
+	.footer-left {
+		width: 75%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-left: 10px;
+
+		.footer-nav > .light-footer-link {
+			color: $dark-gray;
+		}
+
+		.footer-nav > .dark-footer-link {
+			color: $light-gray;
+		}
+
+		.footer-nav > .light-footer-link:hover,
+		.dark-footer-link:hover {
+			color: $dark-hover-gray;
+			text-decoration: underline;
+		}
+
+		.footer-nav > .dark-footer-link:hover {
+			color: $light-hover-gray;
+		}
+	}
+
+	.light-region,
+	.dark-region {
+		margin-right: 10px;
+	}
+}
+*/

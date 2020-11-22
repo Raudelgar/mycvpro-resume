@@ -1,7 +1,7 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
+import useHover from 'hooks/useHover.js';
 import './tooltip.scss';
-import useHover from '../../hooks/useHover.js';
 
 export default function TooltipLabel({
 	label = 'Tooltip',
@@ -25,3 +25,8 @@ export default function TooltipLabel({
 		</div>
 	);
 }
+TooltipLabel.propTypes = {
+	label: PropTypes.string,
+	collapse: PropTypes.bool.isRequired,
+	children: PropTypes.node.isRequired,
+};

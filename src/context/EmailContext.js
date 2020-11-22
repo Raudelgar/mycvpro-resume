@@ -1,5 +1,6 @@
 import React, { createContext, useState } from 'react';
-import useEmailState from '../hooks/useEmailState';
+import PropTypes from 'prop-types';
+import useEmailState from 'hooks/useEmailState';
 
 export const EmailContext = createContext();
 
@@ -72,4 +73,8 @@ export const EmailProvider = (props) => {
 			{props.children}
 		</EmailContext.Provider>
 	);
+};
+
+EmailProvider.propTypes = {
+	children: PropTypes.node.isRequired,
 };

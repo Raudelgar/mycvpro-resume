@@ -1,6 +1,6 @@
 import React from 'react';
-
-import '../sections.scss';
+import PropTypes from 'prop-types';
+import 'components/sections/sections.scss';
 
 export default function EducationContent({ content, theme }) {
 	return (
@@ -18,3 +18,8 @@ export default function EducationContent({ content, theme }) {
 		</div>
 	);
 }
+
+EducationContent.propTypes = {
+	content: PropTypes.array,
+	theme: PropTypes.string.isRequired,
+};

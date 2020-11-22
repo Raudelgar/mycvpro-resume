@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import { FaTelegramPlane } from 'react-icons/fa';
-import TooltipLabel from '../tooltips/TooltipLabel';
-import { ThemeContext } from '../../context/ThemeContext';
-import { EmailContext } from '../../context/EmailContext';
+import TooltipLabel from 'components/tooltips/TooltipLabel';
+import { ThemeContext } from 'context/ThemeContext';
+import { EmailContext } from 'context/EmailContext';
+import './icons.scss';
 
-export default function MessagesComponent({ collapse }) {
+export default function MessagesComponent({ collapse = true }) {
 	const { theme } = useContext(ThemeContext);
 	const { openEmailForm } = useContext(EmailContext);
 
@@ -14,9 +16,17 @@ export default function MessagesComponent({ collapse }) {
 
 	return (
 		<TooltipLabel label='Send Email' collapse={collapse}>
-			<div className={`${theme}-content-icon`} onClick={handleEmailForm}>
+			<div
+				data-testid='btn-messages-form'
+				className={`${theme}-content-icon`}
+				onClick={handleEmailForm}
+			>
 				<FaTelegramPlane size={25} className={`${theme}-icon`} />
 			</div>
 		</TooltipLabel>
 	);
 }
+
+MessagesComponent.propTypes = {
+	collapse: PropTypes.bool,
+};
