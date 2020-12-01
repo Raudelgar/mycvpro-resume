@@ -6,8 +6,7 @@ const NODE_ENV = process.env.NODE_ENV;
 let baseURL;
 
 if (NODE_ENV !== 'production') {
-	// baseURL = api.domain.dev;
-	baseURL = api.domain.prod;
+	baseURL = api.domain.dev;
 } else {
 	baseURL = api.domain.prod;
 }
@@ -16,24 +15,24 @@ if (NODE_ENV !== 'production') {
  * @description Axios global instance
  */
 const axiosCV = axios.create({
-	baseURL
+	baseURL,
 });
 
 /**
  * @description Fetching user data based on user's unique id
  * @method GET
- * @param {string} id 
- * @returns {object} - user's data 
+ * @param {string} id
+ * @returns {object} - user's data
  * @author Raudel Garcia
  */
 export async function fetchInitData(id) {
 	const URL = api.routes.users;
 	const params = {
-		[api.params.cvid] : id
-	}
+		[api.params.cvid]: id,
+	};
 
 	try {
-		const response = await axiosCV.get(URL,{params});
+		const response = await axiosCV.get(URL, { params });
 		const { user } = await response.data.payload;
 
 		const {
@@ -78,12 +77,12 @@ export function getUrlParams() {
 /**
  * @description Send a new messages to be persist under user's `messages` collection
  * @method POST
- * @param {string} name - Required 
- * @param {string} company - Required 
- * @param {string} email - Required 
- * @param {string} subject - Optional 
- * @param {string} content - Optional 
- * @param {object} profile - Required 
+ * @param {string} name - Required
+ * @param {string} company - Required
+ * @param {string} email - Required
+ * @param {string} subject - Optional
+ * @param {string} content - Optional
+ * @param {object} profile - Required
  * @returns {object} - status and messages
  * @author Raudel Garcia
  */
@@ -97,8 +96,8 @@ export async function sendMessages(
 ) {
 	const URL = api.routes.messages;
 	const params = {
-		[api.params.cvid] : profile.id
-	}
+		[api.params.cvid]: profile.id,
+	};
 	const data = {
 		name,
 		company,
@@ -109,8 +108,8 @@ export async function sendMessages(
 	};
 
 	try {
-		const response = await axiosCV.post(URL, data,{params});
-		const result = await response.data; 
+		const response = await axiosCV.post(URL, data, { params });
+		const result = await response.data;
 		return result;
 	} catch (error) {
 		console.log(error);
@@ -119,11 +118,11 @@ export async function sendMessages(
 
 /**
  * @description This function request the PDF file based on user's information
- * @param {object} profile 
- * @param {object} skills 
- * @param {object} experience 
- * @param {object} education 
- * @param {object} projects 
+ * @param {object} profile
+ * @param {object} skills
+ * @param {object} experience
+ * @param {object} education
+ * @param {object} projects
  * @returns {Promise} - resolve with PDF file download.
  */
 export function generatePdf(profile, skills, experience, education, projects) {
